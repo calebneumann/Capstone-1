@@ -52,6 +52,14 @@ video {
     display: flex;
 }
 
+
+
+.special {
+    cursor: pointer;
+    color: red;
+    border-radius: 5px;
+}
+
 .main {
     padding-left: 30px;
     min-width: 75%;
