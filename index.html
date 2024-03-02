@@ -4,7 +4,7 @@
     <META NAME="GENERATOR" Content="Microsoft Visual Studio">
     <TITLE>Speakommerce</TITLE>
     <link rel="stylesheet" type="text/css" href="index.css">
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <script src="index.js"></script>
 
 </HEAD>
 <div class="container">
@@ -24,20 +24,31 @@
             <p> I'm sure we will come up with something more clever soon!</p>
             <div>
 
-                <button py-click="write_to_page()" id="manual">Say Hello</button><br><br><br>
-                <py-script>
-                def write_to_page():
-                  print("hello")
-                </py-script>
-            
 
+            <!--trying to get AI working from pressing a button for testing purposes-->
+            <button onclick="displayText()">
+                <div class="buttonText"> Generate Joke</div>
+            </button>
+            
+            <div class="center">
+                <p class="jokeButton">
+                <div id="textField">
+        
+                    <div id="content"></div>
+                    Generated jokes will show here...
+        
+        
+        
+        
+                    <span id="textField"></span>
             <div class="news">
             <h1>BREAKING NEWS!!!
             <iframe width="560" height="315" src="https://www.youtube.com/embed/S9STizATKjE?si=eNQ5_fuxylzxdVvx?&autoplay=1"></iframe>
             </h1>
         </div>
 
- 
+        <script src="index.js"></script>
+
     </BODY>
 </HTML>
 
