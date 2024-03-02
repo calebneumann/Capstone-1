@@ -48,6 +48,14 @@ video {
     min-width: 75%;
 }
 
+.news {
+    padding-left: 50px;
+    color: red;
+    font-size: 60px;
+    font-family: sans-serif;
+}
+
+
 .nav {
     background-color: #FFEE00;
     max-width: 25%;
