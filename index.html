@@ -4,15 +4,8 @@
     <META NAME="GENERATOR" Content="Microsoft Visual Studio">
     <TITLE>Speakommerce</TITLE>
     <link rel="stylesheet" type="text/css" href="index.css">
-    <script src="index.js"></script>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 
-    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
-    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
-    <script type="module">
-        const loading = document.getElementById('loading');
-        addEventListener('py:ready', () => loading.close());
-        loading.showModal();
-    </script>
 </HEAD>
 <div class="container">
     <BODY>
@@ -31,13 +24,11 @@
             <p> I'm sure we will come up with something more clever soon!</p>
             <div>
 
-                <button id="get_joke" py-click="get_joke">Get a new PyJoke</button>
-            </div>
-
-            <div id="jokes"></div>
-
-            <script type="py" src="test.py"></script>
-        </section>
+                <button py-click="write_to_page()" id="manual">Say Hello</button><br><br><br>
+                <py-script>
+                def write_to_page():
+                  print("hello")
+                </py-script>
             
 
             <div class="news">
