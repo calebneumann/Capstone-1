@@ -4,6 +4,15 @@
     <META NAME="GENERATOR" Content="Microsoft Visual Studio">
     <TITLE>Speakommerce</TITLE>
     <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="index.js"></script>
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <script type="module">
+        const loading = document.getElementById('loading');
+        addEventListener('py:ready', () => loading.close());
+        loading.showModal();
+    </script>
 </HEAD>
 <div class="container">
     <BODY>
@@ -20,9 +29,21 @@
             <h1>Speakommerce</h1>
             <h3>Speak and find whatever e-commerce product you need!</h3>
             <p> I'm sure we will come up with something more clever soon!</p>
-        <div class="news">
-            <h1>BREAKING NEWS!!!</h1>
+            <div>
+
+                <button id="get_joke" py-click="get_joke">Get a new PyJoke</button>
+            </div>
+
+            <div id="jokes"></div>
+
+            <script type="py" src="test.py"></script>
+        </section>
+            
+
+            <div class="news">
+            <h1>BREAKING NEWS!!!
             <iframe width="560" height="315" src="https://www.youtube.com/embed/S9STizATKjE?si=eNQ5_fuxylzxdVvx?&autoplay=1"></iframe>
+            </h1>
         </div>
 
  
