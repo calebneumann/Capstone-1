@@ -12,12 +12,13 @@ async function chatGPT() {
   console.log(completion.choices[0].message.content);
   const response = String(completion.choices[0].message.content);
 
-  document.getElementById("textField").textContent = response;
+  document.getElementById("textField").textContent = "sup";
   text.style.display = "block";
 
 }
-*/
 
+chatGPT();
+*/
 function displayText(){
 
   document.getElementById("textField").textContent = "HEEEELP IM STUCK IN JAVASCRIPT";
