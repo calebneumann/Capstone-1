@@ -13,6 +13,15 @@ BODY {
     width: auto;
 }
 
+button {
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
 h1 {
     font-size: 48px;
 }
@@ -43,6 +52,14 @@ video {
     display: flex;
 }
 
+
+
+.special {
+    cursor: pointer;
+    color: red;
+    border-radius: 5px;
+}
+
 .main {
     padding-left: 30px;
     min-width: 75%;
@@ -51,7 +68,7 @@ video {
 .news {
     padding-left: 50px;
     color: red;
-    font-size: 60px;
+    font-size: 69px;
     font-family: sans-serif;
 }
 

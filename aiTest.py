@@ -9,7 +9,7 @@ class OpenAiManager:
     def __init__(self):
         self.chat_history = [] # Stores the entire conversation
         try:
-            self.client = OpenAI(api_key="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")
+            self.client = OpenAI(api_key="xxxxxxxxxxxxxxxxxxxxxxxxx")
         except TypeError:
             exit("Ooops! You forgot to set OPENAI_API_KEY in your environment!")
 
@@ -71,7 +71,8 @@ if __name__ == '__main__':
     openai_manager = OpenAiManager()
 
     # CHAT TEST
-    question = input("Ask ChatGPT a question: ")
+    #question = input("Ask ChatGPT a question: ")
+    question = "what is 2 plus 2"
     aiResponse = openai_manager.chat(question)
     openai_manager.textToSpeech(aiResponse)
         
