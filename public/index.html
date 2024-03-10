@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+    <META NAME="GENERATOR" Content="Microsoft Visual Studio">
+    <TITLE>Speakommerce</TITLE>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="js/index.js"></script>
+    <script src="js/test.js"></script>
+
+</HEAD>
+<div class="container">
+    <BODY>
+        <div class="navbar">
+        <div class="dropdown">
+        <div class="nav">
+                <button class="dropbtn">Dropdown</button>
+            </div>
+
+                <div class="dropdown-content">
+                  <a href="/look_up.html">Look Up</a>
+                  <a href="/amazon.html">Amazon</a>
+                  <a href="/ebay.html">E-Bay</a>
+                  <a href="/about_us.html">About Us</a>
+    
+                </div>
+              </div>
+
+        </div>
+        <div class="main">
+            <br><br>
+            <h1>Speakommerce</h1>
+            <h3>Speak and find whatever e-commerce product you need!</h3>
+            <p> I'm sure we will come up with something more clever soon!</p>
+            <div>
+
+
+                <div>
+                <a href="https://www.ubisoft.com/en-us/game/skull-and-bones" target="_blank" rel="noopener noreferrer">
+                    <button class="special">DON'T PUSH THIS BUTTON!!!</button>
+                 </a>
+                </div>
+            <!--trying to get AI working from pressing a button for testing purposes-->
+            
+            <input type="text" id="userInputBox" placeholder="Ask ChatGPT a question!">
+            <button id="pressButton">Send Question</button>
+            <div id="responseMessage">
+        
+            <script>
+                const button = document.getElementById('pressButton');
+                const responseMessage = document.getElementById('responseMessage');
+        
+                button.addEventListener('click', () => {
+                    const userInput = document.getElementById('userInputBox').value;
+                    fetch('/buttonPress', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ input: userInput })
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        responseMessage.textContent = data; // Set the response message in the div
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                });
+            </script>
+            <h3>This is where the ChatGPT response will be</h3>
+        </div>
+                </p>
+            </div>            
+            <div class="news">
+            <h1>BREAKING NEWS!!!
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/S9STizATKjE?si=eNQ5_fuxylzxdVvx?&autoplay=1"></iframe>
+            </h1>
+        </div>
+
+        <script src="index.js"></script>
+
+    </BODY>
+</HTML>
+
