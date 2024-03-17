@@ -12,7 +12,20 @@ BODY {
     height: auto;
     width: auto;
 }
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
 
+
+
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 button {
     text-align: center;
     display: inline-block;
@@ -53,6 +66,9 @@ video {
 }
 
 
+.responseThing{
+    color:red;
+}
 
 .special {
     cursor: pointer;

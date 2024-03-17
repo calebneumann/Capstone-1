@@ -40,7 +40,21 @@
                  </a>
                 </div>
             <!--trying to get AI working from pressing a button for testing purposes-->
-            
+            <div>
+                <button id="jimbo">What's poppin' Jimbo?</button>            
+                <script>
+                    document.getElementById('jimbo').addEventListener('click', async () => {
+                        try {
+                            const response = await fetch('/jimboButton'); // Make a request to the server
+                        } catch (error) {
+                            console.error('Error fetching data:', error);
+                        }
+                    });
+                </script>
+
+            </div>
+            <br>
+
             <input type="text" id="userInputBox" placeholder="Ask ChatGPT a question!">
             <button id="pressButton">Send Question</button>
             <div id="responseMessage">
@@ -61,13 +75,21 @@
                     .then(response => response.text())
                     .then(data => {
                         responseMessage.textContent = data; // Set the response message in the div
+                        document.getElementById('chatResponse').textContent = data; // Display the data
+
                     })
                     .catch(error => {
                         console.error('Error:', error);
                     });
                 });
             </script>
-            <h3>This is where the ChatGPT response will be</h3>
+            <h3><div class="responseThing" id="chatResponse"><h3>This is where the ChatGPT response will be</h3></div>
+        </div>
+        <div class="row">
+            <div class="column">
+              <img src="shrekbob.jpg" alt="Snow" style="width:100%">
+            </div>
+            <div class="column">shrekbob shrekbob shrekbob shrekbob shrekbob shrekbob</div>
         </div>
                 </p>
             </div>            

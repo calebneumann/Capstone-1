@@ -9,14 +9,21 @@ const { record } = require('./js/record.js')
 const app = express();
 
 
-
+/*
 console.log('Starting recording...');
 async function poop(){
   record();
 
 }
+*/
+app.get('/jimboButton', (req, res) => {
+  // Execute your desired action (e.g., call a function)
+  say.speak("what's poppin' jimbo?");
 
-poop();
+});
+
+
+//poop();
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'html')));
 app.use(express.static(path.join(__dirname, 'css')));
