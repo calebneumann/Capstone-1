@@ -15,6 +15,7 @@ async function poop(){
   record();
 
 }
+poop();
 */
 app.get('/jimboButton', (req, res) => {
   // Execute your desired action (e.g., call a function)
@@ -23,10 +24,11 @@ app.get('/jimboButton', (req, res) => {
 });
 
 
-//poop();
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'html')));
 app.use(express.static(path.join(__dirname, 'css')));
+app.use(express.static(path.join(__dirname, 'assets')));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

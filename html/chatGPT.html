@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+    <META NAME="GENERATOR" Content="Microsoft Visual Studio">
+    <TITLE>Speakommerce</TITLE>
+    <link rel="stylesheet" type="text/css" href="chatGPT.css">
+
+
+</HEAD>
+<div class="container">
+    <BODY>
+        <div class="navbar">
+        <div class="dropdown">
+        <div class="nav">
+                <button class="dropbtn">Dropdown</button>
+            </div>
+
+                <div class="dropdown-content">
+                    <a href="../index.html">Home</a>
+                    <a href="/look_up.html">Look Up</a>
+                    <a href="/ebay.html">E-Bay</a>
+                    <a href="/about_us.html">About Us</a>
+                </div>
+              </div>
+
+        </div>
+        <div class="main">
+            <br><br>
+            <h1>ChatGPT</h1>
+            <div>
+
+            <!--trying to get AI working from pressing a button for testing purposes-->
+            <input type="text" id="userInputBox" placeholder="Ask ChatGPT a question!">
+            <button id="pressButton">Send Question</button>
+            <div id="responseMessage">
+        
+            <script>
+                const button = document.getElementById('pressButton');
+                const responseMessage = document.getElementById('responseMessage');
+        
+                button.addEventListener('click', () => {
+                    const userInput = document.getElementById('userInputBox').value;
+                    fetch('/buttonPress', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ input: userInput })
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        responseMessage.textContent = data; // Set the response message in the div
+                        document.getElementById('chatResponse').textContent = data; // Display the data
+
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                });
+            </script>
+            <h3><div class="responseThing" id="chatResponse"><h3>This is where the ChatGPT response will be</h3></div>      
+        </div>
+
+        <script src="index.js"></script>
+
+    </BODY>
+</HTML>
+

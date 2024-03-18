@@ -37,7 +37,7 @@ process.stdin.on('keypress', async (ch, key) => {
         console.log("Recording Stopped");
         await playAudioAndExit();
     }
-    else if (key.name === 'space' && recording == false) {
+    else if (key.name === 'shift(left)' && recording == false) {
       recording = true;
       console.log('Recording (not actually recording)');
       say.speak("Recording voice", 'Samantha', 1.2);
