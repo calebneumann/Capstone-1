@@ -10,6 +10,7 @@
 </HEAD>
 <div class="container">
     <BODY>
+
         <div class="navbar">
         <div class="dropdown">
         <div class="nav">
@@ -17,8 +18,8 @@
             </div>
 
                 <div class="dropdown-content">
+                  <a href="/chatGPT.html">ChatGPT</a>
                   <a href="/look_up.html">Look Up</a>
-                  <a href="/amazon.html">Amazon</a>
                   <a href="/ebay.html">E-Bay</a>
                   <a href="/about_us.html">About Us</a>
     
@@ -54,37 +55,6 @@
 
             </div>
             <br>
-
-            <input type="text" id="userInputBox" placeholder="Ask ChatGPT a question!">
-            <button id="pressButton">Send Question</button>
-            <div id="responseMessage">
-        
-            <script>
-                const button = document.getElementById('pressButton');
-                const responseMessage = document.getElementById('responseMessage');
-        
-                button.addEventListener('click', () => {
-                    const userInput = document.getElementById('userInputBox').value;
-                    fetch('/buttonPress', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ input: userInput })
-                    })
-                    .then(response => response.text())
-                    .then(data => {
-                        responseMessage.textContent = data; // Set the response message in the div
-                        document.getElementById('chatResponse').textContent = data; // Display the data
-
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
-                });
-            </script>
-            <h3><div class="responseThing" id="chatResponse"><h3>This is where the ChatGPT response will be</h3></div>
-        </div>
         <div class="row">
             <div class="column">
               <img src="shrekbob.jpg" alt="Snow" style="width:100%">

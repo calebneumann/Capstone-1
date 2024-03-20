@@ -1,54 +1,85 @@
 const keypress = require('keypress')
 const say = require('say')
+const { OpenAI } = require('openai');
+const record = require('node-record-lpcm16');
+const openai = new OpenAI(process.env.OPENAI_API_KEY);
+const wav = require('wav');
+const fs = require('fs');
+let recording = false;
+
+
+const filePath = 'voice-to-text.wav';
+let file = "";
+
+function startRecord(){
 
 
 
-async function playAudioAndExit() {
-    return new Promise((resolve, reject) => {
-    say.speak("Recording has stopped", null, 1.2, (err) => {
-        if (err) {
-          console.error('Error playing audio:', err);
-          reject(err);
-        } else {
-          resolve();
-        }
-      });
-    });
+const writer = new wav.Writer({
+  channels: 1,
+  sampleRate: 16000,
+  bitDepth: 16,
+});
+const mic = record.record({
+  sampleRate: 16000,
+  channels: 1,
+  bitDepth: 16,
+});
+
+if(recording == true){
+
+console.log('Recording...');
+mic._stream.pipe(writer).pipe(file); //Use mic._stream.pipe for piping
+}
+
+else{
+  mic._stream.pipe(writer).end(); //Use mic._stream.end() for to end recording
+  console.log('Recording stopped.');
+  file.end();
+  voiceToText(filePath);
+}
+}
+
+
+
+
+//Function to transcribe audio
+
+async function voiceToText(filePath) {
+  const transcription = await openai.audio.transcriptions.create({
+    file: fs.createReadStream(filePath),
+    model: "whisper-1",
+    language: "en"
+  });
+
+  console.log(transcription.text);
+  fs.unlinkSync(filePath);
+
 }
 
 
 // Initialize keypress
 keypress(process.stdin);
 
-// Set raw mode to get keystrokes
-function record(){
+function recordThing(rec){
+recording == rec;
 
-process.stdin.setRawMode(true);
-let recording = false;
-// Event listener for key presses
-process.stdin.on('keypress', async (ch, key) => {
-  if (key) {
-    if (key.ctrl && key.name === 'c') {
-      console.log('Exiting...');
-      process.exit(); // Exit the process gracefully
-    } 
-    else if(recording == true){
+
+    if(recording == true){ //stop recording
         recording = false;
-        console.log("Recording Stopped");
-        await playAudioAndExit();
+
+        startRecord();
+        say.speak("Recording has stopped", 'Samantha', 1.2);
     }
-    else if (key.name === 'space' && recording == false) {
+    else if (recording == false) { //start's recording
       recording = true;
-      console.log('Recording (not actually recording)');
+      file = fs.createWriteStream(filePath, { encoding: 'binary' });
+
+      startRecord();
       say.speak("Recording voice", 'Samantha', 1.2);
-      // Your code to run when space bar is held down
     }
 
-  }
-});
-
-// Listen for keypresses
 process.stdin.resume();
 }
-
-module.exports = { record };
+//recordThing();
+module.exports = { recordThing };

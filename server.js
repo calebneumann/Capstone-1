@@ -4,18 +4,34 @@ const bodyParser = require('body-parser')
 const OpenAI = require('openai')
 const fs = require('fs')
 const say = require('say')
-const { record } = require('./js/record.js')
+const { recordThing } = require('./js/record.js')
 
 const app = express();
 
-
+let rec = false;
 /*
-console.log('Starting recording...');
+//console.log('Starting recording...');
 async function poop(){
-  record();
+  recordThing();
 
 }
+poop();
 */
+app.get('/stt', (req, res) => {
+  // Execute your desired action (e.g., call a function)
+  console.log("hello?");
+  if(rec == false){
+    rec = true;
+  }
+  else{
+    rec = false;
+  }
+  res.send("yo yo I got it")
+  recordThing(rec);
+  
+});
+
+
 app.get('/jimboButton', (req, res) => {
   // Execute your desired action (e.g., call a function)
   say.speak("what's poppin' jimbo?");
@@ -23,10 +39,11 @@ app.get('/jimboButton', (req, res) => {
 });
 
 
-//poop();
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'html')));
 app.use(express.static(path.join(__dirname, 'css')));
+app.use(express.static(path.join(__dirname, 'assets')));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
