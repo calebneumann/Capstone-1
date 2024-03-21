@@ -68,6 +68,8 @@ video {
 
 .responseThing{
     color:red;
+    padding-left: 30px;
+    min-width: 75%;
 }
 
 .special {

@@ -17,18 +17,28 @@ async function poop(){
 }
 poop();
 */
-app.get('/stt', (req, res) => {
+app.get('/stt', async (req, res) => {
   // Execute your desired action (e.g., call a function)
   console.log("hello?");
+  try{
+
+  
   if(rec == false){
     rec = true;
+    const poop = await recordThing(rec);
+    res.send("Recording...")
+
   }
   else{
     rec = false;
+    const poop = await recordThing(rec);
+    res.send(poop);
+
   }
-  res.send("yo yo I got it")
-  recordThing(rec);
-  
+}
+catch (error) {
+  console.log(error);
+}
 });
 
 
