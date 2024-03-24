@@ -43,11 +43,49 @@ catch (error) {
 
 
 app.get('/jimboButton', (req, res) => {
-  // Execute your desired action (e.g., call a function)
   say.speak("what's poppin' jimbo?");
 
 });
 
+app.get('/homepage', async (req, res) => {
+  try {
+    await say.speak("You are now on the home page.");
+  } catch (error) {
+    res.status(500).send("Error speaking: " + error.message);
+  }
+});
+
+app.get('/chatPage', async(req, res) => {
+  try {
+    await say.speak("You are now on the chat page.");
+  } catch (error) {
+    res.status(500).send("Error speaking: " + error.message);
+  }
+});
+
+app.get('/aboutPage', async(req, res) => {
+  try {
+    await say.speak("You are now on the about page.");
+  } catch (error) {
+    res.status(500).send("Error speaking: " + error.message);
+  }
+});
+
+app.get('/ebayPage', async(req, res) => {
+  try {
+    await say.speak("You are now on the ebay page.");
+  } catch (error) {
+    res.status(500).send("Error speaking: " + error.message);
+  }
+});
+
+app.get('/lookupPage', async(req, res) => {
+  try {
+    await say.speak("You are now on the search page.");
+  } catch (error) {
+    res.status(500).send("Error speaking: " + error.message);
+  }
+});
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'html')));
@@ -105,6 +143,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.listen(3000, () => {
-  console.log(`Server running at http://localhost:3000`);
+app.listen(4000, () => {
+  console.log(`Server running at http://localhost:4000`);
 });

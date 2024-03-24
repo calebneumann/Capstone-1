@@ -49,7 +49,7 @@ async function voiceToText(filePath) {
     language: "en"
   });
   sttResponse = transcription.text;
-  //console.log(transcription.text);
+  console.log(transcription.text);
   fs.unlinkSync(filePath);
 
 }
