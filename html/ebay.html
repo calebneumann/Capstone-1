@@ -13,7 +13,48 @@
         <div class="nav">
                 <button class="dropbtn">Dropdown</button>
             </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', async () => {
+                    try {
+                        const response = await fetch('/ebayPage'); // Make a request to the server
+                    } catch (error) {
+                        console.error('Error fetching data:', error);
+                    }
+                });
+              </script>
+            <script>
+                document.addEventListener("keydown", (event) => {
+                    if(event.key == ' '){
+                        const sttResponse = document.getElementById('sttResponse');
 
+                        //alert("you entered space")
+                        
+                        try {
+                            const response = fetch('/stt').then(res => res.text()).then(data => {
+                                data = data.toLowerCase();
+                                if(data.includes("home")){
+                                    window.location.href = "../index.html";
+                                }
+                                else if(data.includes("chat")){
+                                    window.location.href = "/chatGPT.html";
+                                }
+                                else if(data.includes("about")){
+                                    window.location.href = "/about_us.html";
+                                }
+                                else if(data.includes("search")){
+                                    window.location.href = "/look_up.html";
+                                }
+
+
+
+                            }); // Make a request to the server
+                        } catch (error) {
+                            console.error('Error fetching data:', error);
+                        }
+                    }
+                    // do something
+                  });
+            </script>
                 <div class="dropdown-content">
                     <a href="../index.html">Home</a>
                     <a href="/chatGPT.html">ChatGPT</a>
@@ -27,7 +68,11 @@
             <br><br>
             <h1>Ebay or something</h1>
             <div><h3>hello welcome to ebay. Would you like to try the McDouble with extra cheese and extra ham and extra burger and extra cheese and extra pickle and extra bun and extra McDonald's secret sauce?</h3></div>
-    </BODY>
+            <div>To home page: sentence must have "home" in it</div>
+            <div>To chatGPT page: sentence must have "chat" in it</div>
+            <div>To about page: sentence must have "about" in it</div>
+            <div>To look_up page: sentence must have "search" in it</div>
+        </BODY>
 </HTML>
 
 
