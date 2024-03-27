@@ -1,6 +1,0 @@
-hello
-Hello! How can I assist you today?
-sup
-Hello! How can I assist you today?
-whats 2 + 2
-2 + 2 = 4
