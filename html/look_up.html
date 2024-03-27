@@ -66,11 +66,64 @@
         <div class="main">
             <br><br>
             <h1>Look Up</h1>
-            <div><h3>dont look up its not worth it. I speak from experience when I say BABAGABOOSH</h3></div>
-            <div>To home page: sentence must have "home" in it</div>
-            <div>To chatGPT page: sentence must have "chat" in it</div>
-            <div>To about page: sentence must have "about" in it</div>
-            <div>To ebay page: sentence must have "ebay" in it</div>
+
+            <input type="text" id="textInput" placeholder="Enter product to search...">
+            <button id="sendButton">Submit</button>
+            <div>
+
+            <!--when the button is pressed, send the value in the text box to server.js to be searched-->
+            <script>
+                document.getElementById('sendButton').addEventListener('click', () => {
+                    const userInput = document.getElementById('textInput').value;
+
+                    if(userInput != ""){
+
+                    
+
+                    fetch('/searchProduct', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ text: userInput })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+
+                        //sets which div the html will be sent to
+                        var poopies = document.getElementById('responseMessage');
+
+                        //currently gets the top 3 results and displays info about them
+
+                        //available parameters are: title, link (where the actual product is), product_link (from google.com/shopping), 
+                        //source (where it's sold), price, condition (new, used, etc.), rating, reviews (# of reviews), 
+                        //delivery (delivery options), extensions (color of product, material of product, etc.), thumbnail)
+                        
+                        poopies.innerHTML = "Result#1<ul><li>Product: "+data[0].title+"</li><li>Price: "+data[0].price+"</li><li>Distributor: "+data[0].source+"</li><li>Rating: "+data[0].store_rating+"</li></ul>";
+                        poopies.innerHTML += "Result#2<ul><li>Product: "+data[1].title+"</li><li>Price: "+data[1].price+"</li><li>Distributor: "+data[1].source+"</li><li>Rating: "+data[1].store_rating+"</li></ul>";
+                        poopies.innerHTML += "Result#3<ul><li>Product: "+data[2].title+"</li><li>Price: "+data[2].price+"</li><li>Distributor: "+data[2].source+"</li><li>Rating: "+data[2].store_rating+"</li></ul>";
+
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                }
+                });
+            </script>
+                        <h3><div id="responseMessage">Product info will be here</div></h3>    
+                </div>
+
+            <br><br>
+            <div><h3>TO DO: </h3>
+            <ul>
+                <li>Send ChatGPT the product info and have it summarize it</li>
+                <li>If the user says yes, have chatGPT give a brief summary of the product (features, etc.)</li>
+                <li>Check if the product as a thumbnail link; if so, paste it with product info</li>
+                <li>probably more stuff but for now this is it chief</li>
+            </ul>
+            
+            </div>
+
     </BODY>
 </HTML>
 
