@@ -1,1 +1,35 @@
 To set remote repo:
+git init
+git remote add origin https://github.com/calebneumann/Capstone-1
+git branch [Your Name]
+git checkout [Your Name]
+
+To commit to your branch:
+git add .
+git commit -m "Commit Message"
+git push origin [Your Branch]
+
+To pull from master branch:
+git pull origin master
+
+MAKE SURE TO INSTALL NODE JS!!!
+
+Ask me for open ai key. When you get it set an environmental variable-
+name it OPENAI_API_KEY and put the key as the value
+
+
+Sox:
+Go here: 
+https://sourceforge.net/projects/sox/files/sox/14.4.1/
+
+Download sox-14.4.1-win32.exe
+Note: it is automatically saved to "C:\Program Files (x86)\sox-14-4-1"
+Go to your environmental variables
+    go to "Path" list of environmental variables
+    Insert the file path in that list
+
+
+
+To launch app, run "server.js"
+In your browser, go to http://localhost:4000
+(Port number may change based on if it randomly stops working on me)
