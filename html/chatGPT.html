@@ -15,6 +15,15 @@
         <div class="nav">
                 <button class="dropbtn">Dropdown</button>
             </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', async () => {
+                    try {
+                        const response = await fetch('/chatPage'); // Make a request to the server
+                    } catch (error) {
+                        console.error('Error fetching data:', error);
+                    }
+                });
+              </script>
                 <script>
                     document.addEventListener("keydown", (event) => {
                         if(event.key == ' '){
@@ -25,8 +34,24 @@
                             try {
                                 const response = fetch('/stt').then(res => res.text()).then(data => {
                                     sttResponse.textContent = data; // Set the response message in the div
-                                    document.getElementById('sttResponse').textContent = data; // Display the data
-            
+                                    data = data.toLowerCase();
+                                    if(data.includes("home")){
+                                        window.location.href = "../index.html";
+                                    }
+                                    else if(data.includes("about")){
+                                        window.location.href = "/about_us.html";
+                                    }
+                                    else if(data.includes("search")){
+                                        window.location.href = "/look_up.html";
+                                    }
+                                    else if(data.includes("ebay")){
+                                        window.location.href = "/ebay.html";
+                                    }
+                                    else{
+                                        document.getElementById('sttResponse').textContent = data; // Display the data
+                                    }
+
+
                                 }); // Make a request to the server
                             } catch (error) {
                                 console.error('Error fetching data:', error);
@@ -91,7 +116,10 @@
         <h3><div class="responseThing" id="sttResponse">This is where the text will be...</div></h3>
 
         </div>
-
+        <div>To home page: sentence must have "home" in it</div>
+        <div>To look up page: sentence must have "search" in it</div>
+        <div>To about page: sentence must have "about" in it</div>
+        <div>To ebay page: sentence must have "ebay" in it</div>
     </BODY>
 </HTML>
 
