@@ -5,18 +5,34 @@ const OpenAI = require('openai')
 const fs = require('fs')
 const say = require('say')
 const { recordThing } = require('./js/record.js')
-
+const { getJson } = require("serpapi");
 const app = express();
 
 let rec = false;
-/*
-//console.log('Starting recording...');
-async function poop(){
-  recordThing();
 
-}
-poop();
-*/
+app.use(bodyParser.json());
+
+app.post('/searchProduct', async (req, res) => {
+  try {
+    await getJson({
+      engine: "google_shopping",
+      q: req.body.text,
+      api_key: "6f0c25895e35ca946165c00a417842fd45133927050835001054ef47a72a4251"
+    }, (json) => {
+
+      //console.log(json["shopping_results"][0]);
+      //sends only the search results
+      res.json(json["shopping_results"]);
+    });
+
+  } catch (error) {
+    // Handle errors
+    console.error('Error:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+
 app.get('/stt', async (req, res) => {
   // Execute your desired action (e.g., call a function)
   console.log("hello?");
