@@ -149,5 +149,12 @@ video {
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
-    height:auto
+    height:auto;
+    display: flex;
   }
+  .recordThing{
+    padding: 0;
+    text-align: center;
+    margin-top: -60px;
+    color: red;
+}

@@ -11,10 +11,14 @@
 <div class="container">
     <BODY>
         <div class="navbar">
-        <div class="dropdown">
-        <div class="nav">
-                <button class="dropbtn">Dropdown</button>
-            </div>
+            <div class="dropdown">
+                <div class="nav">
+            
+                    <button class="dropbtn">Dropdown</button>
+                    <h3><div class="recordThing" id="sttResponse">This is where the text will be...</div></h3>
+
+                </div>
+        
             <script>
                 document.addEventListener('DOMContentLoaded', async () => {
                     try {
@@ -25,30 +29,32 @@
                 });
               </script>
                 <script>
-                    document.addEventListener("keydown", (event) => {
-                        if(event.key == ' '){
+                    document.addEventListener("keydown", function(event){
+                        if(event.key === " " && !isTextInput(event.target)) {
+                            event.preventDefault();
                             const sttResponse = document.getElementById('sttResponse');
-
                             //alert("you entered space")
                             
+
                             try {
                                 const response = fetch('/stt').then(res => res.text()).then(data => {
-                                    sttResponse.textContent = data; // Set the response message in the div
+                                    sttResponse.textContent = data;
                                     data = data.toLowerCase();
-                                    if(data.includes("home")){
+                                    if(data.includes("home page")){
                                         window.location.href = "../index.html";
                                     }
-                                    else if(data.includes("about")){
+                                    else if(data.includes("about us")){
                                         window.location.href = "/about_us.html";
                                     }
-                                    else if(data.includes("search")){
-                                        window.location.href = "/look_up.html";
+                                    else if(data.includes("search page")){
+                                        window.location.href = "/search.html";
                                     }
                                     else if(data.includes("ebay")){
                                         window.location.href = "/ebay.html";
                                     }
                                     else{
-                                        document.getElementById('sttResponse').textContent = data; // Display the data
+                                            document.getElementById('sttResponse').textContent = data; // Display the data
+
                                     }
 
 
@@ -57,12 +63,16 @@
                                 console.error('Error fetching data:', error);
                             }
                         }
+
                         // do something
                       });
+                        function isTextInput(element) {
+                            return element.tagName === "INPUT" && element.getAttribute("type") === "text" || element.tagName === "TEXTAREA";
+                        }
                 </script>
                 <div class="dropdown-content">
                     <a href="../index.html">Home</a>
-                    <a href="/look_up.html">Look Up</a>
+                    <a href="/search.html">Look Up</a>
                     <a href="/ebay.html">E-Bay</a>
                     <a href="/about_us.html">About Us</a>
                 </div>
@@ -113,7 +123,6 @@
         <br>
         <br>
         <h1>Voice-to-Text</h1>
-        <h3><div class="responseThing" id="sttResponse">This is where the text will be...</div></h3>
 
         </div>
         <div>To home page: sentence must have "home" in it</div>
