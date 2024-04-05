@@ -14,7 +14,9 @@ let sttResponse = "";
 
 
 async function startRecord(){
-
+  const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+  await delay(1500) /// waiting 1 second.
+  
   const writer = new wav.Writer({
     channels: 1,
     sampleRate: 16000,
@@ -72,8 +74,8 @@ recording == rec;
       recording = true;
       file = fs.createWriteStream(filePath, { encoding: 'binary' });
 
-      await startRecord();
       say.speak("Recording voice", 'Samantha', 1.2);
+      await startRecord();
     }
     return sttResponse;
 }

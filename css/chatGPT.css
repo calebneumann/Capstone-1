@@ -70,6 +70,8 @@ video {
     color:red;
 }
 
+
+
 .special {
     cursor: pointer;
     color: red;
@@ -93,6 +95,7 @@ video {
 
     .nav h1 {
         padding-left: 20px;
+        display: flex;
     }
 
 
@@ -147,5 +150,12 @@ video {
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
-    height:auto
+    height:auto;
+    display: flex;
   }
+  .recordThing{
+    padding: 0;
+    text-align: center;
+    margin-top: -60px;
+    color: red;
+}

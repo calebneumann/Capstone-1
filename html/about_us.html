@@ -12,6 +12,8 @@
         <div class="dropdown">
         <div class="nav">
                 <button class="dropbtn">Dropdown</button>
+                <h3><div class="recordThing" id="sttResponse">This is where the text will be...</div></h3>
+
             </div>
             <script>
                 document.addEventListener('DOMContentLoaded', async () => {
@@ -31,20 +33,24 @@
                         
                         try {
                             const response = fetch('/stt').then(res => res.text()).then(data => {
+                                sttResponse.textContent = data;
                                 data = data.toLowerCase();
                                 if(data.includes("home")){
                                     window.location.href = "../index.html";
                                 }
                                 else if(data.includes("chat")){
-                                    window.location.href = "/about_us.html";
+                                    window.location.href = "/chatGPT.html";
                                 }
                                 else if(data.includes("search")){
-                                    window.location.href = "/look_up.html";
+                                    window.location.href = "/search.html";
                                 }
                                 else if(data.includes("ebay")){
                                     window.location.href = "/ebay.html";
                                 }
+                                else{
+                                    document.getElementById('sttResponse').textContent = data; // Display the data
 
+                                }
 
 
                             }); // Make a request to the server
@@ -60,7 +66,7 @@
                 <div class="dropdown-content">
                     <a href="../index.html">Home</a>
                     <a href="/chatGPT.html">ChatGPT</a>
-                    <a href="/look_up.html">Look Up</a>
+                    <a href="/search.html">Look Up</a>
                     <a href="/ebay.html">E-Bay</a>
                 </div>
               </div>
