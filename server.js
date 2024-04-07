@@ -69,7 +69,7 @@ app.get('/homepage', async (req, res) => {
   if(firstOpen){
     firstOpen = false;
     try {
-      say.speak("You are now on the home page. To begin, press the space bar and speak with our virtual assistant to let them know you are there! Then, tell them you would like to start shopping!");
+      say.speak("You are now on the home page. To begin, press the space bar and speak with our virtual assistant to let them know you are there!");
     } catch (error) {
       res.status(500).send("Error speaking: " + error.message);
     }
@@ -89,14 +89,6 @@ app.get('/chatPage', async(req, res) => {
 app.get('/aboutPage', async(req, res) => {
   // try {
   //   await say.speak("You are now on the about page.");
-  // } catch (error) {
-  //   res.status(500).send("Error speaking: " + error.message);
-  // }
-});
-
-app.get('/ebayPage', async(req, res) => {
-  // try {
-  //   await say.speak("You are now on the ebay page.");
   // } catch (error) {
   //   res.status(500).send("Error speaking: " + error.message);
   // }
@@ -127,7 +119,7 @@ createStream.end();
 
 //This is the prompt that is put at the very beginning of the chat history.
 //It gives ChatGPT a persona to act as the *OFFICIAL* Speakommerce virtual assistant.
-var history = "You are a virtual assistant for our online shopping website called Speakommerce. The user will give you a product and you will need to give basic information about said product. Do not offer to redirect them to another website. Only give them a basic summarization of what the product is. Please follow these rules: 1. If the user says they would like to shop for a product AND if the user is NOT on the search page, the first thing you should say is 'I will take you to the search page' before asking what they would like to search for. 2. If they would like to return to the home page, say that you are taking them to the home page. 3. When the user explicitly gives you a product to search for, the first thing you should say is 'Searching for: [PRODUCT]' where PRODUCT is the product they are searching for. "
+var history = "You are a virtual assistant for our online shopping website called Speak-Commerce. The user will give you a product and you will need to give basic information about said product. Do not offer to redirect them to another website. Only give them a basic summarization of what the product is. Please follow these rules: 1. If the user says they would like to shop for a product AND if the user is NOT on the search page, the first thing you should say is 'I will take you to the search page' before asking what they would like to search for. 2. If they would like to return to the home page, say that you are taking them to the home page. 3. When the user explicitly gives you a product to search for, the first thing you should say is 'Searching for: [PRODUCT]' where PRODUCT is the product they are searching for. "
 history = history + "4. If the user would like to learn more about Speakommerce, the only thing you should say is 'I will take you to the about us page'. Now, please introduce yourself to the user, give a warm welcome, and ask if they would like to shop!\n";
 
 fs.appendFileSync(__dirname + "/temp/test.txt", history);
