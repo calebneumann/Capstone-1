@@ -13,8 +13,16 @@
         <div class="navbar">
         <div class="dropdown">
         <div class="nav">
-                <button class="dropbtn">Dropdown</button>
-                <h3><div class="recordThing" id="sttResponse">This is where the text will be...</div></h3>
+            <img src="logo.jpg" alt="Snow" style="width:100px" style="height:100px">
+            <h3><div class="recordThing" id="sttResponse">Press the Space Bar to record...</div></h3>
+            <div class="anchor-container">
+                <h4>
+                    <a href="../index.html">Home</a>
+                    <a href="search.html">Search</a>
+                    <a href="chatGPT.html">ChatGPT</a>
+                    <a href="about_us.html">About Us</a>
+                </h4>
+              </div>
 
             </div>
             <script>
@@ -45,9 +53,7 @@
                                 else if(data.includes("search")){
                                     window.location.href = "/search.html";
                                 }
-                                else if(data.includes("ebay")){
-                                    window.location.href = "/ebay.html";
-                                }
+
                                 else{
                                     document.getElementById('sttResponse').textContent = data; // Display the data
 
@@ -63,13 +69,7 @@
             </script>
 
 
-                <div class="dropdown-content">
-                  <a href="/chatGPT.html">ChatGPT</a>
-                  <a href="/search.html">Look Up</a>
-                  <a href="/ebay.html">E-Bay</a>
-                  <a href="/about_us.html">About Us</a>
-    
-                </div>
+
               </div>
 
         </div>
@@ -112,7 +112,6 @@
             <div>To look up page: sentence must have "search" in it</div>
             <div>To chatGPT page: sentence must have "chat" in it</div>
             <div>To about page: sentence must have "about" in it</div>
-            <div>To ebay page: sentence must have "ebay" in it</div>
 
         <script src="index.js"></script>
 

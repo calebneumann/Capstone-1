@@ -2,7 +2,7 @@
 <HTML>
 <HEAD>
     <META NAME="GENERATOR" Content="Microsoft Visual Studio">
-    <TITLE>Look Up</TITLE>
+    <TITLE>Product Search</TITLE>
     <link rel="stylesheet" type="text/css" href="search.css">
 
 </HEAD>
@@ -11,8 +11,16 @@
         <div class="navbar">
         <div class="dropdown">
         <div class="nav">
-                <button class="dropbtn">Dropdown</button>
-                <h3><div class="recordThing" id="sttResponse">This is where the text will be...</div></h3>
+            <img src="logo.jpg" alt="Snow" style="width:100px" style="height:100px">
+            <h3><div class="recordThing" id="sttResponse">Press the Space Bar to record...</div></h3>
+            <div class="anchor-container">
+                <h4>
+                    <a href="../index.html">Home</a>
+                    <a href="search.html">Search</a>
+                    <a href="chatGPT.html">ChatGPT</a>
+                    <a href="about_us.html">About Us</a>
+                </h4>
+              </div>
 
             </div>
             <script>
@@ -25,18 +33,12 @@
                 });
               </script>
 
-                <div class="dropdown-content">
-                    <a href="../index.html">Home</a>
-                    <a href="/chatGPT.html">ChatGPT</a>
-                    <a href="/ebay.html">E-Bay</a>
-                    <a href="/about_us.html">About Us</a>
-                </div>
               </div>
 
         </div>
         <div class="main">
             <br><br>
-            <h1>Look Up</h1>
+            <h1>Product Search</h1>
 
 
 
@@ -45,19 +47,6 @@
                         <h3><div class="container" id="prod2"></div></h3>    
                         <br>
                         <h3><div class="container" id="prod3"></div></h3>    
-    
-
-            <br><br>
-            <div><h3>TO DO: </h3>
-            <ul>
-                <li>Send ChatGPT the product info and have it summarize it</li>
-                <li>If the user says yes, have chatGPT give a brief summary of the product (features, etc.)</li>
-                <li>Check if the product as a thumbnail link; if so, paste it with product info</li>
-                <li>probably more stuff but for now this is it chief</li>
-            </ul>
-            
-            </div>
-            <div id="prod">This is what its gonna say</div>
 
             <script>
                 //activates whenever the spacebar is used
@@ -80,9 +69,6 @@
                                 }
                                 else if(data.includes("about us")){
                                     window.location.href = "/about_us.html";
-                                }
-                                else if(data.includes("ebay")){
-                                    window.location.href = "/ebay.html";
                                 }
                                 else if(data.includes("searching for")){
                                     search_product(data);
@@ -126,9 +112,9 @@
                             //source (where it's sold), price, condition (new, used, etc.), rating, reviews (# of reviews), 
                             //delivery (delivery options), extensions (color of product, material of product, etc.), thumbnail)
                             
-                            product1.innerHTML = '<img class="image" src=' + '"' + data[0].thumbnail + '">' + 'Result#1<ul><li><a href="' + data[0].link + '">Product: '+data[0].title+"</a></li><li>Price: "+data[0].price+"</li><li>Distributor: "+data[0].source+"</li><li>Rating: "+data[0].store_rating+"</li></ul>";
-                            product2.innerHTML = '<img class="image" src=' + '"' + data[1].thumbnail + '">' + 'Result#2<ul><li><a href="' + data[1].link + '">Product: '+data[1].title+"</a></li><li>Price: "+data[1].price+"</li><li>Distributor: "+data[1].source+"</li><li>Rating: "+data[1].store_rating+"</li></ul>";
-                            product3.innerHTML = '<img class="image" src=' + '"' + data[2].thumbnail + '">' + 'Result#3<ul><li><a href="' + data[2].link + '">Product: '+data[2].title+"</a></li><li>Price: "+data[2].price+"</li><li>Distributor: "+data[2].source+"</li><li>Rating: "+data[2].store_rating+"</li></ul>";
+                            product1.innerHTML = '<img class="image" src=' + '"' + data[0].thumbnail + '">' + '<h1>Result#1<ul><li><a href="' + data[0].link + '">Product: '+data[0].title+"</a></li><li>Price: "+data[0].price+"</li><li>Distributor: "+data[0].source+"</li><li>Rating: "+data[0].store_rating+"</li></ul></h1>";
+                            product2.innerHTML = '<img class="image" src=' + '"' + data[1].thumbnail + '">' + '<h1>Result#2<ul><li><a href="' + data[1].link + '">Product: '+data[1].title+"</a></li><li>Price: "+data[1].price+"</li><li>Distributor: "+data[1].source+"</li><li>Rating: "+data[1].store_rating+"</li></ul></h1>";
+                            product3.innerHTML = '<img class="image" src=' + '"' + data[2].thumbnail + '">' + '<h1>Result#3<ul><li><a href="' + data[2].link + '">Product: '+data[2].title+"</a></li><li>Price: "+data[2].price+"</li><li>Distributor: "+data[2].source+"</li><li>Rating: "+data[2].store_rating+"</li></ul></h1>";
     
                         })
                         .catch(error => {

@@ -94,14 +94,6 @@ app.get('/aboutPage', async(req, res) => {
   // }
 });
 
-app.get('/ebayPage', async(req, res) => {
-  // try {
-  //   await say.speak("You are now on the ebay page.");
-  // } catch (error) {
-  //   res.status(500).send("Error speaking: " + error.message);
-  // }
-});
-
 app.get('/lookupPage', async(req, res) => {
   // try {
   //   await say.speak("You are now on the search page.");

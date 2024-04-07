@@ -173,3 +173,21 @@ video {
     margin-right: 20px; /* Adjust spacing between image and text */
 
 }
+
+
+
+.anchor-container {
+    float: right; /* or display: inline-block; */
+    text-align: right;
+    padding: 10px 24px; /* Some padding */
+    margin-top: -70px; /* adjust the margin as needed */
+    margin-bottom: -15px;
+    margin-right: 30px;
+  }
+  
+  .anchor-container a {
+    /* your anchor styles here */
+    color: red;
+    padding-left: 40px;
+    font-size: large;
+  }
