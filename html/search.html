@@ -1,131 +1,133 @@
 <!DOCTYPE html>
 <HTML>
-<HEAD>
-    <META NAME="GENERATOR" Content="Microsoft Visual Studio">
-    <TITLE>Product Search</TITLE>
-    <link rel="stylesheet" type="text/css" href="search.css">
-
-</HEAD>
-<div class="container">
+    <HEAD>
+        <META NAME="GENERATOR" Content="Microsoft Visual Studio">
+        <TITLE>Product Search</TITLE>
+        <link rel="stylesheet" type="text/css" href="search.css">
+    </HEAD>
+    <div class="container">
     <BODY>
         <div class="navbar">
-        <div class="dropdown">
-        <div class="nav">
-            <img src="logo.jpg" alt="Snow" style="width:100px" style="height:100px">
-            <h3><div class="recordThing" id="sttResponse">Press the Space Bar to record...</div></h3>
-            <div class="anchor-container">
-                <h4>
-                    <a href="../index.html">Home</a>
-                    <a href="search.html">Search</a>
-                    <a href="chatGPT.html">ChatGPT</a>
-                    <a href="about_us.html">About Us</a>
-                </h4>
-              </div>
-
-            </div>
-            <script>
-                document.addEventListener('DOMContentLoaded', async () => {
-                    try {
-                        const response = await fetch('/lookupPage'); // Make a request to the server
-                    } catch (error) {
-                        console.error('Error fetching data:', error);
-                    }
-                });
-              </script>
-
-              </div>
-
-        </div>
-        <div class="main">
-            <br><br>
-            <h1>Product Search</h1>
-
-
-
-                        <h3><div class="container" id="prod1">Product info will be here</div></h3>
-                        <br>
-                        <h3><div class="container" id="prod2"></div></h3>    
-                        <br>
-                        <h3><div class="container" id="prod3"></div></h3>    
-
-            <script>
-                //activates whenever the spacebar is used
-                document.addEventListener("keydown", async (event) => {
-                    if(event.key == ' '){
-                        const sttResponse = document.getElementById('sttResponse');
-                        var response;
-                        //alert("you entered space")
-                        
-                        //activates recording until another spacebar press is detected, then the transcript is sent back
+                <div class="nav">
+                    <a href="../index.html">
+                        <img src="logo.jpg" alt="Snow" style="width:100px" style="height:100px">
+                    </a>
+                    <div class="anchor-container">
+                        <h4>
+                            <a href="../index.html">Home</a>
+                            <a href="search.html">Search</a>
+                            <a href="chatGPT.html">ChatGPT</a>
+                            <a href="about_us.html">About Us</a>
+                        </h4>
+                    </div>
+                </div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', async () => {
                         try {
-                            response = await fetch('/stt').then(res => res.text()).then(data => {
-                                data = data.toLowerCase();
-                                
-                                if(data.includes("home page")){
-                                    window.location.href = "../index.html";
-                                }
-                                else if(data.includes("chat page")){
-                                    window.location.href = "/chatGPT.html";
-                                }
-                                else if(data.includes("about us")){
-                                    window.location.href = "/about_us.html";
-                                }
-                                else if(data.includes("searching for")){
-                                    search_product(data);
-                                }
-                                else{
-                                    document.getElementById('sttResponse').textContent = data; // Display the data
-
-                                }
-
-
-                            }); // Make a request to the server
+                            const response = await fetch('/lookupPage'); // Make a request to the server
                         } catch (error) {
                             console.error('Error fetching data:', error);
                         }
-
-                    }
-                    // do something
-                    //splits the response transcript into an array to extract the product name
-                    function search_product(response){
-                        let response_split = response.split(/\[(.*?)\]/);
-                        let product_name = response_split[0]; //In the chatGPT prompt, I always have the response start with 'Searching for: [product]'
-
-                        fetch('/searchProduct', {               //so the product will always be the 3rd element, or index 2
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({ text: product_name })
-                        })
-                        .then(response => response.json())
-                        .then(data => {
-    
-                            //sets which div the html will be sent to
-                            var product1 = document.getElementById('prod1');
-                            var product2 = document.getElementById('prod2');
-                            var product3 = document.getElementById('prod3');
-
-                            //currently gets the top 3 results and displays info about them
-    
-                            //available parameters are: title, link (where the actual product is), product_link (from google.com/shopping), 
-                            //source (where it's sold), price, condition (new, used, etc.), rating, reviews (# of reviews), 
-                            //delivery (delivery options), extensions (color of product, material of product, etc.), thumbnail)
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="main">
+        <br><br>
+        <h1>Product Search</h1>
+        <h3>
+            <div class="container" id="prod1">Product info will be here</div>
+        </h3>
+        <br>
+        <h3>
+            <div class="container" id="prod2"></div>
+        </h3>
+        <br>
+        <h3>
+            <div class="container" id="prod3"></div>
+        </h3>
+        <script>
+            //activates whenever the spacebar is used
+            document.addEventListener("keydown", async (event) => {
+                if(event.key == ' '){
+                    const sttResponse = document.getElementById('sttResponse');
+                    var response;
+                    //alert("you entered space")
+                    //activates recording until another spacebar press is detected, then the transcript is sent back
+                    try {
+                        response = await fetch('/stt').then(res => res.text()).then(data => {
+                            data = data.toLowerCase();
                             
-                            product1.innerHTML = '<img class="image" src=' + '"' + data[0].thumbnail + '">' + '<h1>Result#1<ul><li><a href="' + data[0].link + '">Product: '+data[0].title+"</a></li><li>Price: "+data[0].price+"</li><li>Distributor: "+data[0].source+"</li><li>Rating: "+data[0].store_rating+"</li></ul></h1>";
-                            product2.innerHTML = '<img class="image" src=' + '"' + data[1].thumbnail + '">' + '<h1>Result#2<ul><li><a href="' + data[1].link + '">Product: '+data[1].title+"</a></li><li>Price: "+data[1].price+"</li><li>Distributor: "+data[1].source+"</li><li>Rating: "+data[1].store_rating+"</li></ul></h1>";
-                            product3.innerHTML = '<img class="image" src=' + '"' + data[2].thumbnail + '">' + '<h1>Result#3<ul><li><a href="' + data[2].link + '">Product: '+data[2].title+"</a></li><li>Price: "+data[2].price+"</li><li>Distributor: "+data[2].source+"</li><li>Rating: "+data[2].store_rating+"</li></ul></h1>";
-    
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                        });
-
+                            if(data.includes("home page")){
+                                window.location.href = "../index.html";
+                            }
+                            else if(data.includes("chat page")){
+                                window.location.href = "/chatGPT.html";
+                            }
+                            else if(data.includes("about us")){
+                                window.location.href = "/about_us.html";
+                            }
+                            else if(data.includes("searching for")){
+                                search_product(data);
+                                document.getElementById('sttResponse').textContent = data; // Display the data
+            
+                            }
+                            else{
+                                document.getElementById('sttResponse').textContent = data; // Display the data
+            
+                            }
+            
+            
+                        }); // Make a request to the server
+                    } catch (error) {
+                        console.error('Error fetching data:', error);
                     }
-                  });
-            </script>
+            
+                }
+                // do something
+                //splits the response transcript into an array to extract the product name
+                function search_product(response){
+                    let response_split = response.split(/\[(.*?)\]/);
+                    let product_name = response_split[0]; //In the chatGPT prompt, I always have the response start with 'Searching for: [product]'
+            
+                    fetch('/searchProduct', {               //so the product will always be the 3rd element, or index 2
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ text: product_name })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+            
+                        //sets which div the html will be sent to
+                        var product1 = document.getElementById('prod1');
+                        var product2 = document.getElementById('prod2');
+                        var product3 = document.getElementById('prod3');
+            
+                        //currently gets the top 3 results and displays info about them
+            
+                        //available parameters are: title, link (where the actual product is), product_link (from google.com/shopping), 
+                        //source (where it's sold), price, condition (new, used, etc.), rating, reviews (# of reviews), 
+                        //delivery (delivery options), extensions (color of product, material of product, etc.), thumbnail)
+                        
+                        product1.innerHTML = '<img class="image" src=' + '"' + data[0].thumbnail + '">' + '<h1>Result#1<ul><li><a href="' + data[0].link + '">Product: '+data[0].title+"</a></li><li>Price: "+data[0].price+"</li><li>Distributor: "+data[0].source+"</li><li>Rating: "+data[0].store_rating+"</li></ul></h1>";
+                        product2.innerHTML = '<img class="image" src=' + '"' + data[1].thumbnail + '">' + '<h1>Result#2<ul><li><a href="' + data[1].link + '">Product: '+data[1].title+"</a></li><li>Price: "+data[1].price+"</li><li>Distributor: "+data[1].source+"</li><li>Rating: "+data[1].store_rating+"</li></ul></h1>";
+                        product3.innerHTML = '<img class="image" src=' + '"' + data[2].thumbnail + '">' + '<h1>Result#3<ul><li><a href="' + data[2].link + '">Product: '+data[2].title+"</a></li><li>Price: "+data[2].price+"</li><li>Distributor: "+data[2].source+"</li><li>Rating: "+data[2].store_rating+"</li></ul></h1>";
+            
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            
+                }
+              });
+        </script>
+        <br><br><br>
+        <div class="sticky-container">
+        <h3>
+            <div id="sttResponse">Press the Space Bar to record...</div>
+        </h3>
+    </div>
     </BODY>
 </HTML>
-
-
-
