@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+    <META NAME="GENERATOR" Content="Microsoft Visual Studio">
+    <TITLE>Speakommerce</TITLE>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="js/index.js"></script>
+
+    <style type="text/css">
+        
+        .img_amz
+        {
+            position: relative;
+            float: right;
+            top: 60px;
+            right: 100px;
+            
+        }
+
+        .img_eby
+        {
+            position: absolute;
+            float: right;
+            top: 100px;
+            right: 400px; 
+        }
+
+        .img_ali
+        {
+            position: absolute;
+            float: right;
+            top: 300px;
+            right: 40px; 
+        }
+
+        .img_wal
+        {
+            position: absolute;
+            float: right;
+            top: 340px;
+            right: 390px; 
+        }
+
+    </style>
+
+</HEAD>
+<div class="container">
+    <BODY>
+
+        <div class="navbar">
+        <div class="nav">
+            <a href="../index.html">
+                <img src="logo.jpg" alt="Snow" style="width:100px" style="height:100px">
+            </a>
+            <div class="anchor-container">
+                <h4>
+                    <a href="../index.html">Home</a>
+                    <a href="search.html">Search</a>
+                    <a href="chatGPT.html">ChatGPT</a>
+                    <a href="about_us.html">About Us</a>
+                </h4>
+            </div>
+
+            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', async () => {
+                    try {
+                        const response = await fetch('/homepage'); // Make a request to the server
+                    } catch (error) {
+                        console.error('Error fetching data:', error);
+                    }
+                });
+              </script>
+            <script>
+                document.addEventListener("keydown", (event) => {
+                    if(event.key == ' '){
+                        const sttResponse = document.getElementById('sttResponse');
+
+                        //alert("you entered space")
+                        
+                        try {
+                            const response = fetch('/stt').then(res => res.text()).then(data => {
+                                data = data.toLowerCase();
+                                if(data.includes("chat")){
+                                    window.location.href = "/chatGPT.html";
+                                }
+                                else if(data.includes("about us")){
+                                    window.location.href = "/about_us.html";
+                                }
+                                else if(data.includes("search")){
+                                    window.location.href = "/search.html";
+                                }
+
+                                else{
+                                    document.getElementById('sttResponse').textContent = data; // Display the data
+
+                                }
+
+                            }); // Make a request to the server
+                        } catch (error) {
+                            console.error('Error fetching data:', error);
+                        }
+                    }
+                    // do something
+                  });
+            </script>
+
+
+
+              </div>
+
+        </div>
+        <div class="main">
+            <br><br>
+            <img class="img_amz" src="AmazonIcon.png" style="width:200px" style="height:200px">
+            <img class="img_eby" src="EbayIcon.png" style="width:300px" style="height:300px">
+            <img class="img_ali" src="AliExpressIcon.png" style="width:300px" style="height:300px">
+            <img class="img_wal" src="WalmartIcon.png" style="width:300px" style="height:300px">
+            <h1>Speakommerce</h1>
+            <h3>Speak and find whatever e-commerce product you need!</h3>
+            <p> We plan to bring the ability for you to choose from several sites' products soon!</p>
+        </div>
+        <script src="index.js"></script>
+        <br><br><br>
+        <div class="sticky-container">
+        <h3>
+            <div id="sttResponse">Press the Space Bar to record...</div>
+        </h3>
+    </div>
+    </BODY>
+</HTML>
+
