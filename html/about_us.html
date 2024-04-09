@@ -11,7 +11,18 @@
         <div class="navbar">
         <div class="dropdown">
         <div class="nav">
-                <button class="dropbtn">Dropdown</button>
+            <a href="../index.html">
+                <img src="logo.jpg" alt="Snow" style="width:100px" style="height:100px">
+            </a>
+                <div class="anchor-container">
+                    <h4>
+                        <a href="../index.html">Home</a>
+                        <a href="search.html">Search</a>
+                        <a href="chatGPT.html">ChatGPT</a>
+                        <a href="about_us.html">About Us</a>
+                    </h4>
+                  </div>
+
             </div>
             <script>
                 document.addEventListener('DOMContentLoaded', async () => {
@@ -31,20 +42,21 @@
                         
                         try {
                             const response = fetch('/stt').then(res => res.text()).then(data => {
+                                sttResponse.textContent = data;
                                 data = data.toLowerCase();
                                 if(data.includes("home")){
                                     window.location.href = "../index.html";
                                 }
                                 else if(data.includes("chat")){
-                                    window.location.href = "/about_us.html";
+                                    window.location.href = "/chatGPT.html";
                                 }
                                 else if(data.includes("search")){
-                                    window.location.href = "/look_up.html";
+                                    window.location.href = "/search.html";
                                 }
-                                else if(data.includes("ebay")){
-                                    window.location.href = "/ebay.html";
-                                }
+                                else{
+                                    document.getElementById('sttResponse').textContent = data; // Display the data
 
+                                }
 
 
                             }); // Make a request to the server
@@ -57,25 +69,29 @@
             </script>
 
 
-                <div class="dropdown-content">
-                    <a href="../index.html">Home</a>
-                    <a href="/chatGPT.html">ChatGPT</a>
-                    <a href="/look_up.html">Look Up</a>
-                    <a href="/ebay.html">E-Bay</a>
-                </div>
               </div>
 
         </div>
         <div class="main">
             <br><br>
-            <h1>About Us</h1>
+            <h1>About ME</h1>
             <div>
-
-                <h3>who is this about? Huh? Yeah that's right, didn't think so...</h3>
-                <div>To home page: sentence must have "home" in it</div>
-                <div>To chatGPT page: sentence must have "chat" in it</div>
-                <div>To look up page: sentence must have "search" in it</div>
-                <div>To ebay page: sentence must have "ebay" in it</div>
+                <b>
+                <p>In the mystical realms of pixels and polygons, there exists a legendary gamer whose controller prowess knows no bounds - behold, the epic saga of Caleb, the Master of Joysticks and Conqueror of Virtual Realms!</p>
+                <p>Born with a natural affinity for pixels and pixels alone, Caleb embarked on a heroic journey through the enchanted lands of gaming consoles and PCs. From the humble beginnings of button-mashing glory to mastering the art of headshots and power-ups, every level-up was a testament to Caleb's unwavering dedication.</p>
+                <p>Armed with a trusty keyboard (or controller, for the initiated), Caleb faced countless foes - from pixelated monsters to formidable online adversaries. Boss battles were mere pit stops on the road to victory, each victory celebrated with the triumphant roar of a thousand achievements unlocked.</p>
+                <p>But Caleb's legend doesn't end there - oh no! Alongside epic gaming quests, there were tales of legendary snack raids and marathon gaming sessions that transcended space and time. Pizza slices vanished faster than loading screens, and energy drinks flowed like mana from the gaming gods.</p>
+                <p>Through the highs of victory dances and the lows of respawn frustration, Caleb emerged not just as a gamer but as a beacon of digital bravery and virtual camaraderie. Guilds were formed, alliances forged, and friendships cemented through shared quests and epic loot hauls.</p>
+                <p>And so, dear reader, if you ever wander into the realms of virtual adventures and hear whispers of a legendary gamer whose exploits rival the greatest epics, know that you tread upon the footsteps of Caleb, the Epic Gamer Extraordinaire!</p>
+            </b>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="sticky-container">
+        <h3>
+            <div id="sttResponse">Press the Space Bar to record...</div>
+        </h3>
+    </div>
     </BODY>
 </HTML>
 
