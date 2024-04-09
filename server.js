@@ -69,7 +69,7 @@ app.get('/homepage', async (req, res) => {
   if(firstOpen){
     firstOpen = false;
     try {
-      say.speak("You are now on the home page. To begin, press the space bar and speak with our virtual assistant to let them know you are there!");
+      say.speak("You are now on the home page. To begin,press the space bar and speak with our virtual assistant to let them know you are there!");
     } catch (error) {
       res.status(500).send("Error speaking: " + error.message);
     }
