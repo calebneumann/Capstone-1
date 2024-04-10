@@ -125,7 +125,8 @@ history = history + "4. If the user would like to learn more about Speakommerce,
 fs.appendFileSync(__dirname + "/temp/test.txt", history);
 
 //thingy for openai
-const openai = new OpenAI(process.env.OPENAI_API_KEY);
+openaiAPIKey = "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";
+const openai = new OpenAI(process.env.openaiAPIKey);
 
 //idk why this is out here but im sure its for a good reason
 var response;
