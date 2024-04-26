@@ -39,12 +39,12 @@ form {
   /* Center the avatar image inside this container */
   .imgcontainer {
     text-align: center;
-    margin: 24px 0 12px 0;
+    margin: 14px 0 4px 0;
   }
   
   /* Avatar image */
   img.avatar {
-    width: 40%;
+    width: 20%;
     border-radius: 50%;
   }
   
