@@ -1,0 +1,145 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <title>Register</title>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="dropdown">
+            <div class="nav">
+                <a href="../index.html">
+                    <img src="logo.jpg" alt="Snow" style="width:100px" style="height:100px">
+                </a>
+                <div class="anchor-container">
+                    <h4>
+                        <a href="../index.html">Home</a>
+                        <a href="search.html">Search</a>
+                        <a href="chatGPT.html">ChatGPT</a>
+                        <a href="about_us.html">About us</a>
+                        <a href="login.html">Login</a>
+                        <a href="register.html">Register</a>
+                    </h4>
+                </div>
+    
+            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', async () => {
+                    try {
+                        const response = await fetch('/aboutPage'); // Make a request to the server
+                    } catch (error) {
+                        console.error('Error fetching data:', error);
+                    }
+                });
+            </script>
+            <script>
+                document.addEventListener("keydown", (event) => {
+                    if (event.key == ' ') {
+                        const sttResponse = document.getElementById('sttResponse');
+
+                        //alert("you entered space")
+
+                        try {
+                            const response = fetch('/stt').then(res => res.text()).then(data => {
+                                sttResponse.textContent = data;
+                                data = data.toLowerCase();
+                                if (data.includes("home")) {
+                                    window.location.href = "../index.html";
+                                }
+                                else if (data.includes("chat")) {
+                                    window.location.href = "/chatGPT.html";
+                                }
+                                else if (data.includes("search")) {
+                                    window.location.href = "/search.html";
+                                }
+                                else {
+                                    document.getElementById('sttResponse').textContent = data; // Display the data
+
+                                }
+
+
+                            }); // Make a request to the server
+                        } catch (error) {
+                            console.error('Error fetching data:', error);
+                        }
+                    }
+                    // do something
+                });
+            </script>
+    
+    
+        </div>
+    
+    </div>
+
+
+    <div class="container">
+        <div class="signup-container">
+            <div class="logo-text">
+
+
+            </div>
+
+            <div class="sign-up">
+
+                <form method="POST">
+
+                    <label>First Name</label>
+                    <br>
+                    <input type="text">
+
+
+
+                    <div class="underline"></div>
+                    <label>Last Name</label>
+                    <br>
+                    <input type="text">
+
+
+                    <div class="underline"></div>
+
+                    <label>Email</label>
+                    <br>
+                    <input type="text">
+                    <div class="underline"></div>
+                    <label>Password</label>
+                    <br>
+                <input type="text">
+                    <div class="underline"></div>
+                    <label>Confirm password</label>
+                    <br>
+                    <input type="text">
+                    <div class="underline"></div>
+                    <button type="submit" id="submit">Register</button>
+                    <br>
+                    <br>
+                    <span> Already have an account? <a href="login.html" id="login-a">Login</a></span>
+                </form>
+            </div>
+        
+
+
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    var fields = document.getElementsByTagName('input')
+    fields[0].placeholder = 'Enter Your First Name'
+    fields[1].placeholder = 'Enter Your Last Name'
+    fields[2].placeholder = 'Enter Your Email'
+    fields[3].placeholder = 'Enter Your Password'
+    fields[4].placeholder = 'Repeat Your Password'
+</script>

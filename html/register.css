@@ -1,0 +1,423 @@
+
+
+
+
+.container {
+    height: 95vh;
+    overflow: scroll;
+
+
+}
+
+@font-face {
+    font-family: 'Jonathan';
+    src: url('assets/Jonathan.ttf');
+
+}
+
+
+
+
+
+.icon-info a {
+    text-decoration: none;
+    color: black;
+}
+
+.signup-container {
+
+    width: 100%;
+    float: left;
+    height: 80%;
+    text-align: center;
+    font-family: monospace;
+    font-weight: lighter;
+    margin-top: 0px;
+    font-size: 18px;
+
+
+}
+
+
+
+
+@media (max-width:500px) {
+
+    .signup-container label {
+        margin-top: -20px !important;
+
+    }
+
+
+
+    .logo-text {
+
+
+        margin-bottom: -0px !important;
+
+
+    }
+
+
+}
+
+
+#messages {
+    font-size: 16px;
+    display: none;
+    margin-top: 1 0px;
+    margin-bottom: 30px;
+}
+
+@media (max-width:1025px) {
+    .image-container {
+        display: none;
+    }
+
+    #messages {
+        font-size: 25px;
+
+    }
+
+
+    .signup-container {
+
+        height: 80%;
+        width: 100%;
+
+    }
+
+    #messages {
+        display: block;
+    }
+
+}
+
+@media (min-height:1100px) {
+    .image-container {
+        height: 53%;
+        margin-top: -30px;
+    }
+
+
+}
+
+
+
+
+  
+
+
+.sign-up label {
+    text-align: left !important;
+
+
+}
+
+.signup-container input {
+
+    width: 80%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 3px;
+    margin-top: 20px;
+    outline: none;
+    background-color: transparent;
+    font-family: monospace;
+    font-size: 14px;
+    text-align: center;
+
+}
+
+.underline {
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    background-color: grey;
+    height: 1px;
+    margin-bottom: 20px;
+}
+
+.sign-up {
+    margin-top: 30px;
+}
+
+#login-a {
+    text-decoration: none;
+    color: black;
+    font-family: monospace;
+    transition: 0.4s;
+
+
+}
+
+.signup-container span {
+
+    font-family: monospace;
+    font-size: 17px;
+    font-weight: 200;
+    color: grey;
+}
+
+#login-a:hover {
+
+    padding-left: 8px;
+
+}
+
+
+#submit {
+
+    height: 38px;
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid black;
+    width: 80%;
+    border-radius: 5px;
+    margin-bottom: 3px;
+    outline: none;
+    background-color: black;
+    font-family: monospace;
+    text-align: center;
+    transition: 0.4s;
+}
+
+#submit:hover {
+    background-color: #397C97;
+    color: black;
+    border: none;
+}
+
+.logo-text {
+    font-size: 4rem;
+    font-family: "Jonathan";
+    margin-top: 30px;
+    margin-bottom: 30px !important;
+}
+
+#logo-text {
+    text-decoration: none;
+    color: black;
+
+}
+
+
+
+
+
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+button {
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+h1 {
+    font-size: 48px;
+}
+
+p {
+    max-width: 65%;
+    min-width: 500px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.6rem;
+}
+
+div {
+    padding-right: 30px;
+    height: 10%;
+    width: 100%;
+
+
+}
+
+video {
+    background-color: #000000;
+    border: 2px solid black;
+
+}
+
+.container {
+    display: flex;
+}
+
+
+.responseThing {
+    color: red;
+}
+
+
+
+.special {
+    cursor: pointer;
+    color: red;
+    border-radius: 5px;
+}
+
+.main {
+    padding-left: 30px;
+    min-width: 75%;
+}
+
+.news {
+    padding-left: 50px;
+    color: red;
+    font-size: 69px;
+    font-family: sans-serif;
+}
+
+
+
+
+.nav h1 {
+    padding-left: 20px;
+    display: flex;
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: auto;
+    height: auto;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.navbar {
+    overflow: visible;
+    background-color: #397C97;
+    position: absolute;
+    /* Set the navbar to fixed position */
+    top: 0;
+    /* Position the navbar at the top of the page */
+    width: 100%;
+    /* Full width */
+    height: auto;
+}
+
+.recordThing {
+    padding: 0;
+    text-align: center;
+    margin-top: -60px;
+    color: red;
+}
+
+
+
+.anchor-container {
+    float: right;
+    /* or display: inline-block; */
+    text-align: right;
+    padding: 10px 24px;
+    /* Some padding */
+    margin-top: -70px;
+    /* adjust the margin as needed */
+    margin-bottom: -15px;
+    margin-right: 30px;
+}
+
+.anchor-container a {
+    /* your anchor styles here */
+    color: white;
+    padding-left: 40px;
+    font-size: large;
+}
+
+
+.chat-transcript {
+    overflow: hidden;
+    min-width: 0;
+    /* Allow the container to shrink */
+    display: flex;
+    justify-content: center;
+    /* Center the content horizontally */
+    text-align: center;
+    /* Center the text inside the container */
+    color: red;
+}
+
+.container {
+    display: flex;
+
+}
+
+
+.sticky-container {
+    overflow: visible;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+
+.sticky-container div {
+
+    margin-left: 14px;
+    max-width: 98%;
+    text-align: center;
+    color: red;
+}
