@@ -15,7 +15,7 @@ app.post('/searchProduct', async (req, res) => {
     await getJson({
       engine: "google_shopping",
       q: req.body.text,
-      api_key: "6f0c25895e35ca946165c00a417842fd45133927050835001054ef47a72a4251"
+      api_key: "PUT API KEY HERE"
     }, (json) => {
 
       var searchData = json["shopping_results"];
@@ -146,7 +146,7 @@ history = history + "Now, please introduce yourself to the user, give a warm wel
 fs.appendFileSync(__dirname + "/temp/test.txt", history);
 
 //thingy for openai
-openaiAPIKey = "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";
+openaiAPIKey = "PUT API KEY HERE";
 const openai = new OpenAI(openaiAPIKey);
 
 //idk why this is out here but im sure its for a good reason
