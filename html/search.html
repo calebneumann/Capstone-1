@@ -10,7 +10,7 @@
         <div class="navbar">
                 <div class="nav">
                     <a href="../index.html">
-                        <img src="logo.jpg" alt="Snow" style="width:100px" style="height:100px">
+                        <img src="logo2.jpg" alt="Snow" style="width:100px" style="height:100px">
                     </a>
                     <div class="anchor-container">
                         <h4>
@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="main">
-        <br><br>
+        <br><br><br><br>
         <h1>Product Search</h1>
         <h3>
             <div class="container" id="prod1">Product info will be here</div>
@@ -86,7 +86,10 @@
                 }
                 // do something
                 //splits the response transcript into an array to extract the product name
-                function search_product(response){
+                var product1;
+                var product2;
+                var product3;
+                async function search_product(response){
                     let response_split = response.split(/\[(.*?)\]/);
                     let product_name = response_split[0]; //In the chatGPT prompt, I always have the response start with 'Searching for: [product]'
             
@@ -99,11 +102,11 @@
                     })
                     .then(response => response.json())
                     .then(data => {
-            
+                        searchData = data;
                         //sets which div the html will be sent to
-                        var product1 = document.getElementById('prod1');
-                        var product2 = document.getElementById('prod2');
-                        var product3 = document.getElementById('prod3');
+                        product1 = document.getElementById('prod1');
+                        product2 = document.getElementById('prod2');
+                        product3 = document.getElementById('prod3');
             
                         //currently gets the top 3 results and displays info about them
             
@@ -119,7 +122,12 @@
                     .catch(error => {
                         console.error('Error:', error);
                     });
-            
+                    
+                    product1 = "Name: " + searchData[0].title + ", Price: " + searchData[0].price + ", Distributor: " + searchData[0].source + ", Rating: " + searchData[0].store_rating + "\n";
+                    product2 = "Name: " + searchData[1].title + ", Price: " + searchData[1].price + ", Distributor: " + searchData[1].source + ", Rating: " + searchData[1].store_rating + "\n";
+                    product3 = "Name: " + searchData[2].title + ", Price: " + searchData[2].price + ", Distributor: " + searchData[2].source + ", Rating: " + searchData[2].store_rating + "\n";
+
+
                 }
               });
         </script>

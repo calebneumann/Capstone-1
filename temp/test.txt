@@ -1,8 +1,18 @@
 Hello.
-Hello! I'm here to assist you with your online shopping needs at Speak-Commerce. Would you like to shop for something today?
-Please
-I will take you to the search page. What would you like to search for today?
-Apple
-Searching for: Apple
+Hello! I'm your assistant from Speak-Commerce. Would you like to shop for something today?
+Yeah, good morning.
+Good morning! Would you like to shop for something today?
+Yes, please.
+I will take you to the search page. What would you like to search for?
+iPhone
+Searching for: iPhone
+I am sending 3 search result. Please read off each one in an easy-to-understand manner. Name: Apple iPhone 15 Pro Max - 1 TB - White Titanium - T-Mobile, Price: $0.00, Distributor: Apple, Rating: 4.6
+Name: Apple iPhone 14 Pro - 256 GB - Deep Purple - Unlocked, Price: $0.00, Distributor: C Spire, Rating: undefined
+Name: Apple iPhone 12 - 64 GB - Black - Unlocked, Price: $240.00, Distributor: Walmart - Mobile Supply of Ny inc, Rating: undefined
 
-Apple is a popular brand known for its technology products, including iPhones, iPads, MacBooks, Apple Watches, and more. They are known for their sleek design, user-friendly interface, and high-quality performance. Is there a specific Apple product you are interested in today?
+Here are the search results for iPhones:
+1. Apple iPhone 15 Pro Max - 1 TB - White Titanium - T-Mobile, Price: $0.00, Distributor: Apple, Rating: 4.6
+2. Apple iPhone 14 Pro - 256 GB - Deep Purple - Unlocked, Price: $0.00, Distributor: C Spire, Rating: undefined
+3. Apple  iPhone 12 - 64 GB - Black - Unlocked, Price: $240.00, Distributor: Walmart - Mobile Supply of Ny inc, Rating: undefined
+
+Is there a specific iPhone you are interested in, or would you like more information on any of them?
