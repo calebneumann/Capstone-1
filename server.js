@@ -18,6 +18,16 @@ app.post('/searchProduct', async (req, res) => {
       api_key: "6f0c25895e35ca946165c00a417842fd45133927050835001054ef47a72a4251"
     }, (json) => {
 
+      var searchData = json["shopping_results"];
+      var product1 = "Name: " + searchData[0].title + ", Price: " + searchData[0].price + ", Distributor: " + searchData[0].source + ", Rating: " + searchData[0].store_rating + "\n";
+      var product2 = "Name: " + searchData[1].title + ", Price: " + searchData[1].price + ", Distributor: " + searchData[1].source + ", Rating: " + searchData[1].store_rating + "\n";
+      var product3 = "Name: " + searchData[2].title + ", Price: " + searchData[2].price + ", Distributor: " + searchData[2].source + ", Rating: " + searchData[2].store_rating + "\n";
+
+      var searchResults = "I am sending 3 search result. Please read off each one in an easy-to-understand manner. " + product1 + product2 + product3;
+
+      chatGPT(searchResults);
+
+
       //sends only the search results
       res.json(json["shopping_results"]);
     });
@@ -69,7 +79,7 @@ app.get('/homepage', async (req, res) => {
   if(firstOpen){
     firstOpen = false;
     try {
-      say.speak("You are now on the home page. To begin,press the space bar and speak with our virtual assistant to let them know you are there!");
+      say.speak("Welcome to Speak-Commerce! To begin,press the space bar and speak with our virtual assistant to let them know you are there!");
     } catch (error) {
       res.status(500).send("Error speaking: " + error.message);
     }
@@ -117,10 +127,21 @@ var createStream = fs.createWriteStream(__dirname + "/temp/test.txt");
 createStream.end();
 
 
+//extra thing to have chatGPT tell the user the search results
+app.get('/chatShopResults', async(req, res) => {
+
+  print(req.body.text);
+
+
+});
+
+
 //This is the prompt that is put at the very beginning of the chat history.
 //It gives ChatGPT a persona to act as the *OFFICIAL* Speakommerce virtual assistant.
-var history = "You are a virtual assistant for our online shopping website called Speak-Commerce. The user will give you a product and you will need to give basic information about said product. Do not offer to redirect them to another website. Only give them a basic summarization of what the product is. Please follow these rules: 1. If the user says they would like to shop for a product AND if the user is NOT on the search page, the first thing you should say is 'I will take you to the search page' before asking what they would like to search for. 2. If they would like to return to the home page, say that you are taking them to the home page. 3. When the user explicitly gives you a product to search for, the first thing you should say is 'Searching for: [PRODUCT]' where PRODUCT is the product they are searching for. "
-history = history + "4. If the user would like to learn more about Speakommerce, the only thing you should say is 'I will take you to the about us page'. Now, please introduce yourself to the user, give a warm welcome, and ask if they would like to shop!\n";
+var history = "You are a virtual assistant for our online shopping website called Speak-Commerce. The user will give you the name of a product. Do not offer to redirect them to another website. Please follow these rules: 1. If the user says they would like to shop for a product AND if the user is NOT on the search page, the first thing you should say is 'I will take you to the search page' before asking what they would like to search for. 3. When you ask if they would like to shop for something and if they say yes, take them to the search page before asking what they want to search for. 3. If they would like to return to the home page, say that you are taking them to the home page. 4. When the user explicitly gives you a product to search for, the first thing you should say is 'Searching for: [PRODUCT]' where PRODUCT is the product they are searching for. Don't say anything else after that. Wait for a message with information about the product search results."
+history = history + "5. If the user would like to learn more about Speakommerce, the only thing you should say is 'I will take you to the about us page'.";
+history = history + "";
+history = history + "Now, please introduce yourself to the user, give a warm welcome, and ask if they would like to shop!\n";
 
 fs.appendFileSync(__dirname + "/temp/test.txt", history);
 
