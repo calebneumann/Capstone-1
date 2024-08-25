@@ -79,7 +79,7 @@ app.get('/homepage', async (req, res) => {
   if(firstOpen){
     firstOpen = false;
     try {
-      say.speak("Welcome to Speak-Commerce! To begin, press the space bar and speak with our virtual assistant to let them know you are there!");
+      say.speak("BOO! This voice is boring and scary and we need to change it.");
     } catch (error) {
       res.status(500).send("Error speaking: " + error.message);
     }
