@@ -1,10 +1,10 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
-const OpenAI = require('openai')
 const fs = require('fs')
 const say = require('say')
 const { recordThing } = require('./js/record.js')
+const { chatGPT } = require('./js/openai.js')
 const { getJson } = require("serpapi");
 const app = express();
 app.use(bodyParser.json());
@@ -15,7 +15,7 @@ app.post('/searchProduct', async (req, res) => {
     await getJson({
       engine: "google_shopping",
       q: req.body.text,
-      api_key: "PUT API KEY HERE"
+      api_key: "6f0c25895e35ca946165c00a417842fd45133927050835001054ef47a72a4251"
     }, (json) => {
 
       var searchData = json["shopping_results"];
@@ -23,7 +23,7 @@ app.post('/searchProduct', async (req, res) => {
       var product2 = "Name: " + searchData[1].title + ", Price: " + searchData[1].price + ", Distributor: " + searchData[1].source + ", Rating: " + searchData[1].store_rating + "\n";
       var product3 = "Name: " + searchData[2].title + ", Price: " + searchData[2].price + ", Distributor: " + searchData[2].source + ", Rating: " + searchData[2].store_rating + "\n";
 
-      var searchResults = "I am sending 3 search result. Please read off each one in an easy-to-understand manner. " + product1 + product2 + product3;
+      var searchResults = "I am sending 3 search results. Please read off each one in an easy-to-understand manner. " + product1 + product2 + product3;
 
       chatGPT(searchResults);
 
@@ -79,7 +79,7 @@ app.get('/homepage', async (req, res) => {
   if(firstOpen){
     firstOpen = false;
     try {
-      say.speak("Welcome to Speak-Commerce! To begin,press the space bar and speak with our virtual assistant to let them know you are there!");
+      say.speak("Welcome to Speak-Commerce! To begin, press the space bar and speak with our virtual assistant to let them know you are there!");
     } catch (error) {
       res.status(500).send("Error speaking: " + error.message);
     }
@@ -135,57 +135,6 @@ app.get('/chatShopResults', async(req, res) => {
 
 });
 
-
-//This is the prompt that is put at the very beginning of the chat history.
-//It gives ChatGPT a persona to act as the *OFFICIAL* Speakommerce virtual assistant.
-var history = "You are a virtual assistant for our online shopping website called Speak-Commerce. The user will give you the name of a product. Do not offer to redirect them to another website. Please follow these rules: 1. If the user says they would like to shop for a product AND if the user is NOT on the search page, the first thing you should say is 'I will take you to the search page' before asking what they would like to search for. 3. When you ask if they would like to shop for something and if they say yes, take them to the search page before asking what they want to search for. 3. If they would like to return to the home page, say that you are taking them to the home page. 4. When the user explicitly gives you a product to search for, the first thing you should say is 'Searching for: [PRODUCT]' where PRODUCT is the product they are searching for. Don't say anything else after that. Wait for a message with information about the product search results."
-history = history + "5. If the user would like to learn more about Speakommerce, the only thing you should say is 'I will take you to the about us page'.";
-history = history + "";
-history = history + "Now, please introduce yourself to the user, give a warm welcome, and ask if they would like to shop!\n";
-
-fs.appendFileSync(__dirname + "/temp/test.txt", history);
-
-//thingy for openai
-openaiAPIKey = "PUT API KEY HERE";
-const openai = new OpenAI(openaiAPIKey);
-
-//idk why this is out here but im sure its for a good reason
-var response;
-
-async function chatGPT(question){
-  history = history + question + '\n';
-
-  try {
-    const completion = await openai.chat.completions.create({
-      messages: [{ role: "system", content: history}],
-      model: "gpt-3.5-turbo",
-    });
-
-    response = completion.choices[0].message.content;
-    history = history + response + '\n';
-    console.log(response);
-    //Send the response back to the client
-    say.speak(response, 'Samantha', 1.2);
-
-    chatHistory(question, response);
-    return response;
-  } catch (error) {
-    // Handle errors
-    console.error('Error:', error);
-    res.status(500).send('Internal Server Error');
-  }
-}
-
-//stores the chat history in a text file
-function chatHistory(question, response){
-
-  
-  fs.appendFileSync(__dirname + "/temp/test.txt", question);
-  fs.appendFileSync(__dirname + "/temp/test.txt", '\n');
-  fs.appendFileSync(__dirname + "/temp/test.txt", response);
-  fs.appendFileSync(__dirname + "/temp/test.txt", '\n');
-
-}
 
 //renders the home page
 app.get('*', (req, res) => {
