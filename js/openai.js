@@ -11,7 +11,7 @@ var history = "You are a virtual assistant for our online shopping website calle
 
 const parentDir = path.join(__dirname, '..');
 
-fs.appendFileSync(parentDir + "/temp/test.txt", history);
+fs.appendFileSync(parentDir + "/temp/history.txt", history);
 var response;
 
 async function chatGPT(question){
@@ -20,7 +20,7 @@ async function chatGPT(question){
     try {
       const completion = await openai.chat.completions.create({
         messages: [{ role: "system", content: history}],
-        model: "gpt-3.5-turbo",
+        model: "gpt-4o-mini",
       });
   
       response = completion.choices[0].message.content;
@@ -41,10 +41,10 @@ async function chatGPT(question){
   function chatHistory(question, response){
   
     
-    fs.appendFileSync(parentDir + "/temp/test.txt", question);
-    fs.appendFileSync(parentDir + "/temp/test.txt", '\n');
-    fs.appendFileSync(parentDir + "/temp/test.txt", response);
-    fs.appendFileSync(parentDir + "/temp/test.txt", '\n');
+    fs.appendFileSync(parentDir + "/temp/history.txt", question);
+    fs.appendFileSync(parentDir + "/temp/history.txt", '\n');
+    fs.appendFileSync(parentDir + "/temp/history.txt", response);
+    fs.appendFileSync(parentDir + "/temp/history.txt", '\n');
   
   }
   module.exports = { chatGPT }

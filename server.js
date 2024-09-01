@@ -123,7 +123,7 @@ app.use(express.static(path.join(__dirname, 'assets')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var createStream = fs.createWriteStream(__dirname + "/temp/test.txt");
+var createStream = fs.createWriteStream(__dirname + "/temp/history.txt");
 createStream.end();
 
 
