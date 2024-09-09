@@ -2,37 +2,36 @@
 <HTML>
 <HEAD>
     <META NAME="GENERATOR" Content="Microsoft Visual Studio">
-    <TITLE>Speakommerce</TITLE>
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <script src="js/index.js"></script>
+    <TITLE>Profile</TITLE>
+    <link rel="stylesheet" type="text/css" href="about.css">
 
 </HEAD>
 <div class="container">
     <BODY>
-
         <div class="navbar">
+        <div class="dropdown">
         <div class="nav">
             <a href="../index.html">
                 <img src="logo2.jpg" alt="Snow" style="width:100px" style="height:100px">
             </a>
-            <div class="anchor-container">
-                <h4>
-                    <a href="../index.html">Home</a>
-                    <a href="search.html">Search</a>
-                    <a href="chatGPT.html">ChatGPT</a>
-                    <a href="about_us.html">About Us</a>
-                    <a href="login.html">Log in</a>
-                    <a href="profile.html">Profile</a>
+                <div class="anchor-container">
+                    <h4>
+                        <a href="../index.html">Home</a>
+                        <a href="search.html">Search</a>
+                        <a href="chatGPT.html">ChatGPT</a>
+                        <a href="about_us.html">About Us</a>
+                        <a href="service.html">Service</a>
+                        <a href="login.html">Log in</a>
+                        <a href="profile.html">Profile</a>
 
-
-                </h4>
-            </div>
+                    </h4>
+                  </div>
 
             </div>
             <script>
                 document.addEventListener('DOMContentLoaded', async () => {
                     try {
-                        const response = await fetch('/homepage'); // Make a request to the server
+                        const response = await fetch('/aboutPage'); // Make a request to the server
                     } catch (error) {
                         console.error('Error fetching data:', error);
                     }
@@ -47,21 +46,22 @@
                         
                         try {
                             const response = fetch('/stt').then(res => res.text()).then(data => {
+                                sttResponse.textContent = data;
                                 data = data.toLowerCase();
-                                if(data.includes("chat")){
-                                    window.location.href = "/chatGPT.html";
+                                if(data.includes("home")){
+                                    window.location.href = "../index.html";
                                 }
-                                else if(data.includes("about us")){
-                                    window.location.href = "/about_us.html";
+                                else if(data.includes("chat")){
+                                    window.location.href = "/chatGPT.html";
                                 }
                                 else if(data.includes("search")){
                                     window.location.href = "/search.html";
                                 }
-
                                 else{
                                     document.getElementById('sttResponse').textContent = data; // Display the data
 
                                 }
+
 
                             }); // Make a request to the server
                         } catch (error) {
@@ -73,17 +73,18 @@
             </script>
 
 
-
               </div>
 
         </div>
         <div class="main">
             <br><br><br><br>
-            <h1>Speakommerce</h1>
-            <h3>Speak and find whatever e-commerce product you need!</h3>
-            <p> I'm sure we will come up with something more clever soon!</p>
+            <h1>Profile</h1>
+            <div>
+                <b>
+                <h3>this is where profile stuff is gonna go</h3>
+            </b>
+            </div>
         </div>
-        <script src="index.js"></script>
         <br><br><br>
         <div class="sticky-container">
         <h3>
@@ -92,4 +93,5 @@
     </div>
     </BODY>
 </HTML>
+
 
