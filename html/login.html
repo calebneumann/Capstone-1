@@ -3,7 +3,8 @@
 <HEAD>
     <META NAME="GENERATOR" Content="Microsoft Visual Studio">
     <TITLE>Log In</TITLE>
-    <link rel="stylesheet" type="text/css" href="about.css">
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <script src='../server.js'></script>
 
 </HEAD>
 <div class="container">
@@ -77,11 +78,48 @@
 
         </div>
         <div class="main">
-            <br><br><br><br>
+            <br><br><br><br><br>
             <h1>Login</h1>
             <div>
-                <h3>this is the login page</h3>
-                <a href="register.html">Don't have an account? Too bad!</a>
+                <div>
+
+                    <!--trying to get AI working from pressing a button for testing purposes-->
+                    <input class="textBoxes" type="text" id="username" placeholder="username"><br>
+                    <input class="textBoxes" type="text" id="password" placeholder="password"><br>
+
+                    <button class="button" id="pressButton">Log in</button>
+                    <div id="responseMessage">
+                
+                    <script>
+                        document.getElementById("pressButton").addEventListener("click", function() {
+                            var username = document.getElementById("username").value;
+                            var password = document.getElementById("password").value;
+                        
+                            // Create an object to hold the values
+                            let data = { username: username, password: password };
+                        
+                            // Use fetch to send data to the server via GET request
+                            fetch(`/jimboButton?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`)
+                                .then(response => response.json())
+                                .then(data => {
+                                    // If the request is successful, update the DOM with the success message
+                                    document.getElementById("responseMessage").innerHTML = data.message;
+                                    document.getElementById("responseMessage").classList.add("responseThing")
+                                })
+                                .catch(error => {
+                                    console.error('Error:', error);
+                                });
+                        });
+                    </script>
+                    <div class="responseThing" id="chatResponse"></div>      
+                </div>
+                </div>
+
+
+                <a href="register.html">
+                    <div class="account1">Don't have an account?</div> 
+                    <div class="account2 funny">Too bad!</div>
+                </a>
 
             </div>
         </div>

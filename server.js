@@ -66,10 +66,18 @@ catch (error) {
 }
 });
 
-//need to get rid of this unless we want the code here as a reference
+//login thingy
 app.get('/jimboButton', (req, res) => {
-  say.speak("what's poppin' jimbo?");
+  const { username, password } = req.query;
 
+  var successMessage = "yo i got the goods. Here's the proof. The username is " + username + " and the password is " + password;
+  say.speak(successMessage);
+
+  console.log("Received Username: ", username);
+  console.log("Received Password: ", password);
+
+  // Send a JSON response back to the client
+  res.json({ message: "Hey man this is server.js. I got the goods." });
 });
 
 //introduces the user to the app on first boot up. the variable makes 
