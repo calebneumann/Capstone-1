@@ -3,7 +3,7 @@
 <HEAD>
     <META NAME="GENERATOR" Content="Microsoft Visual Studio">
     <TITLE>Register</TITLE>
-    <link rel="stylesheet" type="text/css" href="about.css">
+    <link rel="stylesheet" type="text/css" href="login.css">
 
 </HEAD>
 <div class="container">
@@ -20,7 +20,6 @@
                         <a href="search.html">Search</a>
                         <a href="chatGPT.html">ChatGPT</a>
                         <a href="about_us.html">About Us</a>
-                        <a href="service.html">Service</a>
                         <a href="login.html">Log in</a>
                         <a href="profile.html">Profile</a>
 
@@ -80,7 +79,50 @@
             <br><br><br><br>
             <h1>Register</h1>
             <div>
-                this is where you register
+                <div>
+
+                    <!--trying to get AI working from pressing a button for testing purposes-->
+                    <input class="textBoxes" type="text" id="username" placeholder="username"><br>
+                    <input class="textBoxes" type="text" id="password" placeholder="password"><br>
+                    <input class="textBoxes" type="text" id="phone" placeholder="Phone #"><br>
+
+
+                    <button class="button" id="pressButton">Register</button>
+                    <div id="responseMessage">
+                
+                    <script>
+                        document.getElementById("pressButton").addEventListener("click", function() {
+                            var username = document.getElementById("username").value;
+                            var password = document.getElementById("password").value;
+                            var phone = document.getElementById("phone").value;
+
+                        
+                            // Create an object to hold the values
+                            let data = { username: username, password: password, phone: phone };
+                        
+                            // Use fetch to send data to the server via GET request
+                            fetch(`/register?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}&phone=${encodeURIComponent(phone)}`)
+                                .then(response => response.json())
+                                .then(data => {
+                                    // If the request is successful, update the DOM with the success message
+                                    document.getElementById("responseMessage").innerHTML = data.message;
+                                    document.getElementById("responseMessage").classList.add("responseThing")
+                                })
+                                .catch(error => {
+                                    console.error('Error:', error);
+                                });
+                        });
+                    </script>
+                    <div class="responseThing" id="chatResponse"></div>      
+                </div>
+                </div>
+
+
+                <a href="register.html">
+                    <div class="account1">Don't have an account?</div> 
+                    <div class="account2 funny">Too bad!</div>
+                </a>
+
             </div>
         </div>
         <br><br><br>
