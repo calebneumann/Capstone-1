@@ -80,6 +80,32 @@ app.get('/jimboButton', (req, res) => {
   res.json({ message: "Hey man this is server.js. I got the goods." });
 });
 
+app.get('/register', (req, res) => {
+  const { username, password, phone } = req.query;
+
+  //confirm to the user that the info was successfully sent to the backend
+  var successMessage = "yo i got the goods. Here's the proof. The username is " + username + " and the password is " + password + " and the phone number is " + phone;
+  say.speak(successMessage);
+
+  //display given info on the console for testing
+  console.log("Received Username: ", username);
+  console.log("Received Password: ", password);
+  console.log("Received Password: ", phone);
+
+  //use Regular Expressions to see if phone number is in a correct format
+  //basically it just needs to see if it has 10 numbers
+  //or 11 numbers if there needs to be a 1+ at the beginning
+  //like 1+(XXX-XXX-XXXX)
+
+
+  //if everything is in order, send these babies to the database, redirect to home screen logged in
+
+  //if not, give an error message insulting the user's intelligence
+
+  // Send a JSON response back to the client
+  res.json({ message: "Hey man this is server.js. I got the goods." });
+});
+
 //introduces the user to the app on first boot up. the variable makes 
 //sure the audio doesn't play every time the home page is accesed
 let firstOpen = true;
