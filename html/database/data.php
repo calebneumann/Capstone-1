@@ -4,7 +4,7 @@
 	$phone = $_POST['phone'];
 	
 
-	// Database connection
+	// Database connection1
 	$conn = new mysqli('localhost','root','','test');
 	if($conn->connect_error){
 		echo "$conn->connect_error";
