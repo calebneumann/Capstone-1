@@ -3,11 +3,13 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const fs = require('fs')
 const say = require('say')
+const mysql = require('mysql2')
 const { recordThing } = require('./js/record.js')
 const { chatGPT } = require('./js/openai.js')
 const { getJson } = require("serpapi");
 const app = express();
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.post('/searchProduct', async (req, res) => {
@@ -65,6 +67,49 @@ catch (error) {
   console.log(error);
 }
 });
+
+
+
+//----------------------------------------LOOK HERE------------------------------------>
+//this is to try to streamline database entry. Hopefully no php file?
+const database = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password:'',
+  database: 'speakommerce'
+});
+
+database.connect((err) => {
+  if(err) throw err;
+  console.log('Connected to MySQL...');
+})
+
+app.post('/submit', (req, res) => {
+  const { username, password, phone } = req.body;
+
+  if (!username || !password || !phone) {
+    return res.status(400).send('All fields are required!');
+  }
+
+  const sql = "insert into registration(username, password, phone) values(?, ?, ?)";
+  database.query(sql, [username, password, phone], (err, result) => {
+    if (err) {
+      if(err.code === 'ER_DUP_ENTRY'){
+        return res.status(400).send("Username already used");
+      }
+      return res.status(500).send("Server error");
+    }
+
+
+    console.log('Data Inserted:', result);
+    say.speak("Registration complete");
+    res.redirect('login.html');
+  });
+
+});
+
+//--------------------------------AAAAAAAAAAAAHHHHH DATABASE IS UP HERE----------------------------------------->
+
 
 //login thingy
 app.get('/jimboButton', (req, res) => {

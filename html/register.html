@@ -80,37 +80,47 @@
             <h1>Register</h1>
             <div>
                 <div>
-
+                    <form id="regForm" action="/submit" method="POST">
                     <!--trying to get AI working from pressing a button for testing purposes-->
-                    <input class="textBoxes" type="text" id="username" placeholder="username"><br>
-                    <input class="textBoxes" type="text" id="password" placeholder="password"><br>
-                    <input class="textBoxes" type="text" id="phone" placeholder="Phone #"><br>
-
-
-                    <button class="button" id="pressButton">Register</button>
+                    <input class="textBoxes" type="text" id="username" placeholder="username" name="username" /><br>
+                    <div id="error"></div>                    
+                    <input class="textBoxes" type="text" id="password" placeholder="password" name="password" /><br>
+                    <input class="textBoxes" type="text" id="phone" placeholder="Phone #" name="phone" /><br>
+                    
+                    <input type="submit" value="Submit">
+                    <!--<button class="button" id="pressButton">Register</button>-->
+                    </form>
                     <div id="responseMessage">
                 
                     <script>
-                        document.getElementById("pressButton").addEventListener("click", function() {
-                            var username = document.getElementById("username").value;
-                            var password = document.getElementById("password").value;
-                            var phone = document.getElementById("phone").value;
-
-                        
+                        document.getElementById("regForm").addEventListener("submit", function(event) {
+                            event.preventDefault(); // Prevent the default form submission
+                            const formData = new URLSearchParams(new FormData(this));
                             // Create an object to hold the values
                             let data = { username: username, password: password, phone: phone };
                         
                             // Use fetch to send data to the server via GET request
-                            fetch(`/register?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}&phone=${encodeURIComponent(phone)}`)
-                                .then(response => response.json())
-                                .then(data => {
-                                    // If the request is successful, update the DOM with the success message
-                                    document.getElementById("responseMessage").innerHTML = data.message;
-                                    document.getElementById("responseMessage").classList.add("responseThing")
-                                })
-                                .catch(error => {
-                                    console.error('Error:', error);
-                                });
+                            fetch('/submit', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/x-www-form-urlencoded'
+                                },
+                                body: formData
+                            })
+                                .then(async response => {
+                                    const result = await response.text();
+                                if(!response.ok){
+                                    document.getElementById('error').textContent = result;
+                                }
+                                else{
+                                    window.location.href = 'login.html'
+                                }
+                            
+                            })
+                            .catch(error => {
+                                document.getElementById('errorMessage').innerHTML = 'Error submitting the form. Please try again later.';
+                            })
+
                         });
                     </script>
                     <div class="responseThing" id="chatResponse"></div>      
