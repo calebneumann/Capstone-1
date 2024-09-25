@@ -4,6 +4,8 @@
     <META NAME="GENERATOR" Content="Microsoft Visual Studio">
     <TITLE>Profile</TITLE>
     <link rel="stylesheet" type="text/css" href="about.css">
+    <link rel="stylesheet" type="text/css" href="login.css">
+
 
 </HEAD>
 <div class="container">
@@ -14,28 +16,41 @@
             <a href="../index.html">
                 <img src="logo2.jpg" alt="Snow" style="width:100px" style="height:100px">
             </a>
-                <div class="anchor-container">
-                    <h4>
-                        <a href="../index.html">Home</a>
-                        <a href="search.html">Search</a>
-                        <a href="chatGPT.html">ChatGPT</a>
-                        <a href="about_us.html">About Us</a>
-                        <a href="login.html">Log in</a>
-                        <a href="profile.html">Profile</a>
+            <div id="topLinks" class="anchor-container">
+                <h4>
+                    <a href='../index.html'>Home</a>
+                    <a href='search.html'>Search</a>
+                    <a href='chatGPT.html'>ChatGPT</a>
+                    <a href='about_us.html'>About Us</a>
+                    <a href='login.html'>Log in</a>
+                    
 
-                    </h4>
-                  </div>
-
+                </h4>
             </div>
-            <script>
-                document.addEventListener('DOMContentLoaded', async () => {
-                    try {
-                        const response = await fetch('/aboutPage'); // Make a request to the server
-                    } catch (error) {
-                        console.error('Error fetching data:', error);
+
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', async () => {
+                fetch('/logInCheck')
+                    .then(async response => {
+                        const result = await response.text();
+                    if(result != ""){
+                        var topBar = "<h4><a href='../index.html'>Home</a>";
+                            topBar += "<a href='search.html'>Search</a>";
+                            topBar += "<a href='chatGPT.html'>ChatGPT</a>";
+                            topBar += "<a href='about_us.html'>About Us</a>"
+                            topBar += "<a href='profile.html'>Profile</a></h4>"
+
+                        document.getElementById('topLinks').innerHTML = topBar
                     }
-                });
-              </script>
+                
+                })
+                .catch(error => {
+                    document.getElementById('errorMessage').innerHTML = 'Error';
+                })
+
+            });
+          </script>
             <script>
                 document.addEventListener("keydown", (event) => {
                     if(event.key == ' '){
@@ -79,9 +94,29 @@
             <br><br><br><br>
             <h1>Profile</h1>
             <div>
-                <b>
-                <h3>this is where profile stuff is gonna go</h3>
-            </b>
+
+                <h3>change password</h3>
+                <h3>change phone number</h3>
+
+                <button class="logOutButton" id="pressButton">Log Out</button>
+            
+                <script>
+                    document.getElementById("pressButton").addEventListener("click", function() {
+                    
+                        fetch('/logOut')
+                            .then(async response => {
+                                const result = await response.text();
+                                if(result == ""){
+                                    window.location.href = "index.html"
+                                }
+                            })
+                            .catch(error => {
+                                document.getElementById('errorMessage').innerHTML = 'Error';
+                            })
+                    });
+                </script>
+            </div>
+            </div>
             </div>
         </div>
         <br><br><br>

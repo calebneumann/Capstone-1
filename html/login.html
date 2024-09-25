@@ -15,28 +15,41 @@
             <a href="../index.html">
                 <img src="logo2.jpg" alt="Snow" style="width:100px" style="height:100px">
             </a>
-                <div class="anchor-container">
-                    <h4>
-                        <a href="../index.html">Home</a>
-                        <a href="search.html">Search</a>
-                        <a href="chatGPT.html">ChatGPT</a>
-                        <a href="about_us.html">About Us</a>
-                        <a href="login.html">Log in</a>
-                        <a href="profile.html">Profile</a>
+            <div id="topLinks" class="anchor-container">
+                <h4>
+                    <a href='../index.html'>Home</a>
+                    <a href='search.html'>Search</a>
+                    <a href='chatGPT.html'>ChatGPT</a>
+                    <a href='about_us.html'>About Us</a>
+                    <a href='login.html'>Log in</a>
+                    
 
-                    </h4>
-                  </div>
-
+                </h4>
             </div>
-            <script>
-                document.addEventListener('DOMContentLoaded', async () => {
-                    try {
-                        const response = await fetch('/aboutPage'); // Make a request to the server
-                    } catch (error) {
-                        console.error('Error fetching data:', error);
+
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', async () => {
+                fetch('/logInCheck')
+                    .then(async response => {
+                        const result = await response.text();
+                    if(result != ""){
+                        var topBar = "<h4><a href='../index.html'>Home</a>";
+                            topBar += "<a href='search.html'>Search</a>";
+                            topBar += "<a href='chatGPT.html'>ChatGPT</a>";
+                            topBar += "<a href='about_us.html'>About Us</a>"
+                            topBar += "<a href='profile.html'>Profile</a></h4>"
+
+                        document.getElementById('topLinks').innerHTML = topBar
                     }
-                });
-              </script>
+                
+                })
+                .catch(error => {
+                    document.getElementById('errorMessage').innerHTML = 'Error';
+                })
+
+            });
+          </script>
             <script>
                 document.addEventListener("keydown", (event) => {
                     if(event.key == ' '){
@@ -85,9 +98,9 @@
                     <!--trying to get AI working from pressing a button for testing purposes-->
                     <input class="textBoxes" type="text" id="username" placeholder="username"><br>
                     <input class="textBoxes" type="text" id="password" placeholder="password"><br>
+                    <div id="error"></div>                    
 
                     <button class="button" id="pressButton">Log in</button>
-                    <div id="responseMessage">
                 
                     <script>
                         document.getElementById("pressButton").addEventListener("click", function() {
@@ -98,19 +111,25 @@
                             let data = { username: username, password: password };
                         
                             // Use fetch to send data to the server via GET request
-                            fetch(`/jimboButton?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`)
-                                .then(response => response.json())
-                                .then(data => {
-                                    // If the request is successful, update the DOM with the success message
-                                    document.getElementById("responseMessage").innerHTML = data.message;
-                                    document.getElementById("responseMessage").classList.add("responseThing")
-                                })
-                                .catch(error => {
-                                    console.error('Error:', error);
-                                });
+                            fetch(`/getUserInfo?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`)
+                            .then(async response => {
+                                if (!response.ok) {
+                                  const errorText = await response.text();
+                                  document.getElementById('error').textContent = errorText;
+                                } else {
+                                  const userData = await response.json();
+                                  //console.log('User data:', userData);
+                                  // You can now use the user data, e.g., display it on the page
+                                  window.location.href = "index.html";
+
+                                }
+                              })
+                              .catch(error => {
+                                console.error('Error fetching user data:', error);
+                                document.getElementById('error').textContent = 'Error retrieving user data. Please try again later.';
+                              });
                         });
                     </script>
-                    <div class="responseThing" id="chatResponse"></div>      
                 </div>
                 </div>
 
