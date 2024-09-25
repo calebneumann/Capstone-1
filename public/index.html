@@ -15,15 +15,14 @@
             <a href="../index.html">
                 <img src="logo2.jpg" alt="Snow" style="width:100px" style="height:100px">
             </a>
-            <div class="anchor-container">
+            <div id="topLinks" class="anchor-container">
                 <h4>
-                    <a href="../index.html">Home</a>
-                    <a href="search.html">Search</a>
-                    <a href="chatGPT.html">ChatGPT</a>
-                    <a href="about_us.html">About Us</a>
-                    <a href="login.html">Log in</a>
-                    <a href="profile.html">Profile</a>
-
+                    <a href='../index.html'>Home</a>
+                    <a href='search.html'>Search</a>
+                    <a href='chatGPT.html'>ChatGPT</a>
+                    <a href='about_us.html'>About Us</a>
+                    <a href='login.html'>Log in</a>
+                    
 
                 </h4>
             </div>
@@ -31,11 +30,31 @@
             </div>
             <script>
                 document.addEventListener('DOMContentLoaded', async () => {
+                    fetch('/logInCheck')
+                    .then(async response => {
+                        const result = await response.text();
+                    if(result != ""){
+                        var topBar = "<h4><a href='../index.html'>Home</a>";
+                            topBar += "<a href='search.html'>Search</a>";
+                            topBar += "<a href='chatGPT.html'>ChatGPT</a>";
+                            topBar += "<a href='about_us.html'>About Us</a>"
+                            topBar += "<a href='profile.html'>Profile</a></h4>"
+
+                        document.getElementById('topLinks').innerHTML = topBar
+                    }
+                
+                    })
+                    .catch(error => {
+                        document.getElementById('errorMessage').innerHTML = 'Error';
+                    });
                     try {
                         const response = await fetch('/homepage'); // Make a request to the server
                     } catch (error) {
                         console.error('Error fetching data:', error);
                     }
+
+
+
                 });
               </script>
             <script>

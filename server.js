@@ -84,7 +84,10 @@ database.connect((err) => {
   console.log('Connected to MySQL...');
 })
 
-app.post('/submit', (req, res) => {
+var userLoggedIn = "";
+
+//registers user into database
+app.post('/registerDatabase', (req, res) => {
   const { username, password, phone } = req.body;
 
   if (!username || !password || !phone) {
@@ -108,22 +111,65 @@ app.post('/submit', (req, res) => {
 
 });
 
+//retrieves user info
+app.get('/getUserInfo', (req, res) => {
+  const { username, password } = req.query; // Get the username from the query parameters
+
+  // console.log("username is ", username);
+  // console.log("password is ", password);
+
+  if (!username || !password) {
+    return res.status(400).send('All fields are required!');
+  }
+
+  const sql = "SELECT * FROM registration WHERE username = ?";
+  database.query(sql, [username], (err, result) => {
+    if (err) {
+      console.error('Database error:', err);
+      return res.status(500).send('Server error');
+    }
+
+    if (result.length === 0) {
+      return res.status(404).send('User not found');
+    }
+
+    //TODO: make this acessible somewhere so that we can show this data or change it or something
+    console.log("User logged in: ", result[0].username);
+    console.log("Password: ", result[0].password);
+    console.log("Phone number: ", result[0].phone);
+
+    userLoggedIn = result[0].username;
+    res.json(result[0]); // Send the first matching user as a JSON response
+  });
+});
+
 //--------------------------------AAAAAAAAAAAAHHHHH DATABASE IS UP HERE----------------------------------------->
 
-
-//login thingy
-app.get('/jimboButton', (req, res) => {
-  const { username, password } = req.query;
-
-  var successMessage = "yo i got the goods. Here's the proof. The username is " + username + " and the password is " + password;
-  say.speak(successMessage);
-
-  console.log("Received Username: ", username);
-  console.log("Received Password: ", password);
-
-  // Send a JSON response back to the client
-  res.json({ message: "Hey man this is server.js. I got the goods." });
+//checks to see if someone is logged in so that the
+//login button is replaced by the profile button
+app.get('/logInCheck', async(req, res) => {
+  res.send(userLoggedIn);
 });
+
+//empties the username var so that everywhere knows to be logged out
+app.get('/logOut', async(req, res) => {
+  userLoggedIn = "";
+  res.send(userLoggedIn);
+});
+
+//i guess we can keep this small chunk of code for reference
+// app.get('/jimboButton', (req, res) => {
+//   const { username, password } = req.query;
+
+//   var successMessage = "yo i got the goods. Here's the proof. The username is " + username + " and the password is " + password;
+//   say.speak(successMessage);
+
+//   console.log("Received Username: ", username);
+//   console.log("Received Password: ", password);
+
+//   // Send a JSON response back to the client
+//   res.json({ message: "Hey man this is server.js. I got the goods." });
+// });
 
 app.get('/register', (req, res) => {
   const { username, password, phone } = req.query;
@@ -175,13 +221,7 @@ app.get('/chatPage', async(req, res) => {
   // }
 });
 
-app.get('/aboutPage', async(req, res) => {
-  // try {
-  //   await say.speak("You are now on the about page.");
-  // } catch (error) {
-  //   res.status(500).send("Error speaking: " + error.message);
-  // }
-});
+
 
 app.get('/lookupPage', async(req, res) => {
   // try {

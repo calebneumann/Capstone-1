@@ -34,6 +34,19 @@ button {
     cursor: pointer;
 }
 
+.logOutButton{
+  width: 240px;
+  height: 40px;
+  font-size: 30px;
+  font-weight: bolder;
+  text-align: center;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: grabbing;
+  background-color: crimson;
+  color: white;
+}
+
 
 h1 {
     font-size: 48px;

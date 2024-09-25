@@ -14,26 +14,39 @@
             <a href="../index.html">
                 <img src="logo2.jpg" alt="Snow" style="width:100px" style="height:100px">
             </a>
-                <div class="anchor-container">
+                <div id="topLinks" class="anchor-container">
                     <h4>
-                        <a href="../index.html">Home</a>
-                        <a href="search.html">Search</a>
-                        <a href="chatGPT.html">ChatGPT</a>
-                        <a href="about_us.html">About Us</a>
-                        <a href="login.html">Log in</a>
-                        <a href="profile.html">Profile</a>
+                        <a href='../index.html'>Home</a>
+                        <a href='search.html'>Search</a>
+                        <a href='chatGPT.html'>ChatGPT</a>
+                        <a href='about_us.html'>About Us</a>
+                        <a href='login.html'>Log in</a>
+                        
 
                     </h4>
-                  </div>
+                </div>
 
             </div>
             <script>
                 document.addEventListener('DOMContentLoaded', async () => {
-                    try {
-                        const response = await fetch('/aboutPage'); // Make a request to the server
-                    } catch (error) {
-                        console.error('Error fetching data:', error);
-                    }
+                    fetch('/logInCheck')
+                        .then(async response => {
+                            const result = await response.text();
+                        if(result != ""){
+                            var topBar = "<h4><a href='../index.html'>Home</a>";
+                                topBar += "<a href='search.html'>Search</a>";
+                                topBar += "<a href='chatGPT.html'>ChatGPT</a>";
+                                topBar += "<a href='about_us.html'>About Us</a>"
+                                topBar += "<a href='profile.html'>Profile</a></h4>"
+
+                            document.getElementById('topLinks').innerHTML = topBar
+                        }
+                    
+                    })
+                    .catch(error => {
+                        document.getElementById('errorMessage').innerHTML = 'Error';
+                    })
+
                 });
               </script>
             <script>
@@ -80,7 +93,7 @@
             <h1>Register</h1>
             <div>
                 <div>
-                    <form id="regForm" action="/submit" method="POST">
+                    <form id="regForm" action="/registerDatabase" method="POST">
                     <!--trying to get AI working from pressing a button for testing purposes-->
                     <input class="textBoxes" type="text" id="username" placeholder="username" name="username" /><br>
                     <div id="error"></div>                    
@@ -90,7 +103,6 @@
                     <input type="submit" value="Submit">
                     <!--<button class="button" id="pressButton">Register</button>-->
                     </form>
-                    <div id="responseMessage">
                 
                     <script>
                         document.getElementById("regForm").addEventListener("submit", function(event) {
@@ -100,7 +112,7 @@
                             let data = { username: username, password: password, phone: phone };
                         
                             // Use fetch to send data to the server via GET request
-                            fetch('/submit', {
+                            fetch('/registerDatabase', {
                                 method: 'POST',
                                 headers: {
                                     'Content-Type': 'application/x-www-form-urlencoded'
@@ -127,11 +139,6 @@
                 </div>
                 </div>
 
-
-                <a href="register.html">
-                    <div class="account1">Don't have an account?</div> 
-                    <div class="account2 funny">Too bad!</div>
-                </a>
 
             </div>
         </div>
