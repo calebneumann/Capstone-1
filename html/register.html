@@ -95,12 +95,17 @@
                 <div>
                     <form id="regForm" action="/registerDatabase" method="POST">
                     <!--trying to get AI working from pressing a button for testing purposes-->
+                    <div class="bigText">Username</div>
                     <input class="textBoxes" type="text" id="username" placeholder="username" name="username" /><br>
-                    <div id="error"></div>                    
+                    <div class="bigText">Password</div>
                     <input class="textBoxes" type="text" id="password" placeholder="password" name="password" /><br>
+                    <div class="bigText">Phone #</div>
                     <input class="textBoxes" type="text" id="phone" placeholder="Phone #" name="phone" /><br>
-                    
-                    <input type="submit" value="Submit">
+                    <div id="phoneError"></div>
+                    <div style="font-size: 20px;">Phone # inserted should have no spaces, dashes, or parentheses</div>
+                    <div style="font-size: 20px;">Ex: XXXXXXXXXX</div><br>
+                    <div id="error" class="errorMessage"></div>
+                    <input class="submitButton" type="submit" value="Submit">
                     <!--<button class="button" id="pressButton">Register</button>-->
                     </form>
                 
@@ -110,7 +115,11 @@
                             const formData = new URLSearchParams(new FormData(this));
                             // Create an object to hold the values
                             let data = { username: username, password: password, phone: phone };
-                        
+                            const phonePattern = "^\d{10}$";
+                            //const phoneFormat = phonePattern.test(phone);
+
+
+
                             // Use fetch to send data to the server via GET request
                             fetch('/registerDatabase', {
                                 method: 'POST',

@@ -1,3 +1,8 @@
+/*<-----------------------------HEEEEYYYYY LOOOOOOOOK HEEEEEEEEEERRRRRRRRRREEEEEEEEEEEEE-------------->
+1. MAKE SURE YOU DO GIT PULL TO MAKE SURE YOU ARE UP TO DATE WITH THE PROJECT
+2. MAKE SURE YOU OPEN XAMPP AND CREATE THE CONNECTION TO APACHE AND MYSQL TO START THE DATABASE
+3. THIRD THING HEEEEEERRRRRRRREEEEEEEEEEEEE
+*/
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
@@ -6,6 +11,7 @@ const say = require('say')
 const mysql = require('mysql2')
 const { recordThing } = require('./js/record.js')
 const { chatGPT } = require('./js/openai.js')
+const { sendNotif } = require('./js/send_message.js')
 const { getJson } = require("serpapi");
 const app = express();
 app.use(bodyParser.json());
@@ -71,7 +77,7 @@ catch (error) {
 
 
 //----------------------------------------LOOK HERE------------------------------------>
-//this is to try to streamline database entry. Hopefully no php file?
+//creates a connection with database details
 const database = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -79,21 +85,34 @@ const database = mysql.createConnection({
   database: 'speakommerce'
 });
 
+//establishes the connection with the database
 database.connect((err) => {
   if(err) throw err;
   console.log('Connected to MySQL...');
 })
 
 var userLoggedIn = "";
+var userPassword = "";
+var userPhone = "";
+
 
 //registers user into database
 app.post('/registerDatabase', (req, res) => {
   const { username, password, phone } = req.body;
 
+  //checks of any fields are empty
   if (!username || !password || !phone) {
     return res.status(400).send('All fields are required!');
   }
 
+  //check to see if phone number is in the correct format
+  const phonePattern = /^\d{10}$/;
+  let result = phonePattern.test(phone)
+  if(!result){
+    return res.status(400).send('Phone # in incorrect format!');
+  }
+
+  //this registers user info into the database
   const sql = "insert into registration(username, password, phone) values(?, ?, ?)";
   database.query(sql, [username, password, phone], (err, result) => {
     if (err) {
@@ -103,25 +122,34 @@ app.post('/registerDatabase', (req, res) => {
       return res.status(500).send("Server error");
     }
 
+    //NOTE: The virtual phone number expires every
+    //two weeks so if this stops working thats why
+    var messageNumber = "+1" + phone;
+    sendNotif(messageNumber, "Your account has been activated");
 
+
+    //audibly confirms to the user they have been registered
+    //and they are redirected to the login page
     console.log('Data Inserted:', result);
-    say.speak("Registration complete");
+    say.speak("Registration complete. A notification has been sent to your registered phone number!");
     res.redirect('login.html');
   });
 
 });
 
-//retrieves user info
+//this is used to log in the user
 app.get('/getUserInfo', (req, res) => {
   const { username, password } = req.query; // Get the username from the query parameters
 
   // console.log("username is ", username);
   // console.log("password is ", password);
 
+  //makes sure all fields are filled
   if (!username || !password) {
     return res.status(400).send('All fields are required!');
   }
 
+  //this uses the username to retrieve the password from the database
   const sql = "SELECT * FROM registration WHERE username = ?";
   database.query(sql, [username], (err, result) => {
     if (err) {
@@ -129,8 +157,9 @@ app.get('/getUserInfo', (req, res) => {
       return res.status(500).send('Server error');
     }
 
-    if (result.length === 0) {
-      return res.status(404).send('User not found');
+    //checks if returned username exists or if password is incorrect
+    if (result.length === 0 || password != result[0].password) {
+      return res.status(404).send('Username and/or password incorrect');
     }
 
     //TODO: make this acessible somewhere so that we can show this data or change it or something
@@ -138,11 +167,93 @@ app.get('/getUserInfo', (req, res) => {
     console.log("Password: ", result[0].password);
     console.log("Phone number: ", result[0].phone);
 
-    userLoggedIn = result[0].username;
+    userLoggedIn = username;
+    userPassword = password;
+    userPhone = result[0].phone;
     res.json(result[0]); // Send the first matching user as a JSON response
   });
 });
 
+
+//this is used change your password
+app.post('/changePassword', (req, res) => {
+  const { oldPassword, newPassword } = req.body; // Get the username from the query parameters
+  console.log("hellp")
+  
+  console.log("old is ", oldPassword);
+  console.log("new is ", newPassword);
+
+  //makes sure all fields are filled
+  if (!oldPassword || !newPassword) {
+    return res.status(400).send('All fields are required!');
+  }
+
+  if (oldPassword != userPassword) {
+    return res.status(404).send('Password is incorrect');
+  }
+
+    //change the password using userLoggedIn var
+  const sqlWrite = "UPDATE registration SET password = ? WHERE username = ?";
+  database.query(sqlWrite, [newPassword, userLoggedIn], (err, result) => {
+    if (err) {
+      console.error('Database error:', err);
+      return res.status(500).send('Server error');
+    }
+
+    if(newPassword == userPassword){
+      return res.status(400).send('New password can not be the same as old password!');
+
+    }
+
+    userPassword = newPassword;
+    return res.status(200).send('Password successfully changed!');
+  });
+
+});
+
+
+//this is used to change your phone number
+app.post('/changePhone', (req, res) => {
+  const { oldPhone, newPhone } = req.body; // Get the username from the query parameters
+  console.log("hellp")
+  
+  console.log("old is ", oldPhone);
+  console.log("new is ", newPhone);
+
+  //makes sure all fields are filled
+  if (!oldPhone || !newPhone) {
+    return res.status(400).send('All fields are required!');
+  }
+
+  const phonePattern = /^\d{10}$/;
+  let result = phonePattern.test(newPhone)
+  if(!result){
+    return res.status(400).send('Phone # in incorrect format!');
+  }
+
+
+  if (oldPhone != userPhone) {
+    return res.status(404).send('Phone # is incorrect');
+  }
+
+    //change the password using userLoggedIn var
+  const sqlWrite = "UPDATE registration SET phone = ? WHERE username = ?";
+  database.query(sqlWrite, [newPhone, userLoggedIn], (err, result) => {
+    if (err) {
+      console.error('Database error:', err);
+      return res.status(500).send('Server error');
+    }
+
+    if(newPhone == userPhone){
+      return res.status(400).send('New phone # can not be the same as old phone #');
+
+    }
+
+    userPhone = newPhone;
+    return res.status(200).send('Phone # successfully changed!');
+  });
+
+});
 //--------------------------------AAAAAAAAAAAAHHHHH DATABASE IS UP HERE----------------------------------------->
 
 //checks to see if someone is logged in so that the
@@ -154,48 +265,27 @@ app.get('/logInCheck', async(req, res) => {
 //empties the username var so that everywhere knows to be logged out
 app.get('/logOut', async(req, res) => {
   userLoggedIn = "";
+  console.log("User has logged out...");
   res.send(userLoggedIn);
 });
 
+
 //i guess we can keep this small chunk of code for reference
-// app.get('/jimboButton', (req, res) => {
-//   const { username, password } = req.query;
+/*
+app.get('/jimboButton', (req, res) => {
+  const { username, password } = req.query;
 
-//   var successMessage = "yo i got the goods. Here's the proof. The username is " + username + " and the password is " + password;
-//   say.speak(successMessage);
-
-//   console.log("Received Username: ", username);
-//   console.log("Received Password: ", password);
-
-//   // Send a JSON response back to the client
-//   res.json({ message: "Hey man this is server.js. I got the goods." });
-// });
-
-app.get('/register', (req, res) => {
-  const { username, password, phone } = req.query;
-
-  //confirm to the user that the info was successfully sent to the backend
-  var successMessage = "yo i got the goods. Here's the proof. The username is " + username + " and the password is " + password + " and the phone number is " + phone;
+  var successMessage = "yo i got the goods. Here's the proof. The username is " + username + " and the password is " + password;
   say.speak(successMessage);
 
-  //display given info on the console for testing
   console.log("Received Username: ", username);
   console.log("Received Password: ", password);
-  console.log("Received Password: ", phone);
-
-  //use Regular Expressions to see if phone number is in a correct format
-  //basically it just needs to see if it has 10 numbers
-  //or 11 numbers if there needs to be a 1+ at the beginning
-  //like 1+(XXX-XXX-XXXX)
-
-
-  //if everything is in order, send these babies to the database, redirect to home screen logged in
-
-  //if not, give an error message insulting the user's intelligence
 
   // Send a JSON response back to the client
   res.json({ message: "Hey man this is server.js. I got the goods." });
 });
+*/
+
 
 //introduces the user to the app on first boot up. the variable makes 
 //sure the audio doesn't play every time the home page is accesed

@@ -95,11 +95,109 @@
             <h1>Profile</h1>
             <div>
 
-                <h3>change password</h3>
-                <h3>change phone number</h3>
+                <h2>change password</h2>
 
+                <form id="passChangeForm" action="/changePassword" method="POST">
+                    <!--trying to get AI working from pressing a button for testing purposes-->
+
+                    <input class="textBoxes" type="text" id="oldPassword" placeholder="Current Password" name="oldPassword"><br>
+                    <div id="error" class="errorMessage"></div><br>
+                    <input class="textBoxes" type="text" id="newPassword" placeholder="New Password" name="newPassword"><br>
+                    <div id="success" style="color: green;" class="errorMessage"></div>   
+
+                    <input class="button" type="submit" value="Change Password">
+
+                    <!--<button class="button" id="pressButton">Register</button>-->
+                    </form>
+
+                    <script>
+                        document.getElementById("passChangeForm").addEventListener("submit", function(event) {
+                            event.preventDefault(); // Prevent the default form submission
+                            const formData = new URLSearchParams(new FormData(this));
+                            // Create an object to hold the values
+                            let data = { oldPassword: oldPassword, newPassword: newPassword };
+
+
+                            // Use fetch to send data to the server via GET request
+                            fetch('/changePassword', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/x-www-form-urlencoded'
+                                },
+                                body: formData
+                            })
+                                .then(async response => {
+                                    const result = await response.text();
+                                    if (!response.ok) {
+                                        document.getElementById('error').textContent = result;
+                                        document.getElementById('success').textContent = "";
+
+                                    } else {
+                                        document.getElementById('error').textContent = "";
+                                        document.getElementById('success').textContent = "Password changed successfully!";
+                                    }
+                            
+                            })
+                            .catch(error => {
+                                document.getElementById('errorMessage').innerHTML = 'Error submitting the form. Please try again later.';
+                            })
+
+                        });
+                    </script>
+
+
+
+                <h2>change phone number</h2>
+
+                <form id="phoneChangeForm" action="/changePhone" method="POST">
+                    <!--trying to get AI working from pressing a button for testing purposes-->
+
+                    <input class="textBoxes" type="text" id="oldPhone" placeholder="Current Phone #" name="oldPhone"><br>
+                    <div id="errorPhone" class="errorMessage"></div><br>
+                    <input class="textBoxes" type="text" id="newPhone" placeholder="New Phone #" name="newPhone"><br>
+                    <div id="successPhone" style="color: green;" class="errorMessage"></div>   
+
+                    <button class="button" type="submit">Register</button>
+                    <!--<button class="button" id="pressButton">Register</button>-->
+                    </form>
+
+                    <script>
+                        document.getElementById("phoneChangeForm").addEventListener("submit", function(event) {
+                            event.preventDefault(); // Prevent the default form submission
+                            const formData = new URLSearchParams(new FormData(this));
+                            // Create an object to hold the values
+                            let data = { oldPhone: oldPhone, newPhone: newPhone };
+
+
+                            // Use fetch to send data to the server via GET request
+                            fetch('/changePhone', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/x-www-form-urlencoded'
+                                },
+                                body: formData
+                            })
+                                .then(async response => {
+                                    const result = await response.text();
+                                    if (!response.ok) {
+                                        document.getElementById('errorPhone').textContent = result;
+                                        document.getElementById('successPhone').textContent = "";
+
+                                    } else {
+                                        document.getElementById('errorPhone').textContent = "";
+                                        document.getElementById('successPhone').textContent = "Phone # changed successfully!";
+                                    }
+                            
+                            })
+                            .catch(error => {
+                                document.getElementById('errorMessage').innerHTML = 'Error submitting the form. Please try again later.';
+                            })
+
+                        });
+                    </script>
+                    <br><br>
                 <button class="logOutButton" id="pressButton">Log Out</button>
-            
+                    <br><br>
                 <script>
                     document.getElementById("pressButton").addEventListener("click", function() {
                     

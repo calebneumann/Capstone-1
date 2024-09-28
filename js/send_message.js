@@ -5,17 +5,18 @@ const sinchClient = new SinchClient({
     keyId: process.env.SINCH_KEY_ID,
     keySecret: process.env.SINCH_KEY_SECRET
 });
-async function run(client, bodyMessage){
+async function sendNotif(client, bodyMessage){
     const response = await sinchClient.sms.batches.send({
         sendSMSRequestBody: {
             to: [
                 client
             ],
-            from: "+12066563055",
+            from: "+12084351902", //these numbers expire every 2 weeks so we'll need to grab another one eventually
             body: bodyMessage
         }
     });
 
     console.log(JSON.stringify(response));
 }
-run("+19038208905", "Poopy poopy");
+
+module.exports = { sendNotif };
