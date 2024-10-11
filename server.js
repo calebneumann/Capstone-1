@@ -11,6 +11,7 @@ const say = require('say')
 const mysql = require('mysql2')
 const { recordThing } = require('./js/record.js')
 const { chatGPT } = require('./js/openai.js')
+const { tts } = require('./js/openai.js')
 const { sendNotif } = require('./js/send_message.js')
 const { getJson } = require("serpapi");
 const app = express();
@@ -51,7 +52,6 @@ app.post('/searchProduct', async (req, res) => {
 let rec = false;
 app.get('/stt', async (req, res) => {
   // Execute your desired action (e.g., call a function)
-  console.log("hello?");
   try{
 
   //calls the recording function to start recording
@@ -125,7 +125,7 @@ app.post('/registerDatabase', (req, res) => {
     //NOTE: The virtual phone number expires every
     //two weeks so if this stops working thats why
     var messageNumber = "+1" + phone;
-    sendNotif(messageNumber, "Your account has been activated");
+    sendNotif(messageNumber, "Your Speakommerce account has been activated");
 
 
     //audibly confirms to the user they have been registered
@@ -294,7 +294,8 @@ app.get('/homepage', async (req, res) => {
   if(firstOpen){
     firstOpen = false;
     try {
-      say.speak("BOO! This voice is boring and scary and we need to change it.");
+      //say.speak("BOO! This voice is boring and scary and we need to change it.");
+      chatGPT("Hello!");
     } catch (error) {
       res.status(500).send("Error speaking: " + error.message);
     }

@@ -1,0 +1,6 @@
+Hello!
+Hello! Welcome to Speak-Commerce. I'm here to help you navigate our website and assist you with your shopping needs. How can I assist you today?
+I want to search
+I will take you to the search page. What would you like to search for?
+Shoes
+Searching for: Shoes

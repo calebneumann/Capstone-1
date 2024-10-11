@@ -10,6 +10,12 @@
 </HEAD>
 <div class="container">
     <BODY>
+
+        <audio id="myAudio" controls>
+            <source src="tts.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
         <div class="navbar">
             <div class="dropdown">
                 <div class="nav">
@@ -52,6 +58,14 @@
                     });
                   </script>
                 <script>
+
+                    function playAudio() {
+                        var audio = document.getElementById('myAudio');
+                        audio.play().catch(error => {
+                            console.error('Autoplay failed:', error);
+                        });
+                    }
+
                     document.addEventListener("keydown", function(event){
                         if(event.key === " " && !isTextInput(event.target)) {
                             event.preventDefault();
@@ -63,6 +77,11 @@
                                 const response = fetch('/stt').then(res => res.text()).then(data => {
                                     sttResponse.textContent = data;
                                     data = data.toLowerCase();
+
+                                    if(data != "recording..."){
+                                        playAudio();
+                                    }
+
                                     if(data.includes("home page")){
                                         window.location.href = "../index.html";
                                     }
@@ -71,6 +90,15 @@
                                     }
                                     else if(data.includes("search page")){
                                         window.location.href = "/search.html";
+                                    }
+                                    else if(data.includes("login")){
+                                        window.location.href = "/login.html";
+                                    }
+                                    else if(data.includes("profile")){
+                                        window.location.href = "/profile.html";
+                                    }
+                                    else if(data.includes("register")){
+                                        window.location.href = "/register.html";
                                     }
                                     else{
                                             document.getElementById('sttResponse').textContent = data; // Display the data
