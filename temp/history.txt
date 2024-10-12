@@ -1,6 +1,14 @@
 Hello!
-Hello! Welcome to Speak-Commerce. I'm here to help you navigate our website and assist you with your shopping needs. How can I assist you today?
-I want to search
+Hello! Welcome to Speak-Commerce! I'm here to help you navigate the website and find the products you need. How can I assist you today?
+I want to go to the search page.
 I will take you to the search page. What would you like to search for?
-Shoes
-Searching for: Shoes
+No, I want to go back to the homepage.
+I am taking you to the home page.
+I want to learn more about speak commerce.
+I will take you to the about us page.
+Search page.
+I will take you to the search page. What would you like to search for?
+I agree. Popcorn. I'm pretty sure I'll still pursue it.
+Searching for: Popcorn
+Since there was technically a- Home page. In a way.
+I am taking you to the home page.

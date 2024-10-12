@@ -322,6 +322,23 @@ app.get('/lookupPage', async(req, res) => {
   // }
 });
 
+
+app.post('/delete-mp3', (req, res) => {
+  const { filename } = req.body;
+  const filePath = `public/${filename}`;
+
+    console.log("attempting to delete file")
+
+    fs.unlink(filePath, (error) => {
+      if (error) {
+          console.error(`Error deleting file: ${error.message}`);
+          return;
+      }
+      console.log('MP3 file deleted successfully.');
+  });
+});
+
+
 //I think this is so that express can easily render the pages
 //I think the pages themselves are static and all the cool stuff
 //runs in the background here and throws them at the pages

@@ -15,6 +15,38 @@
             Your browser does not support the audio element.
         </audio>
     
+        <script>
+            window.onload = function() {
+                var audio = document.getElementById('myAudio');
+                audio.play().catch(error => {
+                    console.log("Playback was prevented. User interaction is required.");
+                });
+            };
+
+            audio.addEventListener('ended', function() {
+                console.log('Audio has ended, attempting to delete the file.');
+    
+                // Send an AJAX request to the server to delete the file
+                fetch('/delete-mp3', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ filename: 'tts.mp3' })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        console.log('File deleted successfully.');
+                    } else {
+                        console.log('File deletion failed.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error deleting file:', error);
+                });
+            });
+        </script>
 
         <div class="navbar">
         <div class="nav">
@@ -42,7 +74,7 @@
                     });
                 }
                 document.addEventListener('DOMContentLoaded', async () => {
-                    playAudio();
+                    //playAudio();
 
                     fetch('/logInCheck')
                     .then(async response => {

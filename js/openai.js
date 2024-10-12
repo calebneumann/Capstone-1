@@ -49,7 +49,7 @@ async function chatGPT(question){
       history = history + response + '\n';
       console.log(response);
       //Send the response back to the client
-      tts(response);
+      await tts(response);
   
       chatHistory(question, response);
       return response;
@@ -79,9 +79,10 @@ async function tts(speech) {
     voice: "echo",
     input: speech,
   });
-  console.log(speechFile);
+  //console.log(speechFile);
   const buffer = Buffer.from(await mp3.arrayBuffer());
   await fs.promises.writeFile(speechFile, buffer);
+  console.log("created audio file");
   //await playAudio();
 
 //   fs.unlink(audioFile, (error) => {
