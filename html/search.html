@@ -8,47 +8,6 @@
     <div class="container">
     <BODY>
 
-                <audio id="myAudio" controls>
-            <source src="tts.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    
-        <script>
-            var audio = document.getElementById('myAudio');
-            window.onload = function() {
-                audio.play().catch(error => {
-                    console.log("Playback was prevented. User interaction is required.");
-                });
-            };
-
-                        
-            audio.addEventListener('ended', function() {
-                console.log('Audio has ended, attempting to delete the file.');
-    
-                // Send an AJAX request to the server to delete the file
-                fetch('/delete-mp3', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ filename: 'tts.mp3' })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        console.log('File deleted successfully.');
-                    } else {
-                        console.log('File deletion failed.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error deleting file:', error);
-                });
-            });
-
-        </script>
-
-
         <div class="navbar">
                 <div class="nav">
                     <a href="../index.html">
@@ -107,13 +66,6 @@
         </h3>
         <script>
 
-            function playAudio() {
-                var audio = document.getElementById('myAudio');
-                audio.play().catch(error => {
-                    console.error('Autoplay failed:', error);
-                });
-            }
-
             //activates whenever the spacebar is used
             document.addEventListener("keydown", async (event) => {
                 if(event.key == ' '){
@@ -125,9 +77,6 @@
                         response = await fetch('/stt').then(res => res.text()).then(data => {
                             data = data.toLowerCase();
                             
-                            if(data != "recording..."){
-                                playAudio();
-                            }
 
                             if(data.includes("home page")){
                                 window.location.href = "../index.html";

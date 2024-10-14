@@ -9,21 +9,6 @@
 <div class="container">
     <BODY>
 
-        <audio id="myAudio" controls></audio>
-            <source src="tts.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-
-
-        <script>
-            window.onload = function() {
-                var audio = document.getElementById('myAudio');
-                audio.play().catch(error => {
-                    console.log("Playback was prevented. User interaction is required.");
-                });
-            };
-        </script>
-
         <div class="navbar">
         <div class="dropdown">
         <div class="nav">
@@ -67,13 +52,6 @@
           </script>
             <script>
 
-                function playAudio() {
-                    var audio = document.getElementById('myAudio');
-                    audio.play().catch(error => {
-                        console.error('Autoplay failed:', error);
-                    });
-                }
-
                 document.addEventListener("keydown", (event) => {
                     if(event.key == ' '){
                         const sttResponse = document.getElementById('sttResponse');
@@ -84,11 +62,6 @@
                             const response = fetch('/stt').then(res => res.text()).then(data => {
                                 sttResponse.textContent = data;
                                 data = data.toLowerCase();
-
-                                
-                                if(data != "recording..."){
-                                    playAudio();
-                                }
 
                                 if(data.includes("home")){
                                     window.location.href = "../index.html";

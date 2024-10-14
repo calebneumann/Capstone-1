@@ -32,7 +32,6 @@ history += "Now, please introduce yourself to the user, give a warm welcome and 
 const parentDir = path.join(__dirname, '..');
 
 fs.appendFileSync(parentDir + "/temp/history.txt", history);
-const audioFile = parentDir + "/temp/tts.mp3";
 
 var response;
 
@@ -48,9 +47,7 @@ async function chatGPT(question){
       response = completion.choices[0].message.content;
       history = history + response + '\n';
       console.log(response);
-      //Send the response back to the client
-      await tts(response);
-  
+      //Send the response back to the client  
       chatHistory(question, response);
       return response;
     } catch (error) {
@@ -70,55 +67,6 @@ function chatHistory(question, response){
 
 }
 
-const speechFile = path.resolve(parentDir + "/public/tts.mp3")
-
-
-async function tts(speech) {
-  const mp3 = await openai.audio.speech.create({
-    model: "tts-1",
-    voice: "echo",
-    input: speech,
-  });
-  //console.log(speechFile);
-  const buffer = Buffer.from(await mp3.arrayBuffer());
-  await fs.promises.writeFile(speechFile, buffer);
-  console.log("created audio file");
-  //await playAudio();
-
-//   fs.unlink(audioFile, (error) => {
-//     if (error) {
-//         console.error(`Error deleting file: ${error.message}`);
-//         return;
-//     }
-//     console.log('MP3 file deleted successfully.');
-// });
-
-}
-
-
- 
-
-function playAudio(){
-// Command to open the default audio player
-const command = process.platform === 'win32' 
-    ? `start "" "${audioFile}"`  // For Windows
-    : process.platform === 'darwin' 
-    ? `open "${audioFile}"`       // For macOS
-    : `xdg-open "${audioFile}"`;  // For Linux
-
-// Execute the command
-exec(command, (error) => {
-    if (error) {
-        console.error(`Error playing audio: ${error.message}`);
-        return;
-    }
-    console.log('Playing audio...');
-});
-}
-
-
-
 module.exports = { 
-  chatGPT,
-  tts
+  chatGPT
 };

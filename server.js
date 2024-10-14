@@ -11,7 +11,6 @@ const say = require('say')
 const mysql = require('mysql2')
 const { recordThing } = require('./js/record.js')
 const { chatGPT } = require('./js/openai.js')
-const { tts } = require('./js/openai.js')
 const { sendNotif } = require('./js/send_message.js')
 const { getJson } = require("serpapi");
 const app = express();
@@ -65,6 +64,7 @@ app.get('/stt', async (req, res) => {
     rec = false;
     const poop = await recordThing(rec);
     const poop2 = await chatGPT(poop);
+    say.speak(poop2);
     res.send(poop2);
 
   }
