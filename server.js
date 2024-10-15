@@ -51,7 +51,7 @@ app.post('/searchProduct', async (req, res) => {
 let rec = false;
 app.get('/stt', async (req, res) => {
   // Execute your desired action (e.g., call a function)
-  console.log("hello?");
+  say.stop();
   try{
 
   //calls the recording function to start recording
@@ -74,6 +74,29 @@ catch (error) {
 }
 });
 
+app.get('/insertInfo', async (req, res) => {
+  // Execute your desired action (e.g., call a function)
+  try{
+
+  //calls the recording function to start recording
+  if(rec == false){
+    rec = true;
+    const poop = await recordThing(rec);
+    res.send("Recording...")
+
+  }
+  else{
+    rec = false;
+    const poop = await recordThing(rec);
+    const poop2 = await chatGPT(poop);
+    res.send(poop2);
+
+  }
+}
+catch (error) {
+  console.log(error);
+}
+});
 
 
 //----------------------------------------LOOK HERE------------------------------------>
@@ -125,7 +148,7 @@ app.post('/registerDatabase', (req, res) => {
     //NOTE: The virtual phone number expires every
     //two weeks so if this stops working thats why
     var messageNumber = "+1" + phone;
-    sendNotif(messageNumber, "Your account has been activated");
+    sendNotif(messageNumber, "Your Speakommerce account has been activated");
 
 
     //audibly confirms to the user they have been registered
@@ -159,6 +182,9 @@ app.get('/getUserInfo', (req, res) => {
 
     //checks if returned username exists or if password is incorrect
     if (result.length === 0 || password != result[0].password) {
+
+      chatGPT("ERROR: Incorrect username and/or password");
+
       return res.status(404).send('Username and/or password incorrect');
     }
 
@@ -170,6 +196,7 @@ app.get('/getUserInfo', (req, res) => {
     userLoggedIn = username;
     userPassword = password;
     userPhone = result[0].phone;
+    chatGPT("The user is successfully logged in");
     res.json(result[0]); // Send the first matching user as a JSON response
   });
 });
@@ -294,7 +321,8 @@ app.get('/homepage', async (req, res) => {
   if(firstOpen){
     firstOpen = false;
     try {
-      say.speak("BOO! This voice is boring and scary and we need to change it.");
+      //say.speak("BOO! This voice is boring and scary and we need to change it.");
+      chatGPT("Hello!");
     } catch (error) {
       res.status(500).send("Error speaking: " + error.message);
     }
@@ -320,6 +348,7 @@ app.get('/lookupPage', async(req, res) => {
   //   res.status(500).send("Error speaking: " + error.message);
   // }
 });
+
 
 //I think this is so that express can easily render the pages
 //I think the pages themselves are static and all the cool stuff

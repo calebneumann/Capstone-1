@@ -9,6 +9,7 @@
 </HEAD>
 <div class="container">
     <BODY>
+
         <div class="navbar">
         <div class="dropdown">
         <div class="nav">
@@ -51,24 +52,63 @@
             });
           </script>
             <script>
-                document.addEventListener("keydown", (event) => {
-                    if(event.key == ' '){
-                        const sttResponse = document.getElementById('sttResponse');
 
+                document.addEventListener("keydown", (event) => {
+                    if(event.key === " " && !isTextInput(event.target)) {
+                        const sttResponse = document.getElementById('sttResponse');
+                        const loginButton = document.getElementById('loginButton');
+                        var matchedLogin = null;
                         //alert("you entered space")
                         
                         try {
-                            const response = fetch('/stt').then(res => res.text()).then(data => {
+                            const response = fetch('/insertInfo').then(res => res.text()).then(data => {
                                 sttResponse.textContent = data;
-                                data = data.toLowerCase();
-                                if(data.includes("home")){
+                                const lowerData = data.toLowerCase();
+
+                                const matches = lowerData.match(/\[([^\]]+)\]/g);
+                                if(matches){
+                                    matchedLogin = matches.map(match => match.slice(1, -1).replace(/\s+/g, ''));
+                                }
+                                else{
+                                    console.log("no match")
+                                }
+
+                                const firstSentence = lowerData.match(/[^.!?]*[.!?]/)[0];
+                                console.log("The first sentence is " + firstSentence);
+                                
+                                console.log(lowerData);
+                                if(firstSentence.includes("username") && matchedLogin != null){
+                                    console.log("hey we got a username. it is " + matchedLogin[0]);
+                                    document.getElementById('username').value = matchedLogin[0];
+
+                                }
+                                else if(firstSentence.includes("password") && matchedLogin != null){
+                                    console.log("hey we got a password. it is " + matchedLogin[0]);
+                                    document.getElementById('password').value = matchedLogin[0];
+
+                                }
+                                else if(lowerData.includes("attempting")){
+                                    console.log("button CLICKED");
+                                    loginButton.click();
+                                }
+
+                                if(lowerData.includes("home")){
                                     window.location.href = "../index.html";
                                 }
-                                else if(data.includes("chat")){
+                                else if(lowerData.includes("chat")){
                                     window.location.href = "/chatGPT.html";
                                 }
-                                else if(data.includes("search")){
+                                else if(lowerData.includes("search page")){
                                     window.location.href = "/search.html";
+                                }
+                                else if(lowerData.includes("login page")){
+                                    window.location.href = "/login.html";
+                                }
+                                else if(lowerData.includes("profile")){
+                                    window.location.href = "/profile.html";
+                                }
+                                else if(lowerData.includes("register")){
+                                    window.location.href = "/register.html";
                                 }
                                 else{
                                     document.getElementById('sttResponse').textContent = data; // Display the data
@@ -83,6 +123,9 @@
                     }
                     // do something
                   });
+                  function isTextInput(element) {
+                    return element.tagName === "INPUT" && element.getAttribute("type") === "text" || element.tagName === "TEXTAREA";
+                }
             </script>
 
 
@@ -97,13 +140,13 @@
 
                     <!--trying to get AI working from pressing a button for testing purposes-->
                     <input class="textBoxes" type="text" id="username" placeholder="username"><br>
-                    <input class="textBoxes" type="password" id="password" placeholder="password"><br>
+                    <input class="textBoxes" type="text" id="password" placeholder="password"><br>
                     <div id="error" class="errorMessage"></div>                    
 
-                    <button class="button" id="pressButton">Log in</button>
+                    <button class="button" id="loginButton">Log in</button>
                 
                     <script>
-                        document.getElementById("pressButton").addEventListener("click", function() {
+                        document.getElementById("loginButton").addEventListener("click", function() {
                             var username = document.getElementById("username").value;
                             var password = document.getElementById("password").value;
                         
@@ -138,6 +181,24 @@
                     <div class="account1">Don't have an account?</div> 
                     <div class="account2 funny">Too bad!</div>
                 </a>
+
+                <button id="speakButton">Speak Text</button>
+    
+    <script>
+        document.getElementById('speakButton').addEventListener('click', function() {
+            // Create a new SpeechSynthesisUtterance instance
+            const utterance = new SpeechSynthesisUtterance("Hello, this is your browser speaking!");
+
+            // Set options (e.g., language, pitch, rate, voice)
+            utterance.lang = 'en-US';  // Language
+            utterance.pitch = 1;       // Pitch (1 is default, between 0 and 2)
+            utterance.rate = 1;        // Speed (1 is default, between 0.1 and 10)
+            
+            // Speak the text
+            window.speechSynthesis.speak(utterance);
+        });
+    </script>
+
 
             </div>
         </div>

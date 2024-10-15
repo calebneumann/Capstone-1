@@ -13,10 +13,21 @@ let file = "";
 let sttResponse = "";
 
 
+function speakAndWait(text) {
+  return new Promise((resolve, reject) => {
+      say.speak(text, null, null, (err) => {
+          if (err) {
+              reject(err); // Handle any error that occurs during speech
+          } else {
+              resolve();  // Resolve the promise when speech is finished
+          }
+      });
+  });
+}
+
+
 async function startRecord(){
-  const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
-  await delay(1500) /// waiting 1 second.
-  
+  console.log("SPEAK NOW");
   const writer = new wav.Writer({
     channels: 1,
     sampleRate: 16000,
@@ -38,6 +49,8 @@ async function startRecord(){
     mic._stream.pipe(writer).end(); //Use mic._stream.end() for to end recording
     console.log('Recording stopped.');
     file.end();
+    speakAndWait("Recording has stopped");
+
     await voiceToText(filePath);
   }
 }
@@ -66,15 +79,15 @@ recording == rec;
 
     if(recording == true){ //stop recording
         recording = false;
-        say.speak("Recording has stopped", 'Samantha', 1.2);
 
         await startRecord();
+
     }
     else if (recording == false) { //start's recording
       recording = true;
       file = fs.createWriteStream(filePath, { encoding: 'binary' });
 
-      say.speak("Recording voice", 'Samantha', 1.2);
+      await speakAndWait("Recording voice");
       await startRecord();
     }
     return sttResponse;

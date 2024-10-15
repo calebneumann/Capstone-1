@@ -10,6 +10,7 @@
 </HEAD>
 <div class="container">
     <BODY>
+
         <div class="navbar">
             <div class="dropdown">
                 <div class="nav">
@@ -52,6 +53,7 @@
                     });
                   </script>
                 <script>
+
                     document.addEventListener("keydown", function(event){
                         if(event.key === " " && !isTextInput(event.target)) {
                             event.preventDefault();
@@ -63,6 +65,7 @@
                                 const response = fetch('/stt').then(res => res.text()).then(data => {
                                     sttResponse.textContent = data;
                                     data = data.toLowerCase();
+                                    
                                     if(data.includes("home page")){
                                         window.location.href = "../index.html";
                                     }
@@ -71,6 +74,15 @@
                                     }
                                     else if(data.includes("search page")){
                                         window.location.href = "/search.html";
+                                    }
+                                    else if(data.includes("login")){
+                                        window.location.href = "/login.html";
+                                    }
+                                    else if(data.includes("profile")){
+                                        window.location.href = "/profile.html";
+                                    }
+                                    else if(data.includes("register")){
+                                        window.location.href = "/register.html";
                                     }
                                     else{
                                             document.getElementById('sttResponse').textContent = data; // Display the data

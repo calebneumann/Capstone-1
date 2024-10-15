@@ -9,7 +9,6 @@
 </HEAD>
 <div class="container">
     <BODY>
-
         <div class="navbar">
         <div class="nav">
             <a href="../index.html">
@@ -30,6 +29,7 @@
             </div>
             <script>
                 document.addEventListener('DOMContentLoaded', async () => {
+
                     fetch('/logInCheck')
                     .then(async response => {
                         const result = await response.text();
@@ -53,11 +53,11 @@
                         console.error('Error fetching data:', error);
                     }
 
-
-
                 });
               </script>
             <script>
+
+                //this detects a spacebar press
                 document.addEventListener("keydown", (event) => {
                     if(event.key == ' '){
                         const sttResponse = document.getElementById('sttResponse');
@@ -67,6 +67,7 @@
                         try {
                             const response = fetch('/stt').then(res => res.text()).then(data => {
                                 data = data.toLowerCase();
+
                                 if(data.includes("chat")){
                                     window.location.href = "/chatGPT.html";
                                 }
@@ -76,7 +77,15 @@
                                 else if(data.includes("search")){
                                     window.location.href = "/search.html";
                                 }
-
+                                else if(data.includes("login")){
+                                    window.location.href = "/login.html";
+                                }
+                                else if(data.includes("profile")){
+                                    window.location.href = "/profile.html";
+                                }
+                                else if(data.includes("register")){
+                                    window.location.href = "/register.html";
+                                }
                                 else{
                                     document.getElementById('sttResponse').textContent = data; // Display the data
 
@@ -101,6 +110,7 @@
             <h1>Speakommerce</h1>
             <h3>Speak and find whatever e-commerce product you need!</h3>
             <p> I'm sure we will come up with something more clever soon!</p>
+
         </div>
         <script src="index.js"></script>
         <br><br><br>

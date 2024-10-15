@@ -10,6 +10,7 @@
 </HEAD>
 <div class="container">
     <BODY>
+
         <div class="navbar">
         <div class="dropdown">
         <div class="nav">
@@ -52,8 +53,9 @@
             });
           </script>
             <script>
+
                 document.addEventListener("keydown", (event) => {
-                    if(event.key == ' '){
+                    if(event.key === " " && !isTextInput(event.target)) {
                         const sttResponse = document.getElementById('sttResponse');
 
                         //alert("you entered space")
@@ -62,6 +64,8 @@
                             const response = fetch('/stt').then(res => res.text()).then(data => {
                                 sttResponse.textContent = data;
                                 data = data.toLowerCase();
+
+
                                 if(data.includes("home")){
                                     window.location.href = "../index.html";
                                 }
@@ -70,6 +74,15 @@
                                 }
                                 else if(data.includes("search")){
                                     window.location.href = "/search.html";
+                                }
+                                else if(data.includes("login")){
+                                    window.location.href = "/login.html";
+                                }
+                                else if(data.includes("profile")){
+                                    window.location.href = "/profile.html";
+                                }
+                                else if(data.includes("register")){
+                                    window.location.href = "/register.html";
                                 }
                                 else{
                                     document.getElementById('sttResponse').textContent = data; // Display the data
@@ -84,6 +97,9 @@
                     }
                     // do something
                   });
+                  function isTextInput(element) {
+                    return element.tagName === "INPUT" && element.getAttribute("type") === "text" || element.tagName === "TEXTAREA";
+                }
             </script>
 
 
