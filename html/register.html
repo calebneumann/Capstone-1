@@ -53,7 +53,7 @@
             <script>
 
                 document.addEventListener("keydown", (event) => {
-                    if(event.key == ' '){
+                    if(event.key === " " && !isTextInput(event.target)) {
                         const sttResponse = document.getElementById('sttResponse');
 
                         //alert("you entered space")
@@ -94,6 +94,9 @@
                     }
                     // do something
                   });
+                  function isTextInput(element) {
+                    return element.tagName === "INPUT" && element.getAttribute("type") === "text" || element.tagName === "TEXTAREA";
+                }
             </script>
 
 

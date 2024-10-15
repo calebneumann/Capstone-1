@@ -51,6 +51,7 @@ app.post('/searchProduct', async (req, res) => {
 let rec = false;
 app.get('/stt', async (req, res) => {
   // Execute your desired action (e.g., call a function)
+  say.stop();
   try{
 
   //calls the recording function to start recording
@@ -64,7 +65,6 @@ app.get('/stt', async (req, res) => {
     rec = false;
     const poop = await recordThing(rec);
     const poop2 = await chatGPT(poop);
-    say.speak(poop2);
     res.send(poop2);
 
   }
@@ -74,6 +74,29 @@ catch (error) {
 }
 });
 
+app.get('/insertInfo', async (req, res) => {
+  // Execute your desired action (e.g., call a function)
+  try{
+
+  //calls the recording function to start recording
+  if(rec == false){
+    rec = true;
+    const poop = await recordThing(rec);
+    res.send("Recording...")
+
+  }
+  else{
+    rec = false;
+    const poop = await recordThing(rec);
+    const poop2 = await chatGPT(poop);
+    res.send(poop2);
+
+  }
+}
+catch (error) {
+  console.log(error);
+}
+});
 
 
 //----------------------------------------LOOK HERE------------------------------------>
@@ -159,6 +182,9 @@ app.get('/getUserInfo', (req, res) => {
 
     //checks if returned username exists or if password is incorrect
     if (result.length === 0 || password != result[0].password) {
+
+      chatGPT("ERROR: Incorrect username and/or password");
+
       return res.status(404).send('Username and/or password incorrect');
     }
 
@@ -170,6 +196,7 @@ app.get('/getUserInfo', (req, res) => {
     userLoggedIn = username;
     userPassword = password;
     userPhone = result[0].phone;
+    chatGPT("The user is successfully logged in");
     res.json(result[0]); // Send the first matching user as a JSON response
   });
 });
@@ -320,22 +347,6 @@ app.get('/lookupPage', async(req, res) => {
   // } catch (error) {
   //   res.status(500).send("Error speaking: " + error.message);
   // }
-});
-
-
-app.post('/delete-mp3', (req, res) => {
-  const { filename } = req.body;
-  const filePath = `public/${filename}`;
-
-    console.log("attempting to delete file")
-
-    fs.unlink(filePath, (error) => {
-      if (error) {
-          console.error(`Error deleting file: ${error.message}`);
-          return;
-      }
-      console.log('MP3 file deleted successfully.');
-  });
 });
 
 

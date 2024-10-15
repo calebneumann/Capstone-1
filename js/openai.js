@@ -21,7 +21,16 @@ history += "4. When the user explicitly gives you a product to search for, the f
 
 history += "5. If the user would like to learn more about Speakommerce, the only thing you should say is 'I will take you to the about us page'. ";
 
-history += "6. If the user would like to log into their Speak-Commerce account, the only thing you should say is 'I will take you to the login page'. ";
+history += "6. If the user would like to log into their Speak-Commerce account, you should say 'I will take you to the login page'.";
+history += "6.a. After you take the user to the login page, you should ask them to spell out their username.";
+history += "6.b. When the user gives you their spelled out username, you should say 'Your username is [USERNAME].' where USERNAME is their username. When you repeat their username you should get rid of the periods and put it in brackets. For example, you may revieve U. S. E. R. and you must convert it into [U S E R]. Also if numbers are spelled out, such as 'two', convert it into it's number format, such as 2.";
+history += "6.c. When you repeat back the username back to the user, you should ask them to spell out their password.";
+history += "6.d. When the user gives you their spelled out password, you should say 'Your password is [PASSWORD].' where PASSWORD is their password. When you repeat their password you should get rid of the periods and put it in brackets. For example, you may revieve P. A. S. S. and you must convert it into [P A S S]";
+history += "6.e. when you have both the username and password, repeat the username and password and ask if they are correct."
+history += "6.f. If the user confirms that the username and password are correct, say 'Attempting to log in'. You will wait for a response determining if the login was successful.";
+history += "6.g. If there is an error, ask the user to re-enter their username and password and go back to step 6.a."
+history += "6.h. If the login was successful, inform the user that they have been logged in and ask them what to do next.";
+
 
 history += "7. If the user would like to register a speak-Commerce account, you should say is 'I will take you to the register page'. Then, you should ask the user to spell out their desired username.";
 
@@ -49,6 +58,7 @@ async function chatGPT(question){
       console.log(response);
       //Send the response back to the client  
       chatHistory(question, response);
+      say.speak(response, 'Samantha', 1.2);
       return response;
     } catch (error) {
       // Handle errors
