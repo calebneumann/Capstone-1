@@ -74,7 +74,12 @@
                     //alert("you entered space")
                     //activates recording until another spacebar press is detected, then the transcript is sent back
                     try {
-                        response = await fetch('/stt').then(res => res.text()).then(data => {
+                        response = await fetch('/stt', {
+                            method: 'GET',
+                            headers: {
+                              'source-page': 'search'  // You can include the HTML page name here
+                            }
+                          }).then(res => res.text()).then(data => {
                             data = data.toLowerCase();
                             
 

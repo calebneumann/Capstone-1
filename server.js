@@ -49,9 +49,12 @@ app.post('/searchProduct', async (req, res) => {
 
 //this is here to have a variable outside this chunk of code so that it can determine when to turn the mic on/off
 let rec = false;
+var currPage = "home";
 app.get('/stt', async (req, res) => {
   // Execute your desired action (e.g., call a function)
   say.stop();
+  currPage = req.headers['source-page']
+  console.log("The user is on the " + currPage + " page");
   try{
 
   //calls the recording function to start recording
@@ -75,6 +78,9 @@ catch (error) {
 });
 
 app.get('/insertInfo', async (req, res) => {
+  say.stop();
+  currPage = req.headers['source-page']
+  console.log("The user is on the " + currPage + " page");
   // Execute your desired action (e.g., call a function)
   try{
 
@@ -132,6 +138,8 @@ app.post('/registerDatabase', (req, res) => {
   const phonePattern = /^\d{10}$/;
   let result = phonePattern.test(phone)
   if(!result){
+    chatGPT("ERROR: The phone number was entered incorrectly.");
+
     return res.status(400).send('Phone # in incorrect format!');
   }
 
@@ -140,8 +148,12 @@ app.post('/registerDatabase', (req, res) => {
   database.query(sql, [username, password, phone], (err, result) => {
     if (err) {
       if(err.code === 'ER_DUP_ENTRY'){
+        chatGPT("ERROR: The username is already used.");
+
         return res.status(400).send("Username already used");
       }
+      chatGPT("ERROR: Server Error.");
+
       return res.status(500).send("Server error");
     }
 
@@ -154,7 +166,9 @@ app.post('/registerDatabase', (req, res) => {
     //audibly confirms to the user they have been registered
     //and they are redirected to the login page
     console.log('Data Inserted:', result);
-    say.speak("Registration complete. A notification has been sent to your registered phone number!");
+    //say.speak("Registration complete. A notification has been sent to your registered phone number!");
+    chatGPT("The user is successfully registered");
+
     res.redirect('login.html');
   });
 

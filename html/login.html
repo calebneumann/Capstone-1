@@ -61,7 +61,12 @@
                         //alert("you entered space")
                         
                         try {
-                            const response = fetch('/insertInfo').then(res => res.text()).then(data => {
+                            const response = fetch('/insertInfo', {
+                                method: 'GET',
+                                headers: {
+                                  'source-page': 'login'  // You can include the HTML page name here
+                                }
+                              }).then(res => res.text()).then(data => {
                                 sttResponse.textContent = data;
                                 const lowerData = data.toLowerCase();
 
