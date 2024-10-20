@@ -59,7 +59,12 @@
                         //alert("you entered space")
                         
                         try {
-                            const response = fetch('/stt').then(res => res.text()).then(data => {
+                            const response = fetch('/stt', {
+                                method: 'GET',
+                                headers: {
+                                  'source-page': 'about'  // You can include the HTML page name here
+                                }
+                              }).then(res => res.text()).then(data => {
                                 sttResponse.textContent = data;
                                 data = data.toLowerCase();
 
