@@ -23,7 +23,7 @@ app.post('/searchProduct', async (req, res) => {
     await getJson({
       engine: "google_shopping",
       q: req.body.text,
-      api_key: "6f0c25895e35ca946165c00a417842fd45133927050835001054ef47a72a4251"
+      api_key: process.env.SERPAPI,
     }, (json) => {
 
       var searchData = json["shopping_results"];
@@ -67,7 +67,9 @@ app.get('/stt', async (req, res) => {
   else{
     rec = false;
     const poop = await recordThing(rec);
-    const poop2 = await chatGPT(poop);
+
+    var poop3 = "The user is on the " + currPage + ". " + poop;
+    const poop2 = await chatGPT(poop3);
     res.send(poop2);
 
   }
