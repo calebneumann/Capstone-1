@@ -17,7 +17,6 @@
                         <h4>
                             <a href='../index.html'>Home</a>
                             <a href='search.html'>Search</a>
-                            <a href='chatGPT.html'>ChatGPT</a>
                             <a href='about_us.html'>About Us</a>
                             <a href='login.html'>Log in</a>
                             
@@ -34,7 +33,6 @@
                             if(result != ""){
                                 var topBar = "<h4><a href='../index.html'>Home</a>";
                                     topBar += "<a href='search.html'>Search</a>";
-                                    topBar += "<a href='chatGPT.html'>ChatGPT</a>";
                                     topBar += "<a href='about_us.html'>About Us</a>"
                                     topBar += "<a href='profile.html'>Profile</a></h4>"
     
@@ -65,6 +63,53 @@
             <div class="container" id="prod3"></div>
         </h3>
         <script>
+//<----------------------------------------delete below when done with testing-------------------------->
+                var product11;
+                var product22;
+                var product33;
+
+            document.addEventListener('DOMContentLoaded', async () => {
+                fetch("example.json")
+                .then((res) => {
+                    if (!res.ok) {
+                        throw new Error
+                            (`HTTP error! Status: ${res.status}`);
+                    }
+                    console.log(res.json.body)
+                    var searchData = res.json["shopping_results"];
+                    console.log(searchData)
+                    return res.json();
+                })
+                .then((data) => {
+                    console.log(data)
+                    var searchData = data["shopping_results"];
+                    console.log(searchData);
+                    product11 = document.getElementById('prod1');
+                    product22 = document.getElementById('prod2');
+                    product33 = document.getElementById('prod3');
+        
+                    //currently gets the top 3 results and displays info about them
+        
+                    //available parameters are: title, link (where the actual product is), product_link (from google.com/shopping), 
+                    //source (where it's sold), price, condition (new, used, etc.), rating, reviews (# of reviews), 
+                    //delivery (delivery options), extensions (color of product, material of product, etc.), thumbnail)
+                    
+                    product11.innerHTML = '<img class="image" src=' + '"' + searchData[0].thumbnail + '">' + '<h1>Result#1<ul><li><a href="' + searchData[0].link + '">Product: '+searchData[0].title+"</a></li><li>Price: "+searchData[0].price+"</li><li>Distributor: "+searchData[0].source+"</li><li>Rating: "+searchData[0].store_rating+"</li></ul></h1>";
+                    product22.innerHTML = '<img class="image" src=' + '"' + searchData[1].thumbnail + '">' + '<h1>Result#2<ul><li><a href="' + searchData[1].link + '">Product: '+searchData[1].title+"</a></li><li>Price: "+searchData[1].price+"</li><li>Distributor: "+searchData[1].source+"</li><li>Rating: "+searchData[1].store_rating+"</li></ul></h1>";
+                    product33.innerHTML = '<img class="image" src=' + '"' + searchData[2].thumbnail + '">' + '<h1>Result#3<ul><li><a href="' + searchData[2].link + '">Product: '+searchData[2].title+"</a></li><li>Price: "+searchData[2].price+"</li><li>Distributor: "+searchData[2].source+"</li><li>Rating: "+searchData[2].store_rating+"</li></ul></h1>";
+        
+                    product11 = "Name: " + searchData[0].title + ", Price: " + searchData[0].price + ", Distributor: " + searchData[0].source + ", Rating: " + searchData[0].store_rating + "\n";
+                    product22 = "Name: " + searchData[1].title + ", Price: " + searchData[1].price + ", Distributor: " + searchData[1].source + ", Rating: " + searchData[1].store_rating + "\n";
+                    product33 = "Name: " + searchData[2].title + ", Price: " + searchData[2].price + ", Distributor: " + searchData[2].source + ", Rating: " + searchData[2].store_rating + "\n";
+
+                })
+                .catch((error) =>
+                    console.error("Unable to fetch data:", error));
+                
+            });
+
+
+//<----------------------------------------delete above when done------------------------------------>
 
             //activates whenever the spacebar is used
             document.addEventListener("keydown", async (event) => {
