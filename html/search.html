@@ -94,9 +94,9 @@
                     //source (where it's sold), price, condition (new, used, etc.), rating, reviews (# of reviews), 
                     //delivery (delivery options), extensions (color of product, material of product, etc.), thumbnail)
                     
-                    product11.innerHTML = '<img class="image" src=' + '"' + searchData[0].thumbnail + '">' + '<h1>Result#1<ul><li><a href="' + searchData[0].link + '">Product: '+searchData[0].title+"</a></li><li>Price: "+searchData[0].price+"</li><li>Distributor: "+searchData[0].source+"</li><li>Rating: "+searchData[0].store_rating+"</li></ul></h1>";
-                    product22.innerHTML = '<img class="image" src=' + '"' + searchData[1].thumbnail + '">' + '<h1>Result#2<ul><li><a href="' + searchData[1].link + '">Product: '+searchData[1].title+"</a></li><li>Price: "+searchData[1].price+"</li><li>Distributor: "+searchData[1].source+"</li><li>Rating: "+searchData[1].store_rating+"</li></ul></h1>";
-                    product33.innerHTML = '<img class="image" src=' + '"' + searchData[2].thumbnail + '">' + '<h1>Result#3<ul><li><a href="' + searchData[2].link + '">Product: '+searchData[2].title+"</a></li><li>Price: "+searchData[2].price+"</li><li>Distributor: "+searchData[2].source+"</li><li>Rating: "+searchData[2].store_rating+"</li></ul></h1>";
+                    product11.innerHTML = '<img class="image" src=' + '"' + searchData[0].thumbnail + '">' + '<h1>Result #1<ul><li><a href="' + searchData[0].link + '"> '+searchData[0].title+"</a></li><li>Price: "+searchData[0].price+"</li><li>Distributor: "+searchData[0].source+"</li><li>Rating: "+searchData[0].store_rating+"</li></ul></h1>";
+                    product22.innerHTML = '<img class="image" src=' + '"' + searchData[1].thumbnail + '">' + '<h1>Result #2<ul><li><a href="' + searchData[1].link + '"> '+searchData[1].title+"</a></li><li>Price: "+searchData[1].price+"</li><li>Distributor: "+searchData[1].source+"</li><li>Rating: "+searchData[1].store_rating+"</li></ul></h1>";
+                    product33.innerHTML = '<img class="image" src=' + '"' + searchData[2].thumbnail + '">' + '<h1>Result #3<ul><li><a href="' + searchData[2].link + '"> '+searchData[2].title+"</a></li><li>Price: "+searchData[2].price+"</li><li>Distributor: "+searchData[2].source+"</li><li>Rating: "+searchData[2].store_rating+"</li></ul></h1>";
         
                     product11 = "Name: " + searchData[0].title + ", Price: " + searchData[0].price + ", Distributor: " + searchData[0].source + ", Rating: " + searchData[0].store_rating + "\n";
                     product22 = "Name: " + searchData[1].title + ", Price: " + searchData[1].price + ", Distributor: " + searchData[1].source + ", Rating: " + searchData[1].store_rating + "\n";
@@ -110,7 +110,7 @@
 
 
 //<----------------------------------------delete above when done------------------------------------>
-
+            var productData;
             //activates whenever the spacebar is used
             document.addEventListener("keydown", async (event) => {
                 if(event.key == ' '){
@@ -151,6 +151,11 @@
                                 document.getElementById('sttResponse').textContent = data; // Display the data
             
                             }
+                            else if(data.includes("redirecting to")){
+                                redirect(data);
+                                document.getElementById('sttResponse').textContent = data; // Display the data
+            
+                            }
                             else{
                                 document.getElementById('sttResponse').textContent = data; // Display the data
             
@@ -181,7 +186,8 @@
                     })
                     .then(response => response.json())
                     .then(data => {
-                        searchData = data;
+                        console.log(data);
+                        productData = data;
                         //sets which div the html will be sent to
                         product1 = document.getElementById('prod1');
                         product2 = document.getElementById('prod2');
@@ -193,22 +199,53 @@
                         //source (where it's sold), price, condition (new, used, etc.), rating, reviews (# of reviews), 
                         //delivery (delivery options), extensions (color of product, material of product, etc.), thumbnail)
                         
-                        product1.innerHTML = '<img class="image" src=' + '"' + data[0].thumbnail + '">' + '<h1>Result#1<ul><li><a href="' + data[0].link + '">Product: '+data[0].title+"</a></li><li>Price: "+data[0].price+"</li><li>Distributor: "+data[0].source+"</li><li>Rating: "+data[0].store_rating+"</li></ul></h1>";
-                        product2.innerHTML = '<img class="image" src=' + '"' + data[1].thumbnail + '">' + '<h1>Result#2<ul><li><a href="' + data[1].link + '">Product: '+data[1].title+"</a></li><li>Price: "+data[1].price+"</li><li>Distributor: "+data[1].source+"</li><li>Rating: "+data[1].store_rating+"</li></ul></h1>";
-                        product3.innerHTML = '<img class="image" src=' + '"' + data[2].thumbnail + '">' + '<h1>Result#3<ul><li><a href="' + data[2].link + '">Product: '+data[2].title+"</a></li><li>Price: "+data[2].price+"</li><li>Distributor: "+data[2].source+"</li><li>Rating: "+data[2].store_rating+"</li></ul></h1>";
+                        product1.innerHTML = '<img class="image" src=' + '"' + data[0].thumbnail + '">' + '<h1>Result #1<ul><li><a href="' + data[0].link + '"> '+data[0].title+"</a></li><li>Price: "+data[0].price+"</li><li>Distributor: "+data[0].source+"</li><li>Rating: "+data[0].rating+"</li></ul></h1>";
+                        product2.innerHTML = '<img class="image" src=' + '"' + data[1].thumbnail + '">' + '<h1>Result #2<ul><li><a href="' + data[1].link + '"> '+data[1].title+"</a></li><li>Price: "+data[1].price+"</li><li>Distributor: "+data[1].source+"</li><li>Rating: "+data[1].rating+"</li></ul></h1>";
+                        product3.innerHTML = '<img class="image" src=' + '"' + data[2].thumbnail + '">' + '<h1>Result #3<ul><li><a href="' + data[2].link + '"> '+data[2].title+"</a></li><li>Price: "+data[2].price+"</li><li>Distributor: "+data[2].source+"</li><li>Rating: "+data[2].rating+"</li></ul></h1>";
             
                     })
                     .catch(error => {
                         console.error('Error:', error);
                     });
                     
-                    product1 = "Name: " + searchData[0].title + ", Price: " + searchData[0].price + ", Distributor: " + searchData[0].source + ", Rating: " + searchData[0].store_rating + "\n";
-                    product2 = "Name: " + searchData[1].title + ", Price: " + searchData[1].price + ", Distributor: " + searchData[1].source + ", Rating: " + searchData[1].store_rating + "\n";
-                    product3 = "Name: " + searchData[2].title + ", Price: " + searchData[2].price + ", Distributor: " + searchData[2].source + ", Rating: " + searchData[2].store_rating + "\n";
+                        product1 = "Name: " + searchData[0].title + ", Price: " + searchData[0].price + ", Distributor: " + searchData[0].source + ", Rating: " + searchData[0].store_rating + "\n";
+                        product2 = "Name: " + searchData[1].title + ", Price: " + searchData[1].price + ", Distributor: " + searchData[1].source + ", Rating: " + searchData[1].store_rating + "\n";
+                        product3 = "Name: " + searchData[2].title + ", Price: " + searchData[2].price + ", Distributor: " + searchData[2].source + ", Rating: " + searchData[2].store_rating + "\n";
 
 
                 }
+
+                function redirect(itemNum){
+
+                    const regex = /#(\d+)/;
+
+                    // Extract the number and convert it to an integer
+                    const match = itemNum.match(regex);
+                    if (match && match[1]) {
+                        const itemNumber = parseInt(match[1], 10);
+                        // Display the extracted number
+                        console.log("YOOO WE GOT ITEM #" + itemNumber)
+                        console.log(productData[itemNumber-1])
+
+                        const newTab = window.open(productData[itemNumber-1].link, '_blank');
+                        // Remove focus from the new tab and bring it back to the original page
+                        setTimeout(() => {
+                            // If the tab was successfully created, blur it and focus back on the original tab
+                            if (newTab) {
+                                newTab.blur(); // Blur the new tab
+                                window.focus(); // Focus back on the current window
+                            }
+                        }, 500);
+
+                    } else {
+                        console.log("Item number not found.");
+                    }
+                }
+
+
               });
+
+              
         </script>
         <br><br><br>
         <div class="sticky-container">
