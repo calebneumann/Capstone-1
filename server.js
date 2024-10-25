@@ -77,8 +77,8 @@ app.get('/stt', async (req, res) => {
     rec = false;
     const poop = await recordThing(rec);
 
-    //var poop3 = "The user is on the " + currPage + ". " + poop;
-    const poop2 = await chatGPT(poop);
+    var poop3 = "The user is on the " + currPage + ". " + poop;
+    const poop2 = await chatGPT(poop3);
     res.send(poop2);
 
   }

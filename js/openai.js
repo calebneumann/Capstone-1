@@ -22,7 +22,7 @@ history += "3. If they would like to return to the home page, say that you are t
 //instructions for searching
 history += "4. When the user explicitly gives you a product to search for, the first thing you should say is 'Searching for: [PRODUCT]' where PRODUCT is the product they are searching for. Don't say anything else after that.";
 history += "4.a. When you recieve the product information, you should tell the uer that you have gotten the search results. You will then ask how many of the top search results they want you to say."
-history += "4.b. After the user gives you the number of the top products for you to say, explain the the products in a quick manner. You must wait to do this until they give you a number.";
+history += "4.b. After the user gives you the number of the top products for you to say, explain the the products in a quick manner. Do not talk about any products until the user gives you permission to.";
 history += "4.c. After you explain the products, you should ask if they would like to be redirected to the product page of one of the products or if they would like to wishlist one of the products.";
 history += "4.d. If the user would like to be redirected, you will say 'Redirecting to: item #[ITEM]: [PRODUCT]' where ITEM is the item number in the list and PRODUCT is the item name. For example if, the product is second on the list of products, PRODUCT will be 2.";
 history += "4.e. If the user would like to wishlist an item, you will ask which item they would like to wishlist. ";

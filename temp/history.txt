@@ -1,60 +1,46 @@
-Hello!
-Hello! Welcome to Speak-Commerce! I'm here to assist you with navigating our website and helping you find products. How can I assist you today?
-Take me to the search
-I will take you to the search page. What would you like to search for?
-I don't want to look at it.
-I see you're not interested in looking at the search page right now. Would you like to explore something else on our website or is there a specific product you have in mind?
-No, I want to search for Apple.
-Searching for: Apple
-Product number 1: Name: Apple iPhone 16 Pro Max, Price: $1,199.00, Distributor: Apple, Rating: 3.8
-Product number 2: Name: Apple MacBook Pro Core i5, Price: $280.98, Distributor: Amazon.com - Seller, Rating: 4.8
-Product number 3: Name: Apple iPad (9th Generation), Price: $229.99, Distributor: Best Buy, Rating: 4.8
-Product number 4: Name: Apple iPhone 16, Price: $829.00, Distributor: Total Wireless, Rating: 4.6
-Product number 5: Name: Apple iPhone 15 Pro, Price: $99.99, Distributor: T-Mobile, Rating: 4.4
-Product number 6: Name: Apple iPhone 16 Pro, Price: $999.00, Distributor: Apple, Rating: 3.9
-Product number 7: Name: Apple iPad (10th Generation), Price: $334.00, Distributor: Amazon.com, Rating: 4.8
-Product number 8: Name: The Fruit Company Honeycrisp Apples, Price: $39.00, Distributor: The Fruit Company, Rating: undefined
-Product number 9: Name: Apple iPhone 11, Price: $225.00, Distributor: Walmart - Refurbished for Less, Rating: 4.6
-Product number 10: Name: Apple iPhone 15 Pro Max, Price: $199.99, Distributor: T-Mobile, Rating: 4.6
-Product number 11: Name: Apple HomePod mini, Price: $99.00, Distributor: Apple, Rating: 4.5
-Product number 12: Name: Zestar Apples Fresh-Picked in Our Own Orchard, Price: $29.99, Distributor: Kauffmans Orchard, Rating: undefined
-Product number 13: Name: Red Delicious Apples ( Washington State Fresh Produce), Price: $10.94, Distributor: Amazon.com - Seller, Rating: undefined
-Product number 14: Name: Apple iPhone 13, Price: $629.99, Distributor: Verizon, Rating: 4.7
-Product number 15: Name: Harry & David Light Size Seasonal Apples, Price: $39.99, Distributor: Harry & David, Rating: 5
-Product number 16: Name: Apple iPhone SE (3rd generation), Price: $429.00, Distributor: Apple, Rating: 4.6
-Product number 17: Name: Ready-to-Ship Apples, Price: $69.99, Distributor: Wilson Farm, Rating: undefined
-Product number 18: Name: Apple iPhone 15 128GB Black Unlocked, Price: $729.99, Distributor: Best Buy, Rating: 3.8
-Product number 19: Name: 12 Apples Pick Two Varieties (Saves On Shipping), Price: $34.00, Distributor: Honeycrisp.com, Rating: undefined
-Product number 20: Name: Apple iPhone 12, Price: $280.47, Distributor: Back Market, Rating: 4.5
-Product number 21: Name: Apple iPad Air (M2, 2024), Price: $599.00, Distributor: Apple, Rating: 4.8
-Product number 22: Name: Granny Smith Apples, Price: $1.29, Distributor: OPIE Drive-Thru Grocery, Rating: 1.8
-Product number 23: Name: Jonagold - Pavero Apple, Price: $42.00, Distributor: PaveroApples.com, Rating: undefined
-Product number 24: Name: Gala Apples Fresh Produce Fruit per Pound, Price: $15.00, Distributor: Amazon.com - Seller, Rating: 4.8
-Product number 25: Name: Apple iPhone 13 128GB Red, Price: $14.73/mo, Distributor: Cellcom, Rating: 4.4
-Product number 26: Name: Apple iPhone 14, Price: $629.00, Distributor: Apple, Rating: 4.6
-Product number 27: Name: Apples (3 lb bags) (Summer Rambo), Price: $2.95, Distributor: shop.harvestlanefarmmarket.com, Rating: undefined
-Product number 28: Name: APPLES, RED DELICIOUS (by the each), Price: $0.99, Distributor: Wagshal's, Rating: undefined
-Product number 29: Name: Apple iPhone XR, Price: $168.98, Distributor: Amazon.com - Seller, Rating: 4.5
-Product number 30: Name: Apple iPhone 16 Pro Max - Desert Titanium - 512GB (with plan), Price: $1,399.99, Distributor: T-Mobile, Rating: 3.8
-Product number 31: Name: Apple Watch Series 10 GPS + Cellular 46mm Case Sport, Price: $399.00, Distributor: Apple, Rating: 4.7
-Product number 32: Name: Apples Red, Price: $3.50, Distributor: Rainbow Packaging Corporation, Rating: undefined
-Product number 33: Name: Apple iPhone 16 - 128GB - Ultramarine - With Contract and 36 Installment Payments, Price: $23.06/mo, Distributor: AT&T, Rating: 4.2
-Product number 34: Name: Kauffman Orchards Fresh Mcintosh Apples Hand-Picked in Our Own Orchard, Price: $99.99, Distributor: Amazon.com - Seller, Rating: undefined
-Product number 35: Name: Kauffman Orchards Fresh-Picked Cortland Apples, Price: $28.00, Distributor: Kauffmans Orchard, Rating: undefined
-Product number 36: Name: Apple Watch SE Aluminum Case Sport, Price: $249.00, Distributor: Apple, Rating: 4.7
-Product number 37: Name: Apple iPhone 13 Pro, Price: $552.01, Distributor: Reebelo USA, Rating: 4.6
-Product number 38: Name: Apple iPhone 16 - Ultramarine - 512GB (with plan), Price: $1,129.99, Distributor: T-Mobile, Rating: 4.2
-Product number 39: Name: Golden Delicious Apples Fresh Produce Fruit 3 lb Bag, Price: $25.00, Distributor: Amazon.com - Seller, Rating: 5
-Product number 40: Name: Fresh Jonathan Apples Medium, Price: $25.99, Distributor: Kauffmans Orchard, Rating: undefined
+The user is on the search. Search for the Legend of Zelda
+Searching for: Legend of Zelda
+Product number 1: Name: The Legend of Zelda: Echoes of Wisdom, Price: $59.99, Distributor: Nintendo, Rating: 4.9
+Product number 2: Name: The Legend of Zelda - Legendary Edition Box Set, Price: $86.14, Distributor: Amazon.com, Rating: 4.4
+Product number 3: Name: The Legend of Zelda: Tears of The Kingdom, Price: $51.89, Distributor: Walmart - Nationwide Distributor, Rating: 4.8
+Product number 4: Name: The Legend of Zelda: Link's Awakening Dreamer Edition, Price: $54.99, Distributor: GameStop, Rating: 4.8
+Product number 5: Name: The Legend of Zelda: Tears of the Kingdom Nintendo Switch Account Pick-up Site, Price: $19.35, Distributor: K4G.COM, Rating: 4.8
+Product number 6: Name: The Legend of Zelda, Price: $70.99, Distributor: CaveGamers, Rating: 4.7
+Product number 7: Name: The Legend of Zelda: Ocarina of Time Collector's Edition, Price: $124.49, Distributor: Amazon.com - Seller, Rating: 4.8
+Product number 8: Name: The Legend of Zelda: Tears of The Kingdom and The Legend of Zelda: Breath of The Wild, Price: $94.00, Distributor: eBay - katerusa1, Rating: 5
+Product number 9: Name: The Legend of Zelda: A Link to the Past Four Swords, Price: $34.99, Distributor: GameStop, Rating: 4.9
+Product number 10: Name: The Legend of Zelda: Skyward Sword HD, Price: $39.99, Distributor: Walmart, Rating: 4.7
+Product number 11: Name: The Legend of Zelda: The Complete Series (dvd), Price: $13.57, Distributor: Target, Rating: undefined
+Product number 12: Name: The Legend of Zelda : The Wind Waker HD Deluxe Set, Price: $359.96, Distributor: Amazon.com - Seller, Rating: 4.6
+Product number 13: Name: The Legend of Zelda Majora's Mask 3D, Price: $25.00, Distributor: Groupon.com, Rating: 4.8
+Product number 14: Name: Nintendo The Legend of Zelda Breath of The Wild, Price: $39.99, Distributor: GameStop, Rating: 4.9
+Product number 15: Name: The Legend of Zelda Series Nintendo 3DS / DS Game, Price: $148.00, Distributor: eBay - kotone-34, Rating: 4.8
+Product number 16: Name: Nintendo Switch OLED The Legend of Zelda, Price: $364.99, Distributor: Walmart - uShopMall, Rating: 4.5
+Product number 17: Name: The Legend of Zelda: The Complete Season (dvd), Price: $36.07, Distributor: Amazon.com - Seller, Rating: 4.8
+Product number 18: Name: The Legend of Zelda Collector's Edition, Price: $70.47, Distributor: Lukie Games, Rating: 4.8
+Product number 19: Name: Nintendo The Legend of Zelda Twilight Princess, Price: $29.99, Distributor: GameStop, Rating: 4.8
+Product number 20: Name: The Legend Of Zelda: Breath Of The Wild - Nintendo Switch, Price: $30.99, Distributor: eBay, Rating: 4.9
+Product number 21: Name: The Legend of Zelda Dawn and Dusk English Game, Price: $24.68, Distributor: Walmart - chenzhoushiyitongkeji, Rating: 4.9
+Product number 22: Name: The Legend of Zelda : Breath of the Wild: The Complete Official Guide, Price: $22.26, Distributor: Amazon.com, Rating: 4.6
+Product number 23: Name: Hyrule Warriors: Age of Calamity, Price: $17.01, Distributor: Kinguin.net, Rating: 4.7
+Product number 24: Name: Nintendo Legend of Zelda Skyward Sword, Price: $27.99, Distributor: GameStop, Rating: 4.7
+Product number 25: Name: Legend Of Zelda Breath Of The Wild Creating A Champion Champions, Price: $1,200.00, Distributor: eBay, Rating: 4.9
+Product number 26: Name: The Legend of Zelda: Majora's Mask N64 Game(US Version), Multicolor, Price: $21.89, Distributor: Walmart - Shenzhen Taqu Technology Co. Ltd, Rating: undefined
+Product number 27: Name: Nintendo The Legend of Zelda: Breath of the Wild Collector's Box, Price: $84.79, Distributor: Amazon.com - Seller, Rating: 4.4
+Product number 28: Name: Nintendo The Legend of Zelda Majora's Mask, Price: $66.02, Distributor: Players Choice Videogames, Rating: 4.8
+Product number 29: Name: The Legend of Zelda: Breath of the Wild and Expansion Pass Bundle - Nintendo Switch, Price: $79.98, Distributor: GameStop, Rating: 4.8
+Product number 30: Name: Nintendo The Legend of Zelda Ocarina of Time 3D, Price: $25.00, Distributor: Groupon.com, Rating: 4.8
+Product number 31: Name: The Legend of Zelda: Ocarina of Time N64 Game,US Version, Price: $21.49, Distributor: Walmart - Shenzhen Taqu Technology Co. Ltd, Rating: 5
+Product number 32: Name: Legend of Zelda Link's Awakening - Nintendo Switch Standard Edition (European Version), Price: $51.49, Distributor: Amazon.com - Seller, Rating: 4.8
+Product number 33: Name: The Legend Of Zelda: Breath Of The Wild - Nintendo Switch (only, Price: $29.95, Distributor: eBay, Rating: 4.9
+Product number 34: Name: The Legend of Zelda: The Wind Waker - GameCube, Pre-Owned, Price: $59.99, Distributor: GameStop, Rating: 4.8
+Product number 35: Name: The Legend of Zelda Breath of the Wild Loose, Price: $15.99, Distributor: Everything Games, Rating: undefined
+Product number 36: Name: The Legend of Zelda: Breath of the Wild Expansion Pass, Price: $79.98, Distributor: Target, Rating: 5
+Product number 37: Name: Disguise Women's Zelda Breath of the Wild Costume, Price: $31.62, Distributor: Amazon.com, Rating: 3.6
+Product number 38: Name: The Legend Of Zelda: The Wind Waker, Price: $58.99, Distributor: eBay - goodwillrs, Rating: undefined
+Product number 39: Name: Hyrule Warriors: Age of Calamity - Nintendo Switch, Price: $59.99, Distributor: GameStop, Rating: 4.7
+Product number 40: Name: The Legend of Zelda: The Wind Waker, Price: $124.99, Distributor: Walmart - Birdies Games, Rating: 4.8
 
-I have gotten the search results. How many of the top search results would you like me to say?
-Please.
-I need you to provide a number for how many of the top search results you'd like me to explain.
-Two of the
-Product number 1: Name: Apple iPhone 16 Pro Max, Price: $1,199.00, Distributor: Apple, Rating: 3.8. 
-
-Product number 2: Name: Apple MacBook Pro Core i5, Price: $280.98, Distributor: Amazon.com - Seller, Rating: 4.8. 
-
-Would you like to be redirected to the product page of one of these products, or would you like to wishlist one of them?
-I want to be redirected to one of...
-Redirecting to: item #1: Apple iPhone 16 Pro Max
+Welcome to Speak-Commerce! I'm here to help you with your shopping experience. How can I assist you today?
+The user is on the search. Can you redirect me to the 14th product?
+Redirecting to: item #14: Nintendo The Legend of Zelda Breath of The Wild
