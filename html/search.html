@@ -17,7 +17,6 @@
                         <h4>
                             <a href='../index.html'>Home</a>
                             <a href='search.html'>Search</a>
-                            <a href='chatGPT.html'>ChatGPT</a>
                             <a href='about_us.html'>About Us</a>
                             <a href='login.html'>Log in</a>
                             
@@ -34,7 +33,6 @@
                             if(result != ""){
                                 var topBar = "<h4><a href='../index.html'>Home</a>";
                                     topBar += "<a href='search.html'>Search</a>";
-                                    topBar += "<a href='chatGPT.html'>ChatGPT</a>";
                                     topBar += "<a href='about_us.html'>About Us</a>"
                                     topBar += "<a href='profile.html'>Profile</a></h4>"
     
@@ -53,19 +51,106 @@
         <div class="main">
         <br><br><br><br>
         <h1>Product Search</h1>
-        <h3>
-            <div class="container" id="prod1">Product info will be here</div>
-        </h3>
-        <br>
-        <h3>
-            <div class="container" id="prod2"></div>
-        </h3>
-        <br>
-        <h3>
-            <div class="container" id="prod3"></div>
-        </h3>
-        <script>
+        
 
+        <div id="product-list">Speak to the assistant to search for a product...</div>
+
+        <script>
+//<----------------------------------------delete below when done with testing-------------------------->
+                var product11;
+                var product22;
+                var product33;
+
+            document.addEventListener('DOMContentLoaded', async () => {
+                fetch("example.json")
+                .then((res) => {
+                    if (!res.ok) {
+                        throw new Error
+                            (`HTTP error! Status: ${res.status}`);
+                    }
+                    console.log(res.json.body)
+                    var searchData = res.json["shopping_results"];
+                    console.log(searchData)
+                    return res.json();
+                })
+                .then((data) => {
+                    console.log(data)
+                    var searchData = data["shopping_results"];
+                    console.log(searchData);
+                    /*
+                    product11 = document.getElementById('prod1');
+                    product22 = document.getElementById('prod2');
+                    product33 = document.getElementById('prod3');
+        
+                    //currently gets the top 3 results and displays info about them
+        
+                    //available parameters are: title, link (where the actual product is), product_link (from google.com/shopping), 
+                    //source (where it's sold), price, condition (new, used, etc.), rating, reviews (# of reviews), 
+                    //delivery (delivery options), extensions (color of product, material of product, etc.), thumbnail)
+                    
+
+                    
+                    product11.innerHTML = '<img class="image" src=' + '"' + searchData[0].thumbnail + '">' + '<h3>Result #1<ul><li><a href="' + searchData[0].link + '"> '+searchData[0].title+"</a></li><li>Price: "+searchData[0].price+"</li><li>Distributor: "+searchData[0].source+"</li><li>Rating: "+searchData[0].store_rating+"</li></ul></h1>";
+                    product22.innerHTML = '<img class="image" src=' + '"' + searchData[1].thumbnail + '">' + '<h3>Result #2<ul><li><a href="' + searchData[1].link + '"> '+searchData[1].title+"</a></li><li>Price: "+searchData[1].price+"</li><li>Distributor: "+searchData[1].source+"</li><li>Rating: "+searchData[1].store_rating+"</li></ul></h1>";
+                    product33.innerHTML = '<img class="image" src=' + '"' + searchData[2].thumbnail + '">' + '<h3>Result #3<ul><li><a href="' + searchData[2].link + '"> '+searchData[2].title+"</a></li><li>Price: "+searchData[2].price+"</li><li>Distributor: "+searchData[2].source+"</li><li>Rating: "+searchData[2].store_rating+"</li></ul></h1>";
+        
+                    product11 = "Name: " + searchData[0].title + ", Price: " + searchData[0].price + ", Distributor: " + searchData[0].source + ", Rating: " + searchData[0].store_rating + "\n";
+                    product22 = "Name: " + searchData[1].title + ", Price: " + searchData[1].price + ", Distributor: " + searchData[1].source + ", Rating: " + searchData[1].store_rating + "\n";
+                    product33 = "Name: " + searchData[2].title + ", Price: " + searchData[2].price + ", Distributor: " + searchData[2].source + ", Rating: " + searchData[2].store_rating + "\n";
+                    */
+                    const productList = document.getElementById('product-list');
+
+                    productList.innerHTML = ''; // This clears the list
+
+                    searchData.forEach(product => {
+                        // Create a container div for each product
+                        const productDiv = document.createElement('div');
+                        productDiv.classList.add('product');
+            
+                        // Create product title
+                        const productTitle = document.createElement('p');
+                        productTitle.classList.add('product-title');
+                        productTitle.innerHTML = `<a href="${product.link}" target="_blank">${product.title}</a>`;
+                        productDiv.appendChild(productTitle);
+            
+                        // Create product source
+                        const productSource = document.createElement('p');
+                        productSource.classList.add('product-source');
+                        productSource.textContent = product.source;
+                        productDiv.appendChild(productSource);
+
+                        // Create product image
+                        const productImgLink = document.createElement('a');
+                        productImgLink.href = product.link;
+                        productImgLink.target = "_blank";
+
+                        const productImg = document.createElement('img');
+                        productImg.src = product.thumbnail;
+                        productImg.alt = product.title;
+
+                        // Append the image to the anchor
+                        productImgLink.appendChild(productImg);
+                        productDiv.appendChild(productImgLink);
+            
+                        // Create product price
+                        const productPrice = document.createElement('p');
+                        productPrice.classList.add('product-price');
+                        productPrice.textContent = product.price;
+                        productDiv.appendChild(productPrice);
+            
+                        // Append the product div to the product list
+                        productList.appendChild(productDiv);
+                    });
+
+                })
+                .catch((error) =>
+                    console.error("Unable to fetch data:", error));
+                
+            });
+
+
+//<----------------------------------------delete above when done------------------------------------>
+            var productData;
             //activates whenever the spacebar is used
             document.addEventListener("keydown", async (event) => {
                 if(event.key == ' '){
@@ -106,6 +191,11 @@
                                 document.getElementById('sttResponse').textContent = data; // Display the data
             
                             }
+                            else if(data.includes("redirecting to")){
+                                redirect(data);
+                                document.getElementById('sttResponse').textContent = data; // Display the data
+            
+                            }
                             else{
                                 document.getElementById('sttResponse').textContent = data; // Display the data
             
@@ -136,7 +226,10 @@
                     })
                     .then(response => response.json())
                     .then(data => {
-                        searchData = data;
+                        console.log(data);
+                        productData = data;
+
+                        /*
                         //sets which div the html will be sent to
                         product1 = document.getElementById('prod1');
                         product2 = document.getElementById('prod2');
@@ -148,22 +241,98 @@
                         //source (where it's sold), price, condition (new, used, etc.), rating, reviews (# of reviews), 
                         //delivery (delivery options), extensions (color of product, material of product, etc.), thumbnail)
                         
-                        product1.innerHTML = '<img class="image" src=' + '"' + data[0].thumbnail + '">' + '<h1>Result#1<ul><li><a href="' + data[0].link + '">Product: '+data[0].title+"</a></li><li>Price: "+data[0].price+"</li><li>Distributor: "+data[0].source+"</li><li>Rating: "+data[0].store_rating+"</li></ul></h1>";
-                        product2.innerHTML = '<img class="image" src=' + '"' + data[1].thumbnail + '">' + '<h1>Result#2<ul><li><a href="' + data[1].link + '">Product: '+data[1].title+"</a></li><li>Price: "+data[1].price+"</li><li>Distributor: "+data[1].source+"</li><li>Rating: "+data[1].store_rating+"</li></ul></h1>";
-                        product3.innerHTML = '<img class="image" src=' + '"' + data[2].thumbnail + '">' + '<h1>Result#3<ul><li><a href="' + data[2].link + '">Product: '+data[2].title+"</a></li><li>Price: "+data[2].price+"</li><li>Distributor: "+data[2].source+"</li><li>Rating: "+data[2].store_rating+"</li></ul></h1>";
+                        product1.innerHTML = '<img class="image" src=' + '"' + data[0].thumbnail + '">' + '<h3>Result #1<ul><li><a href="' + data[0].link + '"> '+data[0].title+"</a></li><li>Price: "+data[0].price+"</li><li>Distributor: "+data[0].source+"</li><li>Rating: "+data[0].rating+"</li></ul></h1>";
+                        product2.innerHTML = '<img class="image" src=' + '"' + data[1].thumbnail + '">' + '<h3>Result #2<ul><li><a href="' + data[1].link + '"> '+data[1].title+"</a></li><li>Price: "+data[1].price+"</li><li>Distributor: "+data[1].source+"</li><li>Rating: "+data[1].rating+"</li></ul></h1>";
+                        product3.innerHTML = '<img class="image" src=' + '"' + data[2].thumbnail + '">' + '<h3>Result #3<ul><li><a href="' + data[2].link + '"> '+data[2].title+"</a></li><li>Price: "+data[2].price+"</li><li>Distributor: "+data[2].source+"</li><li>Rating: "+data[2].rating+"</li></ul></h1>";
+                        */
+
+                        const productList = document.getElementById('product-list');
+
+                        productList.innerHTML = ''; // This clears the list
+
+
+                        productData.forEach(product => {
+                            // Create a container div for each product
+                        const productDiv = document.createElement('div');
+                        productDiv.classList.add('product');
             
+                        // Create product title
+                        const productTitle = document.createElement('p');
+                        productTitle.classList.add('product-title');
+                        productTitle.innerHTML = `<a href="${product.link}" target="_blank">${product.title}</a>`;
+                        productDiv.appendChild(productTitle);
+            
+                        // Create product source
+                        const productSource = document.createElement('p');
+                        productSource.classList.add('product-source');
+                        productSource.textContent = product.source;
+                        productDiv.appendChild(productSource);
+
+                        // Create product image
+                        const productImgLink = document.createElement('a');
+                        productImgLink.href = product.link;
+                        productImgLink.target = "_blank";
+
+                        const productImg = document.createElement('img');
+                        productImg.src = product.thumbnail;
+                        productImg.alt = product.title;
+
+                        // Append the image to the anchor
+                        productImgLink.appendChild(productImg);
+                        productDiv.appendChild(productImgLink);
+            
+                        // Create product price
+                        const productPrice = document.createElement('p');
+                        productPrice.classList.add('product-price');
+                        productPrice.textContent = product.price;
+                        productDiv.appendChild(productPrice);
+            
+                        // Append the product div to the product list
+                        productList.appendChild(productDiv);
+                        });
                     })
                     .catch(error => {
                         console.error('Error:', error);
                     });
                     
-                    product1 = "Name: " + searchData[0].title + ", Price: " + searchData[0].price + ", Distributor: " + searchData[0].source + ", Rating: " + searchData[0].store_rating + "\n";
-                    product2 = "Name: " + searchData[1].title + ", Price: " + searchData[1].price + ", Distributor: " + searchData[1].source + ", Rating: " + searchData[1].store_rating + "\n";
-                    product3 = "Name: " + searchData[2].title + ", Price: " + searchData[2].price + ", Distributor: " + searchData[2].source + ", Rating: " + searchData[2].store_rating + "\n";
+                        product1 = "Name: " + searchData[0].title + ", Price: " + searchData[0].price + ", Distributor: " + searchData[0].source + ", Rating: " + searchData[0].store_rating + "\n";
+                        product2 = "Name: " + searchData[1].title + ", Price: " + searchData[1].price + ", Distributor: " + searchData[1].source + ", Rating: " + searchData[1].store_rating + "\n";
+                        product3 = "Name: " + searchData[2].title + ", Price: " + searchData[2].price + ", Distributor: " + searchData[2].source + ", Rating: " + searchData[2].store_rating + "\n";
 
 
                 }
+
+                function redirect(itemNum){
+
+                    const regex = /#(\d+)/;
+
+                    // Extract the number and convert it to an integer
+                    const match = itemNum.match(regex);
+                    if (match && match[1]) {
+                        const itemNumber = parseInt(match[1], 10);
+                        // Display the extracted number
+                        console.log("YOOO WE GOT ITEM #" + itemNumber)
+                        console.log(productData[itemNumber-1])
+
+                        const newTab = window.open(productData[itemNumber-1].link, '_blank');
+                        // Remove focus from the new tab and bring it back to the original page
+                        setTimeout(() => {
+                            // If the tab was successfully created, blur it and focus back on the original tab
+                            if (newTab) {
+                                newTab.blur(); // Blur the new tab
+                                window.focus(); // Focus back on the current window
+                            }
+                        }, 500);
+
+                    } else {
+                        console.log("Item number not found.");
+                    }
+                }
+
+
               });
+
+              
         </script>
         <br><br><br>
         <div class="sticky-container">

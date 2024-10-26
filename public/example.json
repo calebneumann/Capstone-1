@@ -1,0 +1,1035 @@
+{
+    "search_metadata": {
+      "id": "65c238f214b2454c0b22db1e",
+      "status": "Success",
+      "json_endpoint": "https://serpapi.com/searches/29065654c9656313/65c238f214b2454c0b22db1e.json",
+      "created_at": "2024-02-06 13:49:38 UTC",
+      "processed_at": "2024-02-06 13:49:38 UTC",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&q=Macbook+M3&hl=en&gl=us",
+      "raw_html_file": "https://serpapi.com/searches/29065654c9656313/65c238f214b2454c0b22db1e.html",
+      "total_time_taken": 1.48
+    },
+    "search_parameters": {
+      "engine": "google_shopping",
+      "q": "Macbook M3",
+      "google_domain": "google.com",
+      "hl": "en",
+      "gl": "us",
+      "device": "desktop"
+    },
+    "search_information": {
+      "shopping_results_state": "Results for exact spelling",
+      "query_displayed": "Macbook M3",
+      "location_detected": "Middlesboro, KY"
+    },
+    "filters": [
+      {
+        "type": "Show only",
+        "options": [
+          {
+            "text": "On sale",
+            "tbs": "mr:1,sales:1"
+          }
+        ]
+      }
+    ],
+    "inline_shopping_results": [
+      {
+        "position": 1,
+        "block_position": "bottom",
+        "title": "MacBook Pro M3 14-inch - 8GB RAM, 1TB SSD - Space Gray - Apple",
+        "price": "$1,799.00",
+        "extracted_price": 1799.0,
+        "link": "https://www.google.com/aclk?sa=l&ai=DChcSEwjNo6_M7ZaEAxU3WkcBHf1JDEkYABABGgJxdQ&gclid=EAIaIQobChMIzaOvzO2WhAMVN1pHAR39SQxJEAsYASABEgK9NPD_BwE&sig=AOD64_1PZJrlSQTq4OlDRF5OE5FsBqokDQ&ctype=46&q=&ved=0ahUKEwjYoanM7ZaEAxU_lIkEHU5qB0QQqSUIgRw&adurl=",
+        "source": "apple",
+        "thumbnail": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcReDW8Zcd_HaO5Th7BfPD-KO0zYM3xxZ4AUVD3eiWFL_jvcEmcA0Tpw8qV6P94momEqeqlPvrMw&usqp=CAE",
+        "extensions": [
+          "Pick up today"
+        ]
+      }
+    ],
+    "shopping_results": [
+      {
+        "position": 1,
+        "title": "Del Monte Gold Pineapple",
+        "product_link": "https://www.google.com/shopping/product/14492684374703368796?gl=us",
+        "product_id": "14492684374703368796",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=14492684374703368796",
+        "link": "https://www.instacart.com/products/30316014-gold-pineapple-1-each?retailer_id=12&utm_term=pbi-0&utm_campaign=gold-pineapple---1-each_aldi&utm_source=instacart_google&utm_medium=shopping_free_listing&utm_content=productid-30316014_retailerid=12&region_id=7397143711",
+        "links": [
+            "https://www.instacart.com/products/30316014-gold-pineapple-1-each?retailer_id=12&utm_term=pbi-0&utm_campaign=gold-pineapple---1-each_aldi&utm_source=instacart_google&utm_medium=shopping_free_listing&utm_content=productid-30316014_retailerid=12&region_id=7397143711",
+            "https://www.instacart.com/products/26514530-dole-pineapple-each?retailer_id=10&utm_term=pbi-0&utm_campaign=produce-pineapple---1_jewel-osco&utm_source=instacart_google&utm_medium=shopping_free_listing&utm_content=productid-26514530_retailerid=10",
+            "https://www.instacart.com/products/26514530-dole-pineapple-each?retailer_id=233&utm_term=pbi-0&utm_campaign=produce-pineapple---1_albertsons&utm_source=instacart_google&utm_medium=shopping_free_listing&utm_content=productid-26514530_retailerid=233"
+        ],
+        "source": "Instacart",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c26933a1a510b4dace5137f4a0db5ac8f8.png",
+        "price": "$2.15",
+        "extracted_price": 2.15,
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c21bab5f6467c9d8d2b3e1f4dc0f02a306.webp",
+        "delivery": "Get it by 10/24"
+    },
+    {
+        "position": 2,
+        "title": "Del Monte Deluxe Gold Pineapple Slices In 100% Juice",
+        "product_link": "https://www.google.com/shopping/product/7163493111060374401?gl=us",
+        "product_id": "7163493111060374401",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=7163493111060374401",
+        "link": "http://www.chefstore.com/p/del-monte-deluxe-gold-pineapple-slices-in-juice_6783513/?srsltid=AfmBOopt52DhhlRhwbCoxUhz0uJJ6t_Lr2yzrlp_C6g_tb5cCZvTbidj96M",
+        "links": [
+            "http://www.chefstore.com/p/del-monte-deluxe-gold-pineapple-slices-in-juice_6783513/?srsltid=AfmBOopt52DhhlRhwbCoxUhz0uJJ6t_Lr2yzrlp_C6g_tb5cCZvTbidj96M",
+            "https://www.amazon.com/Del-Monte-Canned-Pineapple-Slices/dp/B088D3X537?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=ATVPDKIKX0DER",
+            "https://www.acmemarkets.com/home?pushSection=productDetails&url=/shop/product-details.960563539.html&storeId=1777&preference=instore&productId=960563539&CMPID=organic_acm_all_surf_goo_20220629&psrc=g"
+        ],
+        "number_of_comparisons": "& more",
+        "source": "US Foods Chef'store",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2b8507f4184a30f5f0beb8746d4bdf7ba.png",
+        "price": "$2.49",
+        "extracted_price": 2.49,
+        "rating": 4.7,
+        "reviews": 195,
+        "extensions": [
+            "Free 30-day returns"
+        ],
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2c83ebe9e20dc55b898bfdd81dd369ff4.webp"
+    },
+    {
+        "position": 3,
+        "title": "Del Monte Pineapple",
+        "product_link": "https://www.google.com/shopping/product/1283624128621809186?gl=us",
+        "product_id": "1283624128621809186",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=1283624128621809186",
+        "link": "https://www.shopdwfreshmarket.com/shop/fresh_fruits_vegetables/tropical_fruits/pineapple_small/p/111454",
+        "links": [
+            "https://www.shopdwfreshmarket.com/shop/fresh_fruits_vegetables/tropical_fruits/pineapple_small/p/111454",
+            "https://www.mercato.com/item/chiquita-pineapple/308194?featuredStoreId=1945&region_id=59770684"
+        ],
+        "number_of_comparisons": "& more",
+        "source": "D&W Fresh Market",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c24a563abb8fb61e009fc49973466e32a1.jpeg",
+        "price": "$3.99",
+        "extracted_price": 3.99,
+        "rating": 4.7,
+        "reviews": 1100,
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c202d08dadde3d4698401b8644f261205d.webp",
+        "delivery": "Free by 10/30"
+    },
+    {
+        "position": 4,
+        "title": "Del Monte Deluxe Gold Pineapple Chunks in 100% Pineapple Juice",
+        "product_link": "https://www.google.com/shopping/product/38642227668589924?gl=us",
+        "product_id": "38642227668589924",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=38642227668589924",
+        "link": "https://delivery.publix.com/landing?product_id=21476299&utm_term=pbi-1&utm_campaign=pineapple-chunks%2C-in-100-pineapple-juice_publix&utm_source=instacart_google&utm_medium=shopping_free_listing&utm_content=productid-21476299_retailerid=57",
+        "links": [
+            "https://delivery.publix.com/landing?product_id=21476299&utm_term=pbi-1&utm_campaign=pineapple-chunks%2C-in-100-pineapple-juice_publix&utm_source=instacart_google&utm_medium=shopping_free_listing&utm_content=productid-21476299_retailerid=57",
+            "https://www.shopforesthillsfoods.com/shop/pantry/canned_goods/fruits/del_monte_deluxe_gold_in_100_pineapple_juice_pineapple_chunks_20_oz/p/1564405684709172542",
+            "https://www.shopdwfreshmarket.com/shop/pantry/canned_goods/fruit_single_serve/del_monte_pineapple_chunks_in_100_pineapple_juice_20_oz/p/1564405684709172542"
+        ],
+        "number_of_comparisons": "& more",
+        "source": "Publix Delivery",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c22dc059c221143c851152b84d5dcc9213.png",
+        "price": "$2.87",
+        "extracted_price": 2.87,
+        "rating": 4.4,
+        "reviews": 199,
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2da3ef38da613dec18ae671d8a7efe753.webp",
+        "delivery": "Get it by 10/25"
+    },
+    {
+        "position": 5,
+        "title": "DEL MONTE DELUXE GOLD Pineapple Chunks in 100% Pineapple Juice, Canned Fruit, 12 Pack, 20 oz Can",
+        "product_link": "https://www.google.com/shopping/product/1?gl=us&prds=pid:4168258660991779578",
+        "product_id": "4168258660991779578",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=4168258660991779578",
+        "link": "https://www.amazon.com/Del-Monte-Canned-Pineapple-Chunks/dp/B088CM8H8B?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=ATVPDKIKX0DER",
+        "links": [
+            "https://www.amazon.com/Del-Monte-Canned-Pineapple-Chunks/dp/B088CM8H8B?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=ATVPDKIKX0DER"
+        ],
+        "source": "Amazon.com",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c25887d73f3c5768b0ee1dd2ec4ea541b8.png",
+        "price": "$23.76",
+        "extracted_price": 23.76,
+        "rating": 4.7,
+        "reviews": 86,
+        "extensions": [
+            "30-day returns"
+        ],
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2d978d054a324c63cfc95ba35873cc1af.webp"
+    },
+    {
+        "position": 6,
+        "title": "Del Monte Extra Sweet Pineapple",
+        "product_link": "https://www.google.com/shopping/product/15125337741655528521?gl=us",
+        "product_id": "15125337741655528521",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=15125337741655528521",
+        "link": "https://www.mykoshercart.com/products/del-monte-gold-pineapple?variant=27823150344&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoqwQOJpEp9TTW7duMMVSRqaNLxjhAV55PHRj1HiQ0K_uIsKwiKcLbY",
+        "links": [
+            "https://www.mykoshercart.com/products/del-monte-gold-pineapple?variant=27823150344&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOoqwQOJpEp9TTW7duMMVSRqaNLxjhAV55PHRj1HiQ0K_uIsKwiKcLbY",
+            "https://www.ubereats.com/product/b/f6d0e9a2-7207-56c0-9245-c93f4b39bc52?utm_campaign=google-shopping-free-listings&utm_medium=organic&utm_source=google&srsltid=AfmBOoqjTUIcZ60CZn4jaXf3_AMclzM_PZuKhuWIhhaL5YqInzTizZPwsE0&region_id=1040747050073938590405080013070500011303000510121110101208011300091114150613120911",
+            "https://www.instacart.com/products/18429094-del-monte-pineapple-extra-sweet-1-ea?retailer_id=544&utm_term=pbi-0&utm_campaign=del-monte-pineapple%2C-extra-sweet---1-ea_food-bazaar&utm_source=instacart_google&utm_medium=shopping_free_listing&utm_content=productid-18429094_retailerid=544&region_id=8910821000"
+        ],
+        "source": "My Kosher Cart",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c207c125a5198984a63ec6d332cda6924a.png",
+        "price": "$4.72",
+        "extracted_price": 4.72,
+        "extensions": [
+            "30-day returns"
+        ],
+        "badge": "Small business",
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c23db10ce34ca42cc1706bcd4fa86eaa5c.webp"
+    },
+    {
+        "position": 7,
+        "title": "Del Monte Deluxe Gold Pineapple Tidbits Canned Fruit",
+        "product_link": "https://www.google.com/shopping/product/9038297905096079374?gl=us",
+        "product_id": "9038297905096079374",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=9038297905096079374",
+        "link": "http://www.chefstore.com/p/del-monte-deluxe-gold-pineapple-tidbits-in-juice_7660501/?srsltid=AfmBOopBEqJjSS7iJwtR24om3eAN1lfOy_-Ig3RO7H13NAF_3W3x-Xnlr5k",
+        "links": [
+            "http://www.chefstore.com/p/del-monte-deluxe-gold-pineapple-tidbits-in-juice_7660501/?srsltid=AfmBOopBEqJjSS7iJwtR24om3eAN1lfOy_-Ig3RO7H13NAF_3W3x-Xnlr5k",
+            "https://www.acmemarkets.com/home?pushSection=productDetails&url=/shop/product-details.960563541.html&storeId=1777&preference=instore&productId=960563541&CMPID=organic_acm_all_surf_goo_20220629&psrc=g",
+            "https://www.mercato.com/item/del-monte-pineapple-tidbits-20-ounces/891436?featuredStoreId=2287&region_id=59770684"
+        ],
+        "number_of_comparisons": "& more",
+        "source": "US Foods Chef'store",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2cb7da328cad5361d5f44ee0758c04768.png",
+        "price": "$2.49",
+        "extracted_price": 2.49,
+        "rating": 4.7,
+        "reviews": 86,
+        "extensions": [
+            "Free 30-day returns"
+        ],
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c247caca6c5562e0090dc214b0a82ae0ab.webp"
+    },
+    {
+        "position": 8,
+        "title": "Del Monte Pineapple Slices in Juice",
+        "product_link": "https://www.google.com/shopping/product/2278199554927673259?gl=us",
+        "product_id": "2278199554927673259",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=2278199554927673259",
+        "link": "https://www.target.com/p/del-monte-pineapple-slices-in-100-juice-20oz/-/A-13231225?sid=3387S&afid=google&ref=tgt_adv_xsf&CPNG=Dry+Grocery&adgroup=212-12",
+        "links": [
+            "https://www.target.com/p/del-monte-pineapple-slices-in-100-juice-20oz/-/A-13231225?sid=3387S&afid=google&ref=tgt_adv_xsf&CPNG=Dry+Grocery&adgroup=212-12",
+            "https://www.walmart.com/ip/Del-Monte-Sliced-Pineapple-20-oz/1374827774?wl13=3520&selectedSellerId=0&wmlspartner=wlpa",
+            "https://www.doordash.com/product/024000011859?utm_source=Google&utm_medium=PLA&utm_campaign=organic_product_listing&business_id=956270&dd_sic=urpc_e876278e-6a1a-4244-adbb-bbd66c92db3f&frt=16&srsltid=AfmBOoo1mbpMQ_yUphpo3IUpOed7e6db90rooadJTzJ9ZNu0JRz8e0MpdUo&region_id=2627498"
+        ],
+        "number_of_comparisons": "& more",
+        "source": "Target",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2fb2cb122029c16277e6d467ea6767c85.png",
+        "price": "$1.79",
+        "extracted_price": 1.79,
+        "rating": 4.6,
+        "reviews": 915,
+        "extensions": [
+            "Free 90-day returns"
+        ],
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c29d1487b8f52208667ef906b5d5d9e5cc.webp",
+        "delivery": "Free $35+"
+    },
+    {
+        "position": 9,
+        "title": "Del Monte Golden Pineapples - 5-6 Ct Case",
+        "product_link": "https://www.google.com/shopping/product/1?gl=us&prds=pid:3125775245905771504",
+        "product_id": "3125775245905771504",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=3125775245905771504",
+        "link": "https://boxncase.com/products/del-monte-golden-pineapples-1?variant=45754459128047&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorJx1zP_9xjEqyqDDBiWwtutNWPeN5Cc-lhGDPQcBFur9G30WulGNs",
+        "links": [
+            "https://boxncase.com/products/del-monte-golden-pineapples-1?variant=45754459128047&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorJx1zP_9xjEqyqDDBiWwtutNWPeN5Cc-lhGDPQcBFur9G30WulGNs"
+        ],
+        "source": "Box N Case",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c25b27231ace025b52679e209e6758bf45.png",
+        "price": "$61.25",
+        "extracted_price": 61.25,
+        "badge": "Small business",
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2c9a36c60bb82ac65de9dd1b6f30836bd.webp"
+    },
+    {
+        "position": 10,
+        "title": "The Fruit Company Golden Pineapple",
+        "product_link": "https://www.google.com/shopping/product/13240305650413467841?gl=us",
+        "product_id": "13240305650413467841",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=13240305650413467841",
+        "link": "https://www.thefruitcompany.com/products/maui-pineapple?variant=43518968004837&srsltid=AfmBOoooqbcvTaBGlGthXbX8qK9dGXTOu_GyC9MHg4WvtXd77QGpcdh6vJI",
+        "links": [
+            "https://www.thefruitcompany.com/products/maui-pineapple?variant=43518968004837&srsltid=AfmBOoooqbcvTaBGlGthXbX8qK9dGXTOu_GyC9MHg4WvtXd77QGpcdh6vJI"
+        ],
+        "number_of_comparisons": "& more",
+        "source": "The Fruit Company",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c20c9759a1bacf26fac2dbd2e0e9a35c6b.png",
+        "price": "$34.00",
+        "extracted_price": 34,
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c20e1fa27842ccbab8b8fb4de2f71225d6.webp"
+    },
+    {
+        "position": 11,
+        "title": "Hy-Vee Grocery Fresh Del Monte Gold Pineapple",
+        "product_link": "https://www.google.com/shopping/product/4259852663068164611?gl=us",
+        "product_id": "4259852663068164611",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=4259852663068164611",
+        "link": "https://www.shopforesthillsfoods.com/shop/fresh_fruits_vegetables/tropical_fruits/fresh_pineapple_gold/p/5296429",
+        "links": [
+            "https://www.shopforesthillsfoods.com/shop/fresh_fruits_vegetables/tropical_fruits/fresh_pineapple_gold/p/5296429",
+            "https://www.shopdwfreshmarket.com/shop/fresh_fruits_vegetables/tropical_fruits/fresh_pineapple_gold/p/5296429",
+            "https://www.mercato.com/item/del-monte-gold-pineapple-1-count/930315?featuredStoreId=2372&region_id=59770684"
+        ],
+        "number_of_comparisons": "& more",
+        "source": "Forest Hills Foods",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c257ae154b5780163c60e43969fa2cccdb.png",
+        "price": "$4.99",
+        "extracted_price": 4.99,
+        "rating": 4.5,
+        "reviews": 4,
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2454bd07b3400bc93287118a1caaaa89d.webp",
+        "delivery": "Free by 10/30"
+    },
+    {
+        "position": 12,
+        "title": "Fresh Pineapple",
+        "product_link": "https://www.google.com/shopping/product/1126487751945413727?gl=us",
+        "product_id": "1126487751945413727",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=1126487751945413727",
+        "link": "https://shop.sprouts.com/landing?product_id=439841&utm_term=sfp&utm_campaign=fresh-pineapple_sprouts&utm_source=instacart_google&utm_medium=shopping_free_listing&utm_content=productid-439841_retailerid=279",
+        "links": [
+            "https://shop.sprouts.com/landing?product_id=439841&utm_term=sfp&utm_campaign=fresh-pineapple_sprouts&utm_source=instacart_google&utm_medium=shopping_free_listing&utm_content=productid-439841_retailerid=279",
+            "https://www.walmart.com/ip/Fresh-Pineapple-Each/44391200?wl13=3795&selectedSellerId=0&wmlspartner=wlpa",
+            "https://www.instamandi.com/en/product/pineapple-each"
+        ],
+        "number_of_comparisons": "& more",
+        "source": "Sprouts",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c271c8be56afb160975428809084e0603f.png",
+        "price": "$3.49",
+        "extracted_price": 3.49,
+        "rating": 3.2,
+        "reviews": 2200,
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c234920eeebda329c3a1b8db6bf370e581.webp",
+        "delivery": "Get it by 10/25"
+    },
+    {
+        "position": 13,
+        "title": "Maui Gold Pineapple",
+        "product_link": "https://www.google.com/shopping/product/16917711636690648645?gl=us",
+        "product_id": "16917711636690648645",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=16917711636690648645",
+        "link": "https://mauipineapplestore.com/one-time-pineapple-shipment-includes-shipping/?setCurrencyId=1&sku=2PACK&srsltid=AfmBOorugIrEnxW7O8KV5omxNpuCWb4wlTA0ZvGRIxUJJ0fEz9c5vyyane8",
+        "links": [
+            "https://mauipineapplestore.com/one-time-pineapple-shipment-includes-shipping/?setCurrencyId=1&sku=2PACK&srsltid=AfmBOorugIrEnxW7O8KV5omxNpuCWb4wlTA0ZvGRIxUJJ0fEz9c5vyyane8",
+            "https://www.amazon.com/Maui-Gold-Pineapple/dp/B0CCWSG2PP?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1VPYQKCOO2MV1",
+            "https://www.walmart.com/ip/Maui-Gold-Pineapple-2-Pack/5074997372?wmlspartner=wlpa&selectedSellerId=101489753"
+        ],
+        "number_of_comparisons": "& more",
+        "source": "Maui Pineapple Store",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2001b5e1b7a007591b67d678a8d4dc395.png",
+        "price": "$59.99",
+        "extracted_price": 59.99,
+        "extensions": [
+            "30-day returns"
+        ],
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2af3bd55158d4067fc5525133702be8e6.webp"
+    },
+    {
+        "position": 14,
+        "title": "Del Monte Pineapple Chunks in Juice",
+        "product_link": "https://www.google.com/shopping/product/7301988890736875879?gl=us",
+        "product_id": "7301988890736875879",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=7301988890736875879",
+        "link": "https://www.walmart.com/ip/Del-Monte-Pineapple-Chunks-in-100-Juice-Canned-Fruit-20-oz-Can/10794819?wmlspartner=wlpa&selectedSellerId=101086823",
+        "links": [
+            "https://www.walmart.com/ip/Del-Monte-Pineapple-Chunks-in-100-Juice-Canned-Fruit-20-oz-Can/10794819?wmlspartner=wlpa&selectedSellerId=101086823",
+            "https://www.target.com/p/del-monte-pineapple-chunks-in-100-juice-20oz/-/A-13231233?sid=3387S&afid=google&ref=tgt_adv_xsf&CPNG=Dry+Grocery&adgroup=212-12",
+            "https://www.amazon.com/Del-Monte-Pineapple-Chunks-Pull-Top/dp/B08M9XBWWS?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=ATVPDKIKX0DER"
+        ],
+        "number_of_comparisons": "& more",
+        "source": "Walmart - Pet Feeders",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2a0ca117d992f6e66ae9db3c418428ecc.png",
+        "price": "$2.29",
+        "extracted_price": 2.29,
+        "rating": 4.7,
+        "reviews": 1900,
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2d515098ee2ec14c9e0f8350907556c7f.webp"
+    },
+    {
+        "position": 15,
+        "title": "Del Monte Organic Pineapple",
+        "product_link": "https://www.google.com/shopping/product/7937871467133322762?gl=us",
+        "product_id": "7937871467133322762",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=7937871467133322762",
+        "link": "https://www.freshgogo.com/pc/goodsDescribe?id=32898&language=en&srsltid=AfmBOorzc5a8BzPsz7yrlOZ95x8WzCPdjx9y62XWV3wenGME2u_yt72-y0g&region_id=100001",
+        "links": [
+            "https://www.freshgogo.com/pc/goodsDescribe?id=32898&language=en&srsltid=AfmBOorzc5a8BzPsz7yrlOZ95x8WzCPdjx9y62XWV3wenGME2u_yt72-y0g&region_id=100001",
+            "https://www.mercato.com/item/del-monte-pineapples/316937?featuredStoreId=2282&region_id=59770684",
+            "https://www.mercato.com/item/del-monte-pineapples/316937?featuredStoreId=1936&region_id=59770684"
+        ],
+        "source": "FreshGoGo",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2f8ed44ce98c15d24296aaf7c07fda49d.png",
+        "price": "$4.88",
+        "extracted_price": 4.88,
+        "old_price": "$6",
+        "extracted_old_price": 6,
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c260ffe9781055bff9bc8e9c71a55697f5.webp",
+        "tag": "18% OFF",
+        "extensions": [
+            "18% OFF"
+        ],
+        "delivery": "Free by 10/31"
+    },
+    {
+        "position": 16,
+        "title": "Robinson Fresh Pineapple",
+        "product_link": "https://www.google.com/shopping/product/2932128603949401107?gl=us",
+        "product_id": "2932128603949401107",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=2932128603949401107",
+        "link": "https://www.instacart.com/products/16801631-jumbo-golden-pineapple-each?retailer_id=352&utm_term=pbi-0&utm_campaign=robinson-fresh-pineapple%2C-gold---1-ea_sams-club&utm_source=instacart_google&utm_medium=shopping_free_listing&utm_content=productid-16801631_retailerid=352",
+        "links": [
+            "https://www.instacart.com/products/16801631-jumbo-golden-pineapple-each?retailer_id=352&utm_term=pbi-0&utm_campaign=robinson-fresh-pineapple%2C-gold---1-ea_sams-club&utm_source=instacart_google&utm_medium=shopping_free_listing&utm_content=productid-16801631_retailerid=352",
+            "https://www.freshdirect.com/p/trp_pineapple_gldnrp_org?region_id=0000200601",
+            "https://www.ubereats.com/product/b/a7c76894-af72-5a9d-844f-0fcfbc24e3cf?utm_campaign=google-shopping-free-listings&utm_medium=organic&utm_source=google&srsltid=AfmBOoq8TChd-dxgXf-_xut1d-6_H3zWi_aRFctuBRsf4LnC6njs2lQTIpA"
+        ],
+        "number_of_comparisons": "& more",
+        "source": "Instacart",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2bf4df2480738ebae360e5c014bb72409.png",
+        "price": "$3.57",
+        "extracted_price": 3.57,
+        "rating": 4,
+        "reviews": 716,
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c25705e81279dcebebeb1fd64134326d2a.webp",
+        "delivery": "Get it by 10/24"
+    },
+    {
+        "position": 17,
+        "title": "Del Monte Gold Pineapple Juice 1L",
+        "product_link": "https://www.google.com/shopping/product/1?gl=us&prds=pid:2537571593003965172",
+        "product_id": "2537571593003965172",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=2537571593003965172",
+        "link": "https://mcgrocer.com/products/del-monte-gold-pineapple-juice-1l?currency=GBP&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=9bdd4526a2c2&srsltid=AfmBOooGzbA98VVtEPMsDSTMlXcaj9LdPakvLpWUVcE2l6qVcjJnQb9KKOs",
+        "links": [
+            "https://mcgrocer.com/products/del-monte-gold-pineapple-juice-1l?currency=GBP&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=9bdd4526a2c2&srsltid=AfmBOooGzbA98VVtEPMsDSTMlXcaj9LdPakvLpWUVcE2l6qVcjJnQb9KKOs"
+        ],
+        "source": "McGrocer",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c232ecb2d3f163a6e6e4c490e7c1cba770.png",
+        "price": "$3.75",
+        "extracted_price": 3.75,
+        "extensions": [
+            "30-day returns"
+        ],
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2f189f3df37f724396e90013f17121f5c.webp"
+    },
+    {
+        "position": 18,
+        "title": "Del Monte Pineapple Tidbits in Juice",
+        "product_link": "https://www.google.com/shopping/product/1675414112035541040?gl=us",
+        "product_id": "1675414112035541040",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=1675414112035541040",
+        "link": "https://www.target.com/p/del-monte-pineapple-tidbits-in-100-juice-20oz/-/A-13231222?sid=3290S&afid=google&ref=tgt_adv_xsf&CPNG=Dry+Grocery&adgroup=212-12",
+        "links": [
+            "https://www.target.com/p/del-monte-pineapple-tidbits-in-100-juice-20oz/-/A-13231222?sid=3290S&afid=google&ref=tgt_adv_xsf&CPNG=Dry+Grocery&adgroup=212-12",
+            "https://stopandshop.com/product/335738?StoreID=0509",
+            "https://www.instacart.com/products/2694864-del-monte-pineapple-tidbits-20-oz?retailer_id=235&utm_term=pbi-0&utm_campaign=del-monte-pineapple-tidbits%2C-100-juice---20-oz_stop-shop&utm_source=instacart_google&utm_medium=shopping_free_listing&utm_content=productid-2694864_retailerid=235&region_id=15473446953"
+        ],
+        "number_of_comparisons": "& more",
+        "source": "Target",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c29be4776d423e46ed62ccb8b2c8c9f8d0.png",
+        "price": "$1.79",
+        "extracted_price": 1.79,
+        "rating": 4.8,
+        "reviews": 559,
+        "extensions": [
+            "Free 90-day returns"
+        ],
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c26edcf5ff873af6c958f8ab0424d974a0.webp",
+        "delivery": "Free $35+"
+    },
+    {
+        "position": 19,
+        "title": "Maui Gold Pineapple - Maui Gold Pineapple - 8 Pack",
+        "product_link": "https://www.google.com/shopping/product/1?gl=us&prds=pid:3006933040547657583",
+        "product_id": "3006933040547657583",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=3006933040547657583",
+        "link": "https://www.goldbelly.com/restaurants/maui-gold-pineapple/maui-gold-pineapple-7-pack",
+        "links": [
+            "https://www.goldbelly.com/restaurants/maui-gold-pineapple/maui-gold-pineapple-7-pack"
+        ],
+        "source": "Goldbelly",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2f8a0cd15c3acd5591bd33174d12f4b28.png",
+        "price": "$99.95",
+        "extracted_price": 99.95,
+        "extensions": [
+            "14-day returns"
+        ],
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c24f48430dc35a7b5fdac881cc45a787aa.webp",
+        "delivery": "Free delivery"
+    },
+    {
+        "position": 20,
+        "title": "Del Monte Pineapple Juice",
+        "product_link": "https://www.google.com/shopping/product/12944439707992821287?gl=us",
+        "product_id": "12944439707992821287",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=12944439707992821287",
+        "link": "https://www.amazon.com/Del-Monte-100-Pineapple-Juice/dp/B0CBQR3468?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=ATVPDKIKX0DER",
+        "links": [
+            "https://www.amazon.com/Del-Monte-100-Pineapple-Juice/dp/B0CBQR3468?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=ATVPDKIKX0DER",
+            "https://www.webstaurantstore.com/port-royal-pineapple-juice-46-oz/999JUCPINEAPP.html?utm_source=google&utm_medium=freeclicks&utm_campaign=GoogleShopping&srsltid=AfmBOoohiFZ1A44xKa5C1gk1vMWCmAhBc_sMl-BANBIo-lzaJsQ-q7PZr1w",
+            "https://www.dollargeneral.com/p/del-monte-pineapple-juice-8-1-fl-oz/024000222552"
+        ],
+        "number_of_comparisons": "& more",
+        "source": "Amazon.com",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c26d37a73498d10d870cf04ae172615c16.png",
+        "price": "$22.14",
+        "extracted_price": 22.14,
+        "rating": 4.8,
+        "reviews": 4300,
+        "extensions": [
+            "30-day returns"
+        ],
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2dee589cf5d5b86df38fa145d15bf2647.webp"
+    },
+    {
+        "position": 21,
+        "title": "Maui Gold Pineapple",
+        "product_link": "https://www.google.com/shopping/product/642479744626165707?gl=us",
+        "product_id": "642479744626165707",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=642479744626165707",
+        "link": "https://mauipineapplestore.com/maui-gold-pineapple-25lb-case?setCurrencyId=1&sku=CASEPK&srsltid=AfmBOoqWeGNhvw3dlKKNVHrrAKRDBn2xesHSvM5yHODF5i1loYiPERaAW88",
+        "links": [
+            "https://mauipineapplestore.com/maui-gold-pineapple-25lb-case?setCurrencyId=1&sku=CASEPK&srsltid=AfmBOoqWeGNhvw3dlKKNVHrrAKRDBn2xesHSvM5yHODF5i1loYiPERaAW88",
+            "https://www.amazon.com/Maui-Gold-Pineapple/dp/B0CCX5R1QG?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1VPYQKCOO2MV1"
+        ],
+        "number_of_comparisons": "& more",
+        "source": "Maui Pineapple Store",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2d2d632e0dca7fc935d988c02188dd75a.png",
+        "price": "$159.99",
+        "extracted_price": 159.99,
+        "extensions": [
+            "30-day returns"
+        ],
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c25db88f625714d0ddaa3da8d9e225f2a0.webp"
+    },
+    {
+        "position": 22,
+        "title": "Premium Tropical Golden Pineapple Box",
+        "product_link": "https://www.google.com/shopping/product/1?gl=us&prds=pid:13872117492025620625",
+        "product_id": "13872117492025620625",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=13872117492025620625",
+        "link": "https://www.etsy.com/listing/1575804337/premium-tropical-golden-pineapple-box?gpla=1&gao=1&",
+        "links": [
+            "https://www.etsy.com/listing/1575804337/premium-tropical-golden-pineapple-box?gpla=1&gao=1&"
+        ],
+        "source": "Etsy",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c294bf869f046c7bd6d74dfb92b6886dcc.png",
+        "price": "$49.00",
+        "extracted_price": 49,
+        "rating": 4.9,
+        "reviews": 32,
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c229f86bfe39e785ae7a9277cf4214a5bc.webp",
+        "delivery": "Free delivery"
+    },
+    {
+        "position": 23,
+        "title": "Del Monte Gold Tidbits Pineapple 20 Oz - Case - 12 Units",
+        "product_link": "https://www.google.com/shopping/product/1?gl=us&prds=pid:17101805927300038764",
+        "product_id": "17101805927300038764",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=17101805927300038764",
+        "link": "https://pasteurpharmacy.com/products/del-monte-gold-tidbits-pineapple-20-oz-case-12-units?variant=48818571739414&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorB4qucxRp5Zsi2xNEGAE81AQg_bRXprEelQ7f3x85F-KfgzSAq0cA",
+        "links": [
+            "https://pasteurpharmacy.com/products/del-monte-gold-tidbits-pineapple-20-oz-case-12-units?variant=48818571739414&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorB4qucxRp5Zsi2xNEGAE81AQg_bRXprEelQ7f3x85F-KfgzSAq0cA"
+        ],
+        "source": "Pasteur Pharmacy",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2fe0ec2f1ebbab51ce0e28cdc5d3e85f8.png",
+        "price": "$40.40",
+        "extracted_price": 40.4,
+        "old_price": "$64",
+        "extracted_old_price": 64,
+        "badge": "Small business",
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c296ffe14bced9fa42f46a1c6aa00b7c84.webp",
+        "tag": "36% OFF",
+        "extensions": [
+            "36% OFF"
+        ],
+        "delivery": "Free by 10/31"
+    },
+    {
+        "position": 24,
+        "title": "New Del Monte Sliced Pineapple In Syrup 567 gram",
+        "product_link": "https://www.google.com/shopping/product/1?gl=us&prds=pid:6477635397568184638",
+        "product_id": "6477635397568184638",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=6477635397568184638",
+        "link": "https://www.ebay.com/itm/286082292780?chn=ps&mkevt=1&mkcid=28&srsltid=AfmBOorqVbD1GyPtGaZ8HLNRmQ5tt4A8VC9vdGxfKWSX8gBf6RXdAvGyOSA",
+        "links": [
+            "https://www.ebay.com/itm/286082292780?chn=ps&mkevt=1&mkcid=28&srsltid=AfmBOorqVbD1GyPtGaZ8HLNRmQ5tt4A8VC9vdGxfKWSX8gBf6RXdAvGyOSA"
+        ],
+        "source": "eBay - easy_clicks",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c24064fd0a6ef7f27e70df1467c78b1ab7.png",
+        "price": "$49.99",
+        "extracted_price": 49.99,
+        "rating": 4.6,
+        "reviews": 915,
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c20852382d71bfd8d32e4113f558ac6ef4.webp",
+        "delivery": "Free delivery"
+    },
+    {
+        "position": 25,
+        "title": "Pineapple",
+        "product_link": "https://www.google.com/shopping/product/1?gl=us&prds=pid:12485128066569839884",
+        "product_id": "12485128066569839884",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=12485128066569839884",
+        "link": "https://rainbowfulfillment.com/products/pineapple?variant=40441005015086&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorn2PSXMkx4fULm8W6z_baftpioVYW8QbPrbZ9WzTVPLYv73tGClHw",
+        "links": [
+            "https://rainbowfulfillment.com/products/pineapple?variant=40441005015086&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorn2PSXMkx4fULm8W6z_baftpioVYW8QbPrbZ9WzTVPLYv73tGClHw"
+        ],
+        "source": "Rainbow Packaging Corporation",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c247cfa24232662d3992483348d9dec749.jpeg",
+        "price": "$4.00",
+        "extracted_price": 4,
+        "badge": "Small business",
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2a1741b33e45b518d20f8a60a19f087f6.webp"
+    },
+    {
+        "position": 26,
+        "title": "Bulk - Del Monte Gold Pineapple Slices In Juice - 20 OZ 12 Pack",
+        "product_link": "https://www.google.com/shopping/product/1?gl=us&prds=pid:9694836015615502589",
+        "product_id": "9694836015615502589",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=9694836015615502589",
+        "link": "https://www.stockupexpress.com/products/del-monte-gold-pineapple-slices-in-juice-20-oz-12-pack?variant=40897377763425&utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=40897377763425&srsltid=AfmBOorzL4ICB0qLz55PduN7Vw4sVetGj9xdQ4VTAndxXcBJ8h7aPRyMxPs",
+        "links": [
+            "https://www.stockupexpress.com/products/del-monte-gold-pineapple-slices-in-juice-20-oz-12-pack?variant=40897377763425&utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=40897377763425&srsltid=AfmBOorzL4ICB0qLz55PduN7Vw4sVetGj9xdQ4VTAndxXcBJ8h7aPRyMxPs"
+        ],
+        "source": "StockUpExpress",
+        "source_icon": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQJifim3Y-1mjT-4-sIWNTPCtwlk3GdeIOgZkZVGjsj-lgB6nKe12sheAZGZnGQ1VwH0xufD-wE_hIG0PC7iUa2KC_Pz8e3Jv_ryz1xfEGV",
+        "price": "$30.11",
+        "extracted_price": 30.11,
+        "rating": 4.6,
+        "reviews": 915,
+        "badge": "Small business",
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c21a45d4a48b977de46ae4e14938a4ce24.webp"
+    },
+    {
+        "position": 27,
+        "title": "Premium Tropical Pineapple Box",
+        "product_link": "https://www.google.com/shopping/product/8617279746081293213?gl=us",
+        "product_id": "8617279746081293213",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=8617279746081293213",
+        "link": "https://tropicalfruitbox.com/products/golden-pineapple-box?variant=32700960407640&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorRAwHJyaNCjd-qq61XXIc3hlB_WDWRQevIU1NdeQj-c-lBpHKUcrU",
+        "links": [
+            "https://tropicalfruitbox.com/products/golden-pineapple-box?variant=32700960407640&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorRAwHJyaNCjd-qq61XXIc3hlB_WDWRQevIU1NdeQj-c-lBpHKUcrU"
+        ],
+        "source": "Tropical Fruit Box",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2a1bea06683f67df2ec640e60b021b19e.png",
+        "price": "$49.00",
+        "extracted_price": 49,
+        "old_price": "$59",
+        "extracted_old_price": 59,
+        "rating": 4.9,
+        "reviews": 32,
+        "extensions": [
+            "3-day returns",
+            "16% OFF"
+        ],
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2847c63f764f0e37f547480e2435cd132.webp",
+        "tag": "16% OFF",
+        "delivery": "Free by 11/6"
+    },
+    {
+        "position": 28,
+        "title": "Del Monte Fresh Pineapple Spears",
+        "product_link": "https://www.google.com/shopping/product/1?gl=us&prds=pid:4046877289931773982",
+        "product_id": "4046877289931773982",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=4046877289931773982",
+        "link": "https://www.quicklly.com/grocery-store/del-monte-fresh-pineapple-spears/128392?srsltid=AfmBOor2_UPgaHVnEtQ7eqV4agyfHfQlGsW8To24n9daM0Z3pCjsz2KdKTQ",
+        "links": [
+            "https://www.quicklly.com/grocery-store/del-monte-fresh-pineapple-spears/128392?srsltid=AfmBOor2_UPgaHVnEtQ7eqV4agyfHfQlGsW8To24n9daM0Z3pCjsz2KdKTQ"
+        ],
+        "source": "Quicklly",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2ad158b4c0d662008e9d1cda363ac747d.png",
+        "price": "$11.89",
+        "extracted_price": 11.89,
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2fcb0b2ec01b92cdd22b0837f10d08d59.webp"
+    },
+    {
+        "position": 29,
+        "title": "Dole Gold Tropical Pineapple Chunks",
+        "product_link": "https://www.google.com/shopping/product/3213884305281103975?gl=us",
+        "product_id": "3213884305281103975",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=3213884305281103975",
+        "link": "https://www.samsclub.com/p/dole-tropical-gold-pineapple-chunks-15-25-oz-6-pk/P990330077?itemNumber=990342596",
+        "links": [
+            "https://www.samsclub.com/p/dole-tropical-gold-pineapple-chunks-15-25-oz-6-pk/P990330077?itemNumber=990342596",
+            "https://www.amazon.com/Dole-Canned-Tropical-Pineapple-Staples/dp/B0C4G4Q7VN?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=ATVPDKIKX0DER",
+            "http://www.ralphs.com/p/dole-canned-tropical-gold-pineapple-chunks-in-100-pineapple-juice/0003890074040?fulfillment=PICKUP&storecode=70300019&cid=shp_adw_shopl"
+        ],
+        "number_of_comparisons": "& more",
+        "source": "Sam's Club",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2a318558c6e817487816b0c356c5a9942.png",
+        "price": "$8.98",
+        "extracted_price": 8.98,
+        "rating": 4.8,
+        "reviews": 3000,
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c223b24c518dda8482ef9bd1272d12df33.webp"
+    },
+    {
+        "position": 30,
+        "title": "Dole Pineapple Chunks in Juice",
+        "product_link": "https://www.google.com/shopping/product/3644834625794402043?gl=us",
+        "product_id": "3644834625794402043",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=3644834625794402043",
+        "link": "https://www.target.com/p/dole-pineapple-chunks-in-juice-20oz/-/A-91370133?sid=296S&afid=google&ref=tgt_adv_xsf&CPNG=Dry+Grocery&adgroup=212-12",
+        "links": [
+            "https://www.target.com/p/dole-pineapple-chunks-in-juice-20oz/-/A-91370133?sid=296S&afid=google&ref=tgt_adv_xsf&CPNG=Dry+Grocery&adgroup=212-12",
+            "https://www.walmart.com/ip/Dole-Pineapple-Chunks-In-100-Pineapple-Juice-20-oz/10304327?wl13=1700&selectedSellerId=0&wmlspartner=wlpa",
+            "https://www.walgreens.com/store/c/dole-pineapple-chunks/ID=prod6279125-product"
+        ],
+        "number_of_comparisons": "& more",
+        "source": "Target",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2b168b056928d55ca56a27422c53d1d61.png",
+        "price": "$1.99",
+        "extracted_price": 1.99,
+        "rating": 4.6,
+        "reviews": 5200,
+        "extensions": [
+            "Free 90-day returns"
+        ],
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2890b4c3ba608133fa0a6300d2ca22829.webp",
+        "delivery": "Free $35+"
+    },
+    {
+        "position": 31,
+        "title": "Fresh Tropical Gold Hawaiian Pineapples (2 ea)",
+        "product_link": "https://www.google.com/shopping/product/1?gl=us&prds=pid:8697918577399383968",
+        "product_id": "8697918577399383968",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=8697918577399383968",
+        "link": "https://www.amazon.com/Fresh-Tropical-Gold-Hawaiian-Pineapples/dp/B001OK3V5Q?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1NXU3I8AA844O",
+        "links": [
+            "https://www.amazon.com/Fresh-Tropical-Gold-Hawaiian-Pineapples/dp/B001OK3V5Q?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1NXU3I8AA844O"
+        ],
+        "source": "Amazon.com - Seller",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2fd2646fb233d6872025ec87c3be98912.png",
+        "price": "$32.98",
+        "extracted_price": 32.98,
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2e0de4d53879910f0b1a5ad1e1a65d69d.webp"
+    },
+    {
+        "position": 32,
+        "title": "Dole Tropical Gold Pineapple",
+        "product_link": "https://www.google.com/shopping/product/12280957035853398438?gl=us",
+        "product_id": "12280957035853398438",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=12280957035853398438",
+        "link": "https://www.instacart.com/products/18599544-dole-tropical-gold-pineapple-each?retailer_id=264&utm_term=pbi-0&utm_campaign=dole-tropical-gold-pineapple---1_the-fresh-market&utm_source=instacart_google&utm_medium=shopping_free_listing&utm_content=productid-18599544_retailerid=264",
+        "links": [
+            "https://www.instacart.com/products/18599544-dole-tropical-gold-pineapple-each?retailer_id=264&utm_term=pbi-0&utm_campaign=dole-tropical-gold-pineapple---1_the-fresh-market&utm_source=instacart_google&utm_medium=shopping_free_listing&utm_content=productid-18599544_retailerid=264",
+            "https://www.freshdirect.com/p/trp_pineapple_gldnrp",
+            "https://shop.luckysupermarkets.com/landing?product_id=16693371&utm_term=pbi-1&utm_campaign=tropical-gold-pineapple_lucky-supermarkets&utm_source=instacart_google&utm_medium=shopping_free_listing&utm_content=productid-16693371_retailerid=542"
+        ],
+        "number_of_comparisons": "& more",
+        "source": "Instacart",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c294b26c8c19120abcc57e5461e9a3c9fd.png",
+        "price": "$5.59",
+        "extracted_price": 5.59,
+        "rating": 4,
+        "reviews": 724,
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2bd4cfed844e38b74436bc410d93d423e.webp",
+        "delivery": "Get it by 10/24"
+    },
+    {
+        "position": 33,
+        "title": "Del Monte Pineapple Juice Drink",
+        "product_link": "https://www.google.com/shopping/product/15636031162211166370?gl=us",
+        "product_id": "15636031162211166370",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=15636031162211166370",
+        "link": "https://sukli.com/products/del-monte-quality-100-pineapple-juice-with-added-vitamin-c-1-liter?currency=USD&variant=32523657871446&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=3dbb3e52bf1e&srsltid=AfmBOopqHqEF6nwKD_17LaAPee6E9AAuByXg0xhXa-EbiwkWqTVBmsnAV9M",
+        "links": [
+            "https://sukli.com/products/del-monte-quality-100-pineapple-juice-with-added-vitamin-c-1-liter?currency=USD&variant=32523657871446&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=3dbb3e52bf1e&srsltid=AfmBOopqHqEF6nwKD_17LaAPee6E9AAuByXg0xhXa-EbiwkWqTVBmsnAV9M",
+            "https://www.albertsons.com/home?pushSection=productDetails&url=/shop/product-details.960134804.html&storeId=758&preference=instore&productId=960134804&CMPID=organic_acm_all_surf_goo_20220629&psrc=g",
+            "https://www.instacart.com/products/18154239-del-monte-juice-drink-33-8-fl-oz?retailer_id=119&utm_term=pbi-0&utm_campaign=del-monte-juice%2C-100-pineapple---33.8-fl-oz_hmart&utm_source=instacart_google&utm_medium=shopping_free_listing&utm_content=productid-18154239_retailerid=119&region_id=10684074379"
+        ],
+        "number_of_comparisons": "& more",
+        "source": "Sukli",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c20050bbfcc98b71476276266e859507ed.png",
+        "price": "$5.49",
+        "extracted_price": 5.49,
+        "rating": 4.8,
+        "reviews": 4300,
+        "extensions": [
+            "7-day returns"
+        ],
+        "badge": "Small business",
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2af32095f240f870ae72a9f1d2959d493.webp",
+        "delivery": "Free $69+"
+    },
+    {
+        "position": 34,
+        "title": "Dole Tropical Gold Pineapples Fresh Hawai'i!",
+        "product_link": "https://www.google.com/shopping/product/1?gl=us&prds=pid:3069174509455323323",
+        "product_id": "3069174509455323323",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=3069174509455323323",
+        "link": "https://shop.ktasuperstores.com/product/dole-tropical-gold-pineapples-fresh-hawaii/?attribute_count=2+count&srsltid=AfmBOorDJf_aYPQRpP_4FRLkE6pfOrlHWj7g3IOU7YypWTDy0K6WA2zyF1g",
+        "links": [
+            "https://shop.ktasuperstores.com/product/dole-tropical-gold-pineapples-fresh-hawaii/?attribute_count=2+count&srsltid=AfmBOorDJf_aYPQRpP_4FRLkE6pfOrlHWj7g3IOU7YypWTDy0K6WA2zyF1g"
+        ],
+        "source": "KTA Super Stores",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c265c0afac599367ef32588b4c9e51f5e4.png",
+        "price": "$56.00",
+        "extracted_price": 56,
+        "rating": 4.8,
+        "reviews": 2100,
+        "extensions": [
+            "5-day returns"
+        ],
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c22abf13686480f1994167684ccf1c0fcf.webp",
+        "delivery": "Free delivery"
+    },
+    {
+        "position": 35,
+        "title": "Organic & Fair Trade Gold Pineapple (Costa Rica) - From Our Farmers - 1 count",
+        "product_link": "https://www.google.com/shopping/product/1?gl=us&prds=pid:12871808053901344641",
+        "product_id": "12871808053901344641",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=12871808053901344641",
+        "link": "https://www.goodeggs.com/goodeggsproducesfbay/organic-fair-trade-gold-pineapple-costa-rica/5f19c76c06230c000e9aab8a?srsltid=AfmBOoqLSAk_7Hll9u3zdmNBnD2LrPrjTxpEMEpZJNsk9wFIF7AbOiQOvkk",
+        "links": [
+            "https://www.goodeggs.com/goodeggsproducesfbay/organic-fair-trade-gold-pineapple-costa-rica/5f19c76c06230c000e9aab8a?srsltid=AfmBOoqLSAk_7Hll9u3zdmNBnD2LrPrjTxpEMEpZJNsk9wFIF7AbOiQOvkk"
+        ],
+        "source": "Good Eggs",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c28061bf8ab3f6931d5a2282787e56f84c.png",
+        "price": "$5.99",
+        "extracted_price": 5.99,
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c22fccea06bb73ad85cd42e71f6fc49767.webp"
+    },
+    {
+        "position": 36,
+        "title": "Del Monte #10 Can Pineapple Chunks in Juice",
+        "product_link": "https://www.google.com/shopping/product/1?gl=us&prds=pid:1836409390567373385",
+        "product_id": "1836409390567373385",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=1836409390567373385",
+        "link": "https://www.webstaurantstore.com/del-monte-10-can-pineapple-chunks-in-juice/9992001715.html?utm_source=google&utm_medium=freeclicks&utm_campaign=GoogleShopping&srsltid=AfmBOooR2i-y0LRtB5-X0o-CJP1DMJu9njySP5_Qa_lhJt6Eq6Vtznjp5X0",
+        "links": [
+            "https://www.webstaurantstore.com/del-monte-10-can-pineapple-chunks-in-juice/9992001715.html?utm_source=google&utm_medium=freeclicks&utm_campaign=GoogleShopping&srsltid=AfmBOooR2i-y0LRtB5-X0o-CJP1DMJu9njySP5_Qa_lhJt6Eq6Vtznjp5X0"
+        ],
+        "source": "WebstaurantStore.com",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2a0cc449de2e7faa503b709fa076b6828.png",
+        "price": "$8.69",
+        "extracted_price": 8.69,
+        "rating": 4.7,
+        "reviews": 1900,
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2701c7ec7d79a56c77b6d066234251efb.webp"
+    },
+    {
+        "position": 37,
+        "title": "Pineapple - 2 LBS - We will need 48 hours for delivery",
+        "product_link": "https://www.google.com/shopping/product/1?gl=us&prds=pid:2704773645464486832",
+        "product_id": "2704773645464486832",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=2704773645464486832",
+        "link": "https://int.sentimentsexpress.com/products/pineapple-2-lbs?currency=USD&utm_source=google&utm_medium=cpc&utm_campaign=google%2Bshopping&srsltid=AfmBOoqAYt4PoVA7AxElwuhYVrxKqKCnygfZG0fSi-pC-Sp6ao4Y3Kl0qcI",
+        "links": [
+            "https://int.sentimentsexpress.com/products/pineapple-2-lbs?currency=USD&utm_source=google&utm_medium=cpc&utm_campaign=google%2Bshopping&srsltid=AfmBOoqAYt4PoVA7AxElwuhYVrxKqKCnygfZG0fSi-pC-Sp6ao4Y3Kl0qcI"
+        ],
+        "source": "Sentiments Express",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2c2d0458c74e621368a9db96cea16fbd1.jpeg",
+        "price": "$14.00",
+        "extracted_price": 14,
+        "extensions": [
+            "3-day returns"
+        ],
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2d61375947ec68312a014af5586a8b80d.webp",
+        "delivery": "Free delivery"
+    },
+    {
+        "position": 38,
+        "title": "Fruit Delmonte Pineapple Chunks Packed In Juice 6 no.10 Can",
+        "product_link": "https://www.google.com/shopping/product/1?gl=us&prds=pid:13935578287676963915",
+        "product_id": "13935578287676963915",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=13935578287676963915",
+        "link": "https://www.foodservicedirect.com/fruit-delmonte-pineapple-chunks-packed-in-juice-6-no-10-can-3453.html?srsltid=AfmBOorVg_7R8KargT64rjoNNT5fs10BHygolcV-9o1tBOr3DmOmvKybTbY",
+        "links": [
+            "https://www.foodservicedirect.com/fruit-delmonte-pineapple-chunks-packed-in-juice-6-no-10-can-3453.html?srsltid=AfmBOorVg_7R8KargT64rjoNNT5fs10BHygolcV-9o1tBOr3DmOmvKybTbY"
+        ],
+        "source": "FoodServiceDirect.com",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c21e0cc8947e45852e71891dc014356669.png",
+        "price": "$80.96",
+        "extracted_price": 80.96,
+        "old_price": "$90",
+        "extracted_old_price": 90,
+        "rating": 4.7,
+        "reviews": 1900,
+        "extensions": [
+            "7-day returns",
+            "9% OFF"
+        ],
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c2869b10447ff0ba76712871265e847e88.webp",
+        "tag": "9% OFF"
+    },
+    {
+        "position": 39,
+        "title": "Bulk - Del Monte Gold Pineapple Chunks In Juice - 20 OZ 12 Pack",
+        "product_link": "https://www.google.com/shopping/product/1?gl=us&prds=pid:16462639110545087658",
+        "product_id": "16462639110545087658",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=16462639110545087658",
+        "link": "https://www.stockupexpress.com/products/del-monte-gold-pineapple-chunks-in-juice-20-oz-12-pack?variant=41094190628961&utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=41094190628961&srsltid=AfmBOooDyTiKl0eyOyLqPnYlRU3po_0PyCcTjU3esqxrDOHoycHiummweKk",
+        "links": [
+            "https://www.stockupexpress.com/products/del-monte-gold-pineapple-chunks-in-juice-20-oz-12-pack?variant=41094190628961&utm_source=google&utm_medium=organic&utm_campaign=surfaces-across-google&utm_term=41094190628961&srsltid=AfmBOooDyTiKl0eyOyLqPnYlRU3po_0PyCcTjU3esqxrDOHoycHiummweKk"
+        ],
+        "source": "StockUpExpress",
+        "source_icon": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQJifim3Y-1mjT-4-sIWNTPCtwlk3GdeIOgZkZVGjsj-lgB6nKe12sheAZGZnGQ1VwH0xufD-wE_hIG0PC7iUa2KC_Pz8e3Jv_ryz1xfEGV",
+        "price": "$30.11",
+        "extracted_price": 30.11,
+        "rating": 4.7,
+        "reviews": 1900,
+        "badge": "Small business",
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c29f42e2c0be831298bdae6ca293035896.webp"
+    },
+    {
+        "position": 40,
+        "title": "Harvest Value Pineapple Tidbit in Juice Shelf",
+        "product_link": "https://www.google.com/shopping/product/656970823671214829?gl=us",
+        "product_id": "656970823671214829",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=656970823671214829",
+        "link": "http://www.chefstore.com/p/harvest-value-pineapple-tidbit-in-juice-shelf-stable_6333504/?srsltid=AfmBOopfSyC7wlMG38oIExgfDcVH8VyyhzLKK-Vi-JtCiUiFW0ITUXikNR4",
+        "links": [
+            "http://www.chefstore.com/p/harvest-value-pineapple-tidbit-in-juice-shelf-stable_6333504/?srsltid=AfmBOopfSyC7wlMG38oIExgfDcVH8VyyhzLKK-Vi-JtCiUiFW0ITUXikNR4"
+        ],
+        "source": "US Foods Chef'store",
+        "source_icon": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c200927497a75132d405cd64297da1817a.png",
+        "price": "$6.00",
+        "extracted_price": 6,
+        "extensions": [
+            "Free 30-day returns"
+        ],
+        "thumbnail": "https://serpapi.com/searches/671aec6130dfc19720047ce3/images/3d97079d164f90a299b7efb9293e38c21f29f5f44c1137b8ff97b564dd5f18de.webp"
+    }
+    ],
+    "categories": [
+      {
+        "title": "Filter by color",
+        "filters": [
+          {
+            "title": "Silver",
+            "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRxyUhIvQClBdwTxRzcSeDSnWa6_a1E8i9-Mf6PJ1txgOu4vtLZkC_rW0til5vQA2bj5t0HJ-aM&usqp=CAE",
+            "link": "https://www.google.com/search?sca_esv=5cded6f1e83ac200&hl=en&gl=us&tbm=shop&q=Macbook+M3&tbs=mr:1,pdtr0:1716119%7C1716122&sa=X&ved=0ahUKEwjYoanM7ZaEAxU_lIkEHU5qB0QQwQkI0BsoAA",
+            "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_shopping&gl=us&google_domain=google.com&hl=en&q=Macbook+M3&tbs=mr%3A1%2Cpdtr0%3A1716119%7C1716122"
+          }
+          
+        ]
+      },
+      {
+        "title": "You might like",
+        "filters": [
+          {
+            "title": "MacBook Air",
+            "thumbnail": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTtVIsaVfjS5e2Es6bf67-dLqz3KY0TOMWwX8zri3WRJEIWmyx9L4S6TXeelKPhT-1aE6e5plY&usqp=CAE",
+            "link": "https://www.google.com/search?sca_esv=5cded6f1e83ac200&hl=en&gl=us&tbm=shop&q=Macbook+M3&tbs=mr:1,pdtr0:946505%7C946507&sa=X&ved=0ahUKEwjYoanM7ZaEAxU_lIkEHU5qB0QQwQkI4BsoAA",
+            "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_shopping&gl=us&google_domain=google.com&hl=en&q=Macbook+M3&tbs=mr%3A1%2Cpdtr0%3A946505%7C946507"
+          }
+          
+        ]
+      }
+    ],
+    "featured_shopping_results": [
+      {
+        "position": 1,
+        "title": "Apple MacBook Air 13.3-inch (Retina 8gpu, Silver) 3.2GHz 8-Core M1 (2020) Laptop ...",
+        "link": "https://www.backmarket.com/en-us/p/macbook-air-2020-13-inch-m1-8-core-and-8-core-gpu-8gb-ram-ssd-2000gb/58ba5ecc-eb14-41ab-b19d-8bce7f320958?shopping=gmc&srsltid=AfmBOooeb2cFnjEZadtjapzuPeKsTtq4-IRY9qmM-SDNwFAOXiasoIi2mRI#l=10",
+        "product_link": "https://www.google.com/shopping/product/4860111753655345640?gl=us",
+        "product_id": "4860111753655345640",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=4860111753655345640",
+        "source": "Back Market",
+        "source_icon": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQttBrLD36PDDPlV8mKHkUuL2gL5QsMg4ntt3fcRg27obElEgwXD4KHiy6oKsUQyKHWCLJlMBH9dRegHElG7A1dgzkbTDgpT4n1BIk",
+        "price": "$1,132.89",
+        "extracted_price": 1132.89,
+        "old_price": "$1,849.00",
+        "extracted_old_price": 1849.0,
+        "second_hand_condition": "refurbished",
+        "rating": 4.8,
+        "reviews": 69472,
+        "extensions": [
+          "Mac OS",
+          "Octa Core",
+          "HDMI",
+          "SALE"
+        ],
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRPNp-94DdkUTKyVqdq1nLTVxrdZt8LpuMlG6_f9NmTDzjYztg&usqp=CAE",
+        "tag": "SALE",
+        "delivery": "Delivery by Tue, Feb 13",
+        "store_rating": 4.6,
+        "store_reviews": 2300,
+        "remark": "Lightweight"
+      },
+      {
+        "position": 2,
+        "title": "Apple MacBook Retina Core M3 1.2GHz 8GB 240GB SSD 12' Pick Your OSX!! Os x 12 ...",
+        "link": "https://stock4less.com/products/apple-macbook-retina-core-m3-1-2ghz-8gb-240gb-ssd-12-gold-2017?variant=46033266901295&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOooE1cEnS_k5NHKPTLLrajyaM5Qgs33VjacmAl-B64rw2a5hQ86JXcc",
+        "product_link": "https://www.google.com/shopping/product/1441810132117524438?gl=us",
+        "product_id": "1441810132117524438",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=1441810132117524438",
+        "number_of_comparisons": "5+",
+        "comparison_link": "https://www.google.com/shopping/product/1441810132117524438/offers?hl=en&q=Macbook+M3&gl=us&prds=eto:8002336885957663069_0,pid:13620081601188656607,rsk:PC_5732469676988158429&sa=X&ved=0ahUKEwjYoanM7ZaEAxU_lIkEHU5qB0QQ3q4ECJ8T",
+        "serpapi_product_api_comparisons": "https://serpapi.com/search.json?engine=google_product&filter=eto%3A8002336885957663069_0%2Cpid%3A13620081601188656607%2Crsk%3APC_5732469676988158429&gl=us&offers=1&product_id=1441810132117524438&sa=X&ved=0ahUKEwjYoanM7ZaEAxU_lIkEHU5qB0QQ3q4ECJ8T",
+        "source": "Stock4Less.com",
+        "source_icon": "https://encrypted-tbn0.gstatic.com/favicon-tbn?q=tbn%3AANd9GcQtUhyEsF49Yl8anvh8yo_H7eT4WeAvKgXy4axr6BHdennBA7Q0wSgu-28m2ivoxSNPzw07_3vgtbNIFu6qHVQh9E1VvUdSzg",
+        "price": "$590.00",
+        "extracted_price": 590.0,
+        "old_price": "$890.00",
+        "extracted_old_price": 890.0,
+        "rating": 4.7,
+        "reviews": 30912,
+        "extensions": [
+          "Mac OS",
+          "Dual Core",
+          "USB-C",
+          "SALE"
+        ],
+        "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSG3ucunX2M2UbNcdxPoxp05pDNhYK2MVEuHvAhGoMd9TE7-vo2kmbESBRhh4rQx-mbCjk5JGE&usqp=CAE",
+        "tag": "SALE",
+        "delivery": "Free delivery by Thu, Feb 15",
+        "remark": "Quality display"
+      },
+      {
+        "position": 3,
+        "title": "Apple MacBook Pro Mf840ll/a 13.3-Inch 256gb Laptop w/8GB RAM & Intel Dual-Core i5 ...",
+        "link": "https://www.walmart.com/ip/Restored-Apple-MacBook-Pro-MF840LL-A-13-3-Inch-256GB-Laptop-w-8GB-RAM-Intel-Dual-Core-i5-2-7-GHz-Processor-Refurbished/938254679?wmlspartner=wlpa&selectedSellerId=4800",
+        "product_link": "https://www.google.com/shopping/product/480233806563921352?gl=us",
+        "product_id": "480233806563921352",
+        "serpapi_product_api": "https://serpapi.com/search.json?device=desktop&engine=google_product&gl=us&google_domain=google.com&hl=en&product_id=480233806563921352",
+        "number_of_comparisons": "5+",
+        "comparison_link": "https://www.google.com/shopping/product/480233806563921352/offers?hl=en&q=Macbook+M3&gl=us&prds=eto:3218466656693172530_0,pid:13746623205133485402,rsk:PC_10123637101179699492&sa=X&ved=0ahUKEwjYoanM7ZaEAxU_lIkEHU5qB0QQ3q4ECLMT",
+        "serpapi_product_api_comparisons": "https://serpapi.com/search.json?engine=google_product&filter=eto%3A3218466656693172530_0%2Cpid%3A13746623205133485402%2Crsk%3APC_10123637101179699492&gl=us&offers=1&product_id=480233806563921352&sa=X&ved=0ahUKEwjYoanM7ZaEAxU_lIkEHU5qB0QQ3q4ECLMT",
+        "source": "Walmart - TekReplay",
+        "source_icon": "https://encrypted-tbn3.gstatic.com/favicon-tbn?q=tbn%3AANd9GcTnP5ISNmbEt5sfd-d6O77v8eZaWxR-UtwYkk865osEjKrS0r8udsVsfLPjH1VQBQizWhrYkhO2STFk8WaMhokVgFUhjn2NoxU",
+        "price": "$249.98",
+        "extracted_price": 249.98,
+        "second_hand_condition": "refurbished",
+        "rating": 4.8,
+        "reviews": 44635,
+        "extensions": [
+          "Mac OS",
+          "Dual Core",
+          "USB-C"
+        ],
+        "thumbnail": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRkepn6hfg0VO7wRYK110_zlH-ceoF8uB0DiPsJU14xdg9YTnUC2mzAzoS5xKbCipGBvjhnUVge&usqp=CAE",
+        "delivery": "$40.00 delivery",
+        "remark": "Performs well"
+      }
+      
+    ],
+    "pagination": {
+      "current": 1,
+      "next": "https://www.google.com/search?q=Macbook+M3&sca_esv=5cded6f1e83ac200&hl=en&gl=us&tbs=vw:d&tbm=shop&ei=9DjCZdjXBL-optQPztSdoAQ&start=60&sa=N&ved=0ahUKEwjYoanM7ZaEAxU_lIkEHU5qB0QQ8NMDCJoc",
+      "other_pages": {
+        "2": "https://www.google.com/search?q=Macbook+M3&sca_esv=5cded6f1e83ac200&hl=en&gl=us&tbs=vw:d&tbm=shop&ei=9DjCZdjXBL-optQPztSdoAQ&start=60&sa=N&ved=0ahUKEwjYoanM7ZaEAxU_lIkEHU5qB0QQ8tMDCI4c",
+        "3": "https://www.google.com/search?q=Macbook+M3&sca_esv=5cded6f1e83ac200&hl=en&gl=us&tbs=vw:d&tbm=shop&ei=9DjCZdjXBL-optQPztSdoAQ&start=120&sa=N&ved=0ahUKEwjYoanM7ZaEAxU_lIkEHU5qB0QQ8tMDCJAc",
+        "4": "https://www.google.com/search?q=Macbook+M3&sca_esv=5cded6f1e83ac200&hl=en&gl=us&tbs=vw:d&tbm=shop&ei=9DjCZdjXBL-optQPztSdoAQ&start=180&sa=N&ved=0ahUKEwjYoanM7ZaEAxU_lIkEHU5qB0QQ8tMDCJIc",
+        "5": "https://www.google.com/search?q=Macbook+M3&sca_esv=5cded6f1e83ac200&hl=en&gl=us&tbs=vw:d&tbm=shop&ei=9DjCZdjXBL-optQPztSdoAQ&start=240&sa=N&ved=0ahUKEwjYoanM7ZaEAxU_lIkEHU5qB0QQ8tMDCJQc",
+        "6": "https://www.google.com/search?q=Macbook+M3&sca_esv=5cded6f1e83ac200&hl=en&gl=us&tbs=vw:d&tbm=shop&ei=9DjCZdjXBL-optQPztSdoAQ&start=300&sa=N&ved=0ahUKEwjYoanM7ZaEAxU_lIkEHU5qB0QQ8tMDCJYc",
+        "7": "https://www.google.com/search?q=Macbook+M3&sca_esv=5cded6f1e83ac200&hl=en&gl=us&tbs=vw:d&tbm=shop&ei=9DjCZdjXBL-optQPztSdoAQ&start=360&sa=N&ved=0ahUKEwjYoanM7ZaEAxU_lIkEHU5qB0QQ8tMDCJgc"
+      }
+    },
+    "serpapi_pagination": {
+      "current": 1,
+      "next_link": "https://serpapi.com/search.json?device=desktop&engine=google_shopping&gl=us&google_domain=google.com&hl=en&q=Macbook+M3&start=60&tbs=vw%3Ad",
+      "next": "https://serpapi.com/search.json?device=desktop&engine=google_shopping&gl=us&google_domain=google.com&hl=en&q=Macbook+M3&start=60&tbs=vw%3Ad",
+      "other_pages": {
+        "2": "https://serpapi.com/search.json?device=desktop&engine=google_shopping&gl=us&google_domain=google.com&hl=en&q=Macbook+M3&start=60&tbs=vw%3Ad",
+        "3": "https://serpapi.com/search.json?device=desktop&engine=google_shopping&gl=us&google_domain=google.com&hl=en&q=Macbook+M3&start=120&tbs=vw%3Ad",
+        "4": "https://serpapi.com/search.json?device=desktop&engine=google_shopping&gl=us&google_domain=google.com&hl=en&q=Macbook+M3&start=180&tbs=vw%3Ad",
+        "5": "https://serpapi.com/search.json?device=desktop&engine=google_shopping&gl=us&google_domain=google.com&hl=en&q=Macbook+M3&start=240&tbs=vw%3Ad",
+        "6": "https://serpapi.com/search.json?device=desktop&engine=google_shopping&gl=us&google_domain=google.com&hl=en&q=Macbook+M3&start=300&tbs=vw%3Ad",
+        "7": "https://serpapi.com/search.json?device=desktop&engine=google_shopping&gl=us&google_domain=google.com&hl=en&q=Macbook+M3&start=360&tbs=vw%3Ad"
+      }
+    }
+  }

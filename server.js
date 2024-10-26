@@ -19,19 +19,28 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.post('/searchProduct', async (req, res) => {
+  say.stop();
   try {
     await getJson({
       engine: "google_shopping",
       q: req.body.text,
-      api_key: "6f0c25895e35ca946165c00a417842fd45133927050835001054ef47a72a4251"
+      direct_link: true,
+      api_key: process.env.SERPAPI,
     }, (json) => {
 
       var searchData = json["shopping_results"];
-      var product1 = "Name: " + searchData[0].title + ", Price: " + searchData[0].price + ", Distributor: " + searchData[0].source + ", Rating: " + searchData[0].store_rating + "\n";
-      var product2 = "Name: " + searchData[1].title + ", Price: " + searchData[1].price + ", Distributor: " + searchData[1].source + ", Rating: " + searchData[1].store_rating + "\n";
-      var product3 = "Name: " + searchData[2].title + ", Price: " + searchData[2].price + ", Distributor: " + searchData[2].source + ", Rating: " + searchData[2].store_rating + "\n";
+      var searchResults = "";
+      for(var i=0; i<searchData.length; i++){
 
-      var searchResults = "I am sending 3 search results. Please read off each one in an easy-to-understand manner. " + product1 + product2 + product3;
+        var num = i+1;
+        searchResults = searchResults + "Product number " + num.toString() + ": Name: " + searchData[i].title + ", Price: " + searchData[i].price + ", Distributor: " + searchData[i].source + ", Rating: " + searchData[i].rating + "\n";
+
+      }
+      //var product1 = "Name: " + searchData[0].title + ", Price: " + searchData[0].price + ", Distributor: " + searchData[0].source + ", Rating: " + searchData[0].rating + "\n";
+      //var product2 = "Name: " + searchData[1].title + ", Price: " + searchData[1].price + ", Distributor: " + searchData[1].source + ", Rating: " + searchData[1].rating + "\n";
+      //var product3 = "Name: " + searchData[2].title + ", Price: " + searchData[2].price + ", Distributor: " + searchData[2].source + ", Rating: " + searchData[2].rating + "\n";
+
+      //var searchResults = "I am sending the search results. Please read off each one in an easy-to-understand manner. " + product1 + product2 + product3;
 
       chatGPT(searchResults);
 
@@ -67,7 +76,9 @@ app.get('/stt', async (req, res) => {
   else{
     rec = false;
     const poop = await recordThing(rec);
-    const poop2 = await chatGPT(poop);
+
+    var poop3 = "The user is on the " + currPage + ". " + poop;
+    const poop2 = await chatGPT(poop3);
     res.send(poop2);
 
   }

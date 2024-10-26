@@ -49,6 +49,7 @@ async function startRecord(){
     mic._stream.pipe(writer).end(); //Use mic._stream.end() for to end recording
     console.log('Recording stopped.');
     file.end();
+    say.stop();
     speakAndWait("Recording has stopped");
 
     await voiceToText(filePath);
@@ -86,7 +87,7 @@ recording == rec;
     else if (recording == false) { //start's recording
       recording = true;
       file = fs.createWriteStream(filePath, { encoding: 'binary' });
-
+      say.stop();
       await speakAndWait("Recording voice");
       await startRecord();
     }
