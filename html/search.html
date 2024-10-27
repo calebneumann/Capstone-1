@@ -5,6 +5,82 @@
         <TITLE>Product Search</TITLE>
         <link rel="stylesheet" type="text/css" href="search.css">
     </HEAD>
+
+    <script>
+
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        // Function to get a cookie
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        // Function to parse JSON from a cookie
+        function getJSONFromCookie(name) {
+            const cookieValue = getCookie(name);
+            return cookieValue ? JSON.parse(cookieValue) : null;
+        }
+
+
+        //NOTE: THe limit for one cookie is 4096 bytes which will make it hard to have a genuine wishlist in one cookie
+
+        // Function to add data to the cookie
+        function addDataToCookie(name, newData) {
+            // Get existing data from the cookie
+            var existingData = getJSONFromCookie(name) || {};
+
+            console.log(newData);
+            console.log(existingData);
+
+            if(JSON.stringify(existingData) == '{}'){
+                newData = '[' + JSON.stringify(newData) + ']';
+                setCookie(name, newData, 7);
+
+            }
+            else{
+                // Merge the new data into the existing data
+                var removeBrackets = JSON.stringify(existingData);
+                if(removeBrackets[0] == '['){
+                    console.log(removeBrackets);
+                    removeBrackets = removeBrackets.slice(1, -1);
+                    console.log(removeBrackets);
+                }
+
+                const currLength = existingData.length;
+                //existingData = JSON.parse(removeBrackets);
+                existingData = removeBrackets;
+                var updatedData = '[' + JSON.stringify(newData) + ',' + existingData + ']';
+                
+
+                //var updatedData = '[' + JSON.stringify(existingData) + ',' + JSON.stringify(newData) + ']';
+                updatedData = JSON.parse(updatedData);
+                console.log("updatedData");
+                console.log(updatedData);
+                // Store the updated data back in the cookie
+                setCookie(name, JSON.stringify(updatedData), 7);
+            }
+            
+
+            
+        }
+    </script>
+
+
     <div class="container">
     <BODY>
 
@@ -77,27 +153,7 @@
                     console.log(data)
                     var searchData = data["shopping_results"];
                     console.log(searchData);
-                    /*
-                    product11 = document.getElementById('prod1');
-                    product22 = document.getElementById('prod2');
-                    product33 = document.getElementById('prod3');
-        
-                    //currently gets the top 3 results and displays info about them
-        
-                    //available parameters are: title, link (where the actual product is), product_link (from google.com/shopping), 
-                    //source (where it's sold), price, condition (new, used, etc.), rating, reviews (# of reviews), 
-                    //delivery (delivery options), extensions (color of product, material of product, etc.), thumbnail)
-                    
 
-                    
-                    product11.innerHTML = '<img class="image" src=' + '"' + searchData[0].thumbnail + '">' + '<h3>Result #1<ul><li><a href="' + searchData[0].link + '"> '+searchData[0].title+"</a></li><li>Price: "+searchData[0].price+"</li><li>Distributor: "+searchData[0].source+"</li><li>Rating: "+searchData[0].store_rating+"</li></ul></h1>";
-                    product22.innerHTML = '<img class="image" src=' + '"' + searchData[1].thumbnail + '">' + '<h3>Result #2<ul><li><a href="' + searchData[1].link + '"> '+searchData[1].title+"</a></li><li>Price: "+searchData[1].price+"</li><li>Distributor: "+searchData[1].source+"</li><li>Rating: "+searchData[1].store_rating+"</li></ul></h1>";
-                    product33.innerHTML = '<img class="image" src=' + '"' + searchData[2].thumbnail + '">' + '<h3>Result #3<ul><li><a href="' + searchData[2].link + '"> '+searchData[2].title+"</a></li><li>Price: "+searchData[2].price+"</li><li>Distributor: "+searchData[2].source+"</li><li>Rating: "+searchData[2].store_rating+"</li></ul></h1>";
-        
-                    product11 = "Name: " + searchData[0].title + ", Price: " + searchData[0].price + ", Distributor: " + searchData[0].source + ", Rating: " + searchData[0].store_rating + "\n";
-                    product22 = "Name: " + searchData[1].title + ", Price: " + searchData[1].price + ", Distributor: " + searchData[1].source + ", Rating: " + searchData[1].store_rating + "\n";
-                    product33 = "Name: " + searchData[2].title + ", Price: " + searchData[2].price + ", Distributor: " + searchData[2].source + ", Rating: " + searchData[2].store_rating + "\n";
-                    */
                     const productList = document.getElementById('product-list');
 
                     productList.innerHTML = ''; // This clears the list
@@ -110,7 +166,7 @@
                         // Create product title
                         const productTitle = document.createElement('p');
                         productTitle.classList.add('product-title');
-                        productTitle.innerHTML = `<a href="${product.link}" target="_blank">${product.title}</a>`;
+                        productTitle.innerHTML = `<a href="${product.link}" target="_blank" class="product-title">${product.title}</a>`;
                         productDiv.appendChild(productTitle);
             
                         // Create product source
@@ -138,6 +194,22 @@
                         productPrice.textContent = product.price;
                         productDiv.appendChild(productPrice);
             
+                        //button
+                        const heartButton = document.createElement('button');
+                        heartButton.classList.add('heart-button');
+                        heartButton.innerHTML = '&#9825;'; // Empty heart
+                    
+                        // Toggle heart fill on click
+                        heartButton.addEventListener('click', () => {
+                            heartButton.classList.toggle('active');
+                            heartButton.innerHTML = heartButton.classList.contains('active') ? '&#9829;' : '&#9825;';
+                            addDataToCookie("wishlist", product);
+                            console.log("got from database: ");
+                            console.log(getJSONFromCookie("wishlist"));
+                        });
+
+                        productDiv.appendChild(heartButton); // Add heart button to product div
+
                         // Append the product div to the product list
                         productList.appendChild(productDiv);
                     });
