@@ -170,40 +170,61 @@ h1 {
 .product {
     border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 5px;
-    margin: 5px; /* Reduced margin to decrease space */
-    width: calc(30.333% - 10px); /* 3 items per row accounting for margins */
-    height: 300px; /* Set a fixed height */
+    margin: 5px;
+    width: calc(30.333% - 10px);
+    height: 300px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
     display: flex;
-    flex-direction: column; /* Stack children vertically */
-    justify-content: space-between; /* Distribute space evenly */
-    background-color: #cdf2ff;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px; /* Creates space inside the container */
+    align-items: center; /* Centers items horizontally */
+    position: relative;
 }
+
+.product-title, .product-price {
+    margin: 0; /* Remove default margins */
+    padding: 5px 0; /* Use padding for vertical spacing */
+    overflow: visible; /* Ensure text isn’t clipped */
+}
+
+.product-title {
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: clip;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; /* Limit title to 2 lines */
+    margin: auto;
+    max-width: 70%;
+    text-align: center;
+    white-space: normal;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to the next line */
+    justify-content: flex-start; /* Align items to the start */
+    
+    
+}
+
+.product-price {
+    font-weight: bold;
+    color: green;
+}
+
+/* Extra bottom spacing for the last element */
+.product p:last-child {
+    margin-bottom: 5px;
+}
+
+
+
+
 
 .product img {
     max-width: auto;
     height: 175px;
     flex-grow: 1; /* Allow image to grow and fill space */
-}
-
-.product-title {
-    font-weight: bold; /* Makes the product title bold */
-    overflow: hidden; /* Prevents text from overflowing outside the container */
-    text-overflow: ellipsis; /* Adds "..." if the text overflows */
-    margin: 0; /* Reset margin for consistency */
-    padding: 5px; /* Optional: Add padding for better spacing */
-    height: 40px; /* Set a fixed height for consistency */
     
-}
-
-.product-price {
-    color: green;
-    margin-bottom: 5px;
-    font-weight: bold;
-    overflow: ellipse;
-    font-size: 20px;
 }
 
 .product-source{
@@ -212,4 +233,21 @@ h1 {
     text-overflow: ellipsis; /* Adds "..." if the text overflows */
     margin: 0; /* Reset margin for consistency */
     padding: 5px; /* Optional: Add padding for better spacing */
+}
+
+.heart-button {
+    position: absolute;
+    top: 10px;  /* Adjust these values for desired positioning */
+    left: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 48px;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s ease;
+    margin: auto
+}
+
+.heart-button.active {
+    color: #ff4757; /* Red color for filled heart */
 }
