@@ -4,9 +4,32 @@
     <META NAME="GENERATOR" Content="Microsoft Visual Studio">
     <TITLE>Speakommerce</TITLE>
     <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="search.css">
+
     <script src="js/index.js"></script>
 
 </HEAD>
+
+<script>
+
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // Function to parse JSON from a cookie
+    function getJSONFromCookie(name) {
+        const cookieValue = getCookie(name);
+        return cookieValue ? JSON.parse(cookieValue) : null;
+    }
+
+</script>
 <div class="container">
     <BODY>
         <div class="navbar">
@@ -112,7 +135,121 @@
             <br><br><br><br>
             <h1>Speakommerce</h1>
             <h3>Speak and find whatever e-commerce product you need!</h3>
-            <p> I'm sure we will come up with something more clever soon!</p>
+            <div id="product-list">Speak to the assistant to search for a product...</div>
+
+            
+
+                <script>
+                    //<----------------------------------------delete below when done with testing-------------------------->
+                                    var product11;
+                                    var product22;
+                                    var product33;
+                    
+                                document.addEventListener('DOMContentLoaded', async () => {
+                                    fetch("example.json")
+                                    .then((res) => {
+                                        if (!res.ok) {
+                                            throw new Error
+                                                (`HTTP error! Status: ${res.status}`);
+                                        }
+                                        console.log(res.json.body)
+                                        var searchData = res.json["shopping_results"];
+                                        console.log(searchData)
+                                        return res.json();
+                                    })
+                                    .then((data) => {
+                                        console.log(data)
+                                        var searchData = data["shopping_results"];
+                                        console.log(searchData);
+                                        /*
+                                        product11 = document.getElementById('prod1');
+                                        product22 = document.getElementById('prod2');
+                                        product33 = document.getElementById('prod3');
+                            
+                                        //currently gets the top 3 results and displays info about them
+                            
+                                        //available parameters are: title, link (where the actual product is), product_link (from google.com/shopping), 
+                                        //source (where it's sold), price, condition (new, used, etc.), rating, reviews (# of reviews), 
+                                        //delivery (delivery options), extensions (color of product, material of product, etc.), thumbnail)
+                                        
+                    
+                                        
+                                        product11.innerHTML = '<img class="image" src=' + '"' + searchData[0].thumbnail + '">' + '<h3>Result #1<ul><li><a href="' + searchData[0].link + '"> '+searchData[0].title+"</a></li><li>Price: "+searchData[0].price+"</li><li>Distributor: "+searchData[0].source+"</li><li>Rating: "+searchData[0].store_rating+"</li></ul></h1>";
+                                        product22.innerHTML = '<img class="image" src=' + '"' + searchData[1].thumbnail + '">' + '<h3>Result #2<ul><li><a href="' + searchData[1].link + '"> '+searchData[1].title+"</a></li><li>Price: "+searchData[1].price+"</li><li>Distributor: "+searchData[1].source+"</li><li>Rating: "+searchData[1].store_rating+"</li></ul></h1>";
+                                        product33.innerHTML = '<img class="image" src=' + '"' + searchData[2].thumbnail + '">' + '<h3>Result #3<ul><li><a href="' + searchData[2].link + '"> '+searchData[2].title+"</a></li><li>Price: "+searchData[2].price+"</li><li>Distributor: "+searchData[2].source+"</li><li>Rating: "+searchData[2].store_rating+"</li></ul></h1>";
+                            
+                                        product11 = "Name: " + searchData[0].title + ", Price: " + searchData[0].price + ", Distributor: " + searchData[0].source + ", Rating: " + searchData[0].store_rating + "\n";
+                                        product22 = "Name: " + searchData[1].title + ", Price: " + searchData[1].price + ", Distributor: " + searchData[1].source + ", Rating: " + searchData[1].store_rating + "\n";
+                                        product33 = "Name: " + searchData[2].title + ", Price: " + searchData[2].price + ", Distributor: " + searchData[2].source + ", Rating: " + searchData[2].store_rating + "\n";
+                                        */
+                                        const productList = document.getElementById('product-list');
+                    
+                                        productList.innerHTML = ''; // This clears the list
+                                        searchData = getJSONFromCookie("wishlist");
+                                        console.log(searchData);
+                                        searchData.forEach(product => {
+                                            // Create a container div for each product
+                                            const productDiv = document.createElement('div');
+                                            productDiv.classList.add('product');
+                                
+                                            // Create product title
+                                            const productTitle = document.createElement('p');
+                                            productTitle.classList.add('product-title');
+                                            productTitle.innerHTML = `<a href="${product.link}" target="_blank" class="product-title">${product.title}</a>`;
+                                            productDiv.appendChild(productTitle);
+                                
+                                            // Create product source
+                                            const productSource = document.createElement('p');
+                                            productSource.classList.add('product-source');
+                                            productSource.textContent = product.source;
+                                            productDiv.appendChild(productSource);
+                    
+                                            // Create product image
+                                            const productImgLink = document.createElement('a');
+                                            productImgLink.href = product.link;
+                                            productImgLink.target = "_blank";
+                    
+                                            const productImg = document.createElement('img');
+                                            productImg.src = product.thumbnail;
+                                            productImg.alt = product.title;
+                    
+                                            // Append the image to the anchor
+                                            productImgLink.appendChild(productImg);
+                                            productDiv.appendChild(productImgLink);
+                                
+                                            // Create product price
+                                            const productPrice = document.createElement('p');
+                                            productPrice.classList.add('product-price');
+                                            productPrice.textContent = product.price;
+                                            productDiv.appendChild(productPrice);
+                                
+                                            //button
+                                            const heartButton = document.createElement('button');
+                                            heartButton.classList.add('heart-button');
+                                            heartButton.innerHTML = '&#9825;'; // Empty heart
+                                        
+                                            // Toggle heart fill on click
+                                            heartButton.addEventListener('click', () => {
+                                                heartButton.classList.toggle('active');
+                                                heartButton.innerHTML = heartButton.classList.contains('active') ? '&#9829;' : '&#9825;';
+                                                console.log(product);
+                                            });
+                    
+                                            productDiv.appendChild(heartButton); // Add heart button to product div
+                    
+                                            // Append the product div to the product list
+                                            productList.appendChild(productDiv);
+                                        });
+                    
+                                    })
+                                    .catch((error) =>
+                                        console.error("Unable to fetch data:", error));
+                                    
+                                });
+                    
+
+
+            </script>
 
         </div>
         <script src="index.js"></script>
