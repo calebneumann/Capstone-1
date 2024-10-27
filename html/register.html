@@ -21,8 +21,6 @@
                         <a href='search.html'>Search</a>
                         <a href='about_us.html'>About Us</a>
                         <a href='login.html'>Log in</a>
-                        
-
                     </h4>
                 </div>
 
@@ -37,7 +35,6 @@
                                 topBar += "<a href='search.html'>Search</a>";
                                 topBar += "<a href='about_us.html'>About Us</a>"
                                 topBar += "<a href='profile.html'>Profile</a></h4>"
-
                             document.getElementById('topLinks').innerHTML = topBar
                         }
                     
@@ -136,9 +133,7 @@
                     return element.tagName === "INPUT" && element.getAttribute("type") === "text" || element.tagName === "TEXTAREA";
                 }
             </script>
-
-
-              </div>
+            </div>
 
         </div>
         <div class="main">
@@ -148,19 +143,33 @@
                 <div>
                     <form id="regForm" action="/registerDatabase" method="POST">
                     <!--trying to get AI working from pressing a button for testing purposes-->
-                    <div class="bigText">Username</div>
-                    <input class="textBoxes" type="text" id="username" placeholder="username" name="username" /><br>
-                    <div class="bigText">Password</div>
-                    <input class="textBoxes" type="text" id="password" placeholder="password" name="password" /><br>
-                    <div class="bigText">Phone #</div>
-                    <input class="textBoxes" type="text" id="phone" placeholder="Phone #" name="phone" /><br>
+                    <label>Username</label>
+                    <br>
+                    <br>
+                    <input class="textBoxes" type="text" id="username" placeholder="Enter your username" name="username" /><br>
+                    <div class=" underline">
+                    </div>
+                    
+                    <label>Password</label>
+                    <br><br>
+                    <input class="textBoxes" type="password" id="password" placeholder="Enter your password" name="password" /><br>
+                    <div class=" underline">
+                    </div>
+                    <label>Phone Number</label>
+                    <br><br>
+                    <input class="textBoxes" type="text" id="phone" placeholder="Enter your phone number" name="phone" /><br>
+                    <div class=" underline">
+                    </div>
                     <div id="phoneError"></div>
                     <div style="font-size: 20px;">Phone # inserted should have no spaces, dashes, or parentheses</div>
                     <div style="font-size: 20px;">Ex: XXXXXXXXXX</div><br>
                     <div id="error" class="errorMessage"></div>
                     <input class="submitButton" id="loginButton" type="submit" value="Submit">
                     <!--<button class="button" id="pressButton">Register</button>-->
+                    <br>
+                    <span> Already have an account? <a href="login.html" id="login-a">Login</a></span>
                     </form>
+                    
                 
                     <script>
                         document.getElementById("regForm").addEventListener("submit", function(event) {

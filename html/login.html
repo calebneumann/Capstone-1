@@ -140,18 +140,47 @@
             <h1>Login</h1>
             <div>
                 <div>
+                        <label>Username</label>
+                        <br>
+                        <br>
+                        
+                        <input class="textBoxes" type="text" id="username" placeholder="Enter your username" required><br>
+                        <div class=" underline">
+                        </div>
+                        
+                        <label>Password</label>
+                        <br>
+                        <br>
+                        <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                        <br>
+                    
+                        <div class="underline"></div>
+                        <button class="button" type="submit" id="loginButton">Login</button>
+                       
+                        
 
-                    <!--trying to get AI working from pressing a button for testing purposes-->
-                    <input class="textBoxes" type="text" id="username" placeholder="username"><br>
-                    <input class="textBoxes" type="text" id="password" placeholder="password"><br>
+                        <br>
+                        <span> Don't have an account? <a href="register.html" id="login-a">Register</a></span>
+                            </a></span>
+                            <br>
+                            <br>
+                        <!--<button class="button" id="speakButton">Speak Text</button> -->
+                        <div id="error" class="errorMessage"></div>
+
+                    <!---
+                    
+                  
                     <div id="error" class="errorMessage"></div>                    
 
-                    <button class="button" id="loginButton">Log in</button>
-                
+                   
+                    ------------>
+
+            
                     <script>
                         document.getElementById("loginButton").addEventListener("click", function() {
                             var username = document.getElementById("username").value;
                             var password = document.getElementById("password").value;
+                            console.log(username, password)
                         
                             // Create an object to hold the values
                             let data = { username: username, password: password };
@@ -178,14 +207,7 @@
                     </script>
                 </div>
                 </div>
-
-                <br><br>
-                <a href="register.html">
-                    <div class="account1">Don't have an account?</div> 
-                    <div class="account2 funny">Too bad!</div>
-                </a>
-
-                <button id="speakButton">Speak Text</button>
+                
     
     <script>
         document.getElementById('speakButton').addEventListener('click', function() {
