@@ -10,7 +10,6 @@ BODY {
     background-color: #E3F6FC;
     margin: 0;
     height: auto;
-    width: auto;
 }
 .column {
     float: left;
@@ -18,21 +17,13 @@ BODY {
     padding: 5px;
   }
 
-
-
-  /* Clearfix (clear floats) */
-  .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-button {
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
+
 
 .logOutButton{
   width: 240px;
@@ -74,9 +65,6 @@ video {
 
 }
 
-.container {
-    display: flex;
-}
 
 
 .responseThing{
@@ -91,9 +79,10 @@ video {
 }
 
 .main {
-    padding-left: 30px;
-    min-width: 75%;
-    text-align: center
+    
+    width: 100%;
+    text-align: center;
+
 }
 
 .news {
@@ -103,14 +92,10 @@ video {
     font-family: sans-serif;
 }
 
-
-
-
-    .nav h1 {
-        padding-left: 20px;
-        display: flex;
-    }
-
+.nav h1 {
+    padding-left: 20px;
+    display: flex;
+}
 
 /* Dropdown Button */
 .dropbtn {
@@ -120,102 +105,88 @@ video {
     font-size: 16px;
     border: none;
   }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    width: auto;
-    height: auto;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: black;
-    padding: 12px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #ddd;
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
   
-  .dropdown:hover .dropdown-content {
-    display: block;
-    
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  width: auto;
+  height: auto;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
 }
   
-  .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+.dropdown:hover .dropdown-content {
+  display: block;
+  
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
 }
 
 .navbar {
-    overflow: visible;
-    background-color: #397C97;
-    position: absolute; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
-    height:auto;
+  overflow: visible;
+  background-color: #397C97;
+  position: absolute; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  height:auto;
 }
-  .recordThing{
-    padding: 0;
-    text-align: center;
-    margin-top: -60px;
-    color: red;
+.recordThing{
+  padding: 0;
+  text-align: center;
+  margin-top: -60px;
+  color: red;
 }
 
 
 
 .anchor-container {
-    float: right; /* or display: inline-block; */
-    text-align: right;
-    padding: 10px 24px; /* Some padding */
-    margin-top: -70px; /* adjust the margin as needed */
-    margin-bottom: -15px;
-    margin-right: 30px;
-  }
-  
-  .anchor-container a {
-    /* your anchor styles here */
-    color: white;
-    padding-left: 40px;
-    font-size: large;
-  }
-
-  .chat-transcript {
-    overflow: hidden;
-    min-width: 0; /* Allow the container to shrink */
-    display: flex;
-    justify-content: center; /* Center the content horizontally */
-    text-align: center; /* Center the text inside the container */
-    color: red;
+  float: right; /* or display: inline-block; */
+  text-align: right;
+  padding: 10px 24px; /* Some padding */
+  margin-top: -70px; /* adjust the margin as needed */
+  margin-bottom: -15px;
+  margin-right: 30px;
 }
 
-  .textBoxes{
-    margin-bottom: 10px;
-    width: 390px;
-    height: 37px;
-    font-size: 37px;
+.anchor-container a {
+  /* your anchor styles here */
+  color: white;
+  padding-left: 40px;
+  font-size: large;
 }
 
-.button{
-    width: 240px;
-    height: 40px;
-    font-size: 30px;
-    font-weight: bolder;
+.chat-transcript {
+  overflow: hidden;
+  min-width: 0; /* Allow the container to shrink */
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  text-align: center; /* Center the text inside the container */
+  color: red;
 }
 
-  .center{
-    text-align: center
-  }
+.center{
+  text-align: center
+}
 
 .container {
     display: flex;
@@ -257,17 +228,6 @@ video {
     color: red;
 }
 
-.submitButton{
-  width: 240px;
-  height: 40px;
-  font-size: 30px;
-  font-weight: bolder;
-  text-align: center;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: grabbing;
-}
-
 .bigText{
   font-size: 30px;
 }
@@ -280,4 +240,99 @@ video {
 .title {
   padding-left: 30px;
   min-width: 75%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  height: 95vh;
+  overflow: scroll;
+
+}
+
+.underline {
+
+  text-align: center;
+  background-color: gray;
+  height: 1px;
+  margin-bottom: 20px;
+}
+
+#login-a {
+  text-decoration: none;
+  color: #397C97;
+  transition: 0.4s;
+}
+
+#login-a:hover {
+  padding-left: 8px;
+}
+
+#loginButton {
+  height: 38px;
+  background-color: #397C97;
+  color: white;
+  font-family: monospace;
+  cursor: pointer;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid black;
+  width: 80%;
+  border-radius: 5px;
+  margin-bottom: 3px;
+  outline: none;
+  font-family: monospace;
+  text-align: center;
+  transition: 0.4s;
+}
+
+#loginButton:hover {
+  background-color: #E3F6FC;
+  color: black;
+  border: none;
+}
+
+
+
+#speakButton{
+height: 38px;
+  background-color: #397C97;
+  color: white;
+  font-family: monospace;
+  cursor: pointer;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid black;
+  width: 12%;
+  border-radius: 5px;
+  margin-bottom: 3px;
+  outline: none;
+  font-family: monospace;
+  text-align: center;
+  transition: 0.4s;
+}
+
+#speakButton:hover{
+  background-color: #E3F6FC;
+    color: black;
+    border: none;
+  }
+
+
+input{
+  width: 80%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 3px;
+  outline: none;
+  background-color: transparent;
+  font-size: 14px;
+  text-align: center;
+}
+
+label{
+  font-size: 20px;
 }

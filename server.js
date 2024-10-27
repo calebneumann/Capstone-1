@@ -114,6 +114,9 @@ catch (error) {
   console.log(error);
 }
 });
+var userLoggedIn = "";
+
+
 
 
 //----------------------------------------LOOK HERE------------------------------------>
@@ -308,11 +311,16 @@ app.post('/changePhone', (req, res) => {
 });
 //--------------------------------AAAAAAAAAAAAHHHHH DATABASE IS UP HERE----------------------------------------->
 
+
+
+
+
 //checks to see if someone is logged in so that the
 //login button is replaced by the profile button
 app.get('/logInCheck', async(req, res) => {
   res.send(userLoggedIn);
 });
+
 
 //empties the username var so that everywhere knows to be logged out
 app.get('/logOut', async(req, res) => {
