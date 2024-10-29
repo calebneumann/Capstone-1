@@ -1,2 +1,52 @@
 Hello!
+<<<<<<< HEAD
+Hello! Welcome to Speak-Commerce! I'm here to assist you with your online shopping experience. How can I help you today?
+The user is on the home. 
+Hello! Welcome to Speak-Commerce! I'm here to assist you with your online shopping experience. How can I help you today?
+The user is on the search. Search for PlayStation
+Searching for: PlayStation
+Product number 1: Name: Sony PlayStation 5 Digital Edition Console, Price: $404.99, Distributor: GameStop, Rating: 4.7
+Product number 2: Name: Certified Refurbished PlayStation 5 Digital Edition Console, Price: $349.99, Distributor: playstation.com, Rating: undefined
+Product number 3: Name: Sony PlayStation 5 Pro Console, Price: $699.99, Distributor: PlayStation, Rating: 4.7
+Product number 4: Name: Sony PlayStation 5 Slim Digital Edition, Price: $449.00, Distributor: Amazon.com, Rating: 4.7
+Product number 5: Name: Sony PlayStation 5 Slim, Price: $489.00, Distributor: Amazon.com - Seller, Rating: 4.7
+Product number 6: Name: Sony PlayStation 4 500GB Gaming Console, Price: $119.99, Distributor: GameStop, Rating: 3.9
+Product number 7: Name: Sony PlayStation 4 Pro, Price: $226.99, Distributor: Amazon.com - Seller, Rating: 4.7
+Product number 8: Name: Sony PlayStation Console, Price: $93.99, Distributor: Amazon, Rating: 4.6
+Product number 9: Name: Sony PlayStation 5 Disc, Price: $439.99, Distributor: GameStop, Rating: 4.5
+Product number 10: Name: Sony PlayStation 4 500gb Console, Price: $179.00, Distributor: Amazon.com - Seller, Rating: 4.7
+Product number 11: Name: Sony PlayStation 4 Slim, Price: $199.99, Distributor: Amazon.com - Seller, Rating: 4.7
+Product number 12: Name: Sony PlayStation 4 1TB Slim Console, Price: $149.99, Distributor: GameStop, Rating: 4.7
+Product number 13: Name: PlayStation 5, Price: $280.00, Distributor: Poshmark, Rating: undefined
+Product number 14: Name: Sony PlayStation 5 Console, Price: $414.99, Distributor: GameStop, Rating: 4.7
+Product number 15: Name: Sony PlayStation 4 500GB Limited Edition Uncharted 4 Bundle, Price: $139.99, Distributor: GameStop, Rating: 4.7
+Product number 16: Name: Sony PlayStation 5 Digital Edition Console, Price: $380.00, Distributor: eBay, Rating: 4.8
+Product number 17: Name: Playstation 5 Disc Version PS5 Console 4K-TV Gaming.120Hz 8K Output, Price: $569.00, Distributor: Amazon.com - Seller, Rating: 3.3
+Product number 18: Name: PlayStation 4 1TB Limited Edition, Price: $594.95, Distributor: Amazon, Rating: 4.8
+Product number 19: Name: Sony PlayStation 4 Pro 1TB Console - Black, Price: $189.99, Distributor: GameStop, Rating: 4.7
+Product number 20: Name: Sony PlayStation 4 Call of Duty, Price: $139.99, Distributor: GameStop, Rating: 4.7
+Product number 21: Name: Sony PlayStation 5 Slim Edition NBA 2K25 Bundle, Price: $479.00, Distributor: Sam's Club, Rating: 3.9
+Product number 22: Name: Sony PlayStation 4 Slim Console 500GB - Black, Price: $139.99, Distributor: GameStop, Rating: 4.7
+Product number 23: Name: Sony PlayStation 5 Slim Disc Edition, Price: $538.99, Distributor: Amazon, Rating: 4.2
+Product number 24: Name: New Sony PlayStation 5 Disc Version Video Game Console, Price: $609.99, Distributor: Walmart - BestDeal, Rating: undefined
+Product number 25: Name: Sony PlayStation 4 PS4 Pro 1TB 4K Console - Black + Games, Price: $80.00, Distributor: eBay, Rating: 4.7
+Product number 26: Name: Ps4 Playstation 4 Sony Original Slim Pro 500gb 1tb 2tb Console Black, Price: $188.99, Distributor: eBay - samurai_game.shop-27, Rating: 4.7
+Product number 27: Name: PlayStation 5 Digital Edition 30th Anniversary Limited Edition, Price: $700.00, Distributor: eBay, Rating: 1
+Product number 28: Name: PlayStation 5 Digital Edition Gaming Console, Price: $632.00, Distributor: Macy's, Rating: 2
+Product number 29: Name: PlayStation Console Limited Edition Bundle with Marvel's Spider-Man 2, Price: $939.00, Distributor: Walmart, Rating: 5
+Product number 30: Name: playstation, Price: $50.00, Distributor: eBay, Rating: 4.6
+Product number 31: Name: Ps4 Playstation 4 Sony Original Slim Pro 500gb 1tb 2tb Console Used, Price: $174.99, Distributor: eBay - hima.89, Rating: 4.7
+Product number 32: Name: Sony PlayStation 4 500GB Gaming Console - Black, Price: $129.99, Distributor: eBay, Rating: 4.7
+Product number 33: Name: Sony PlayStation 4 Destiny, Price: $185.29, Distributor: Amazon, Rating: 4.8
+Product number 34: Name: Sony PlayStation 4 Console 500 GB - Black, Price: $238.29, Distributor: Amazon, Rating: undefined
+Product number 35: Name: Sony PlayStation 5 Console with Digital Horizon Forbidden West, Price: $499.00, Distributor: Walmart - IC Store, Rating: 4.2
+Product number 36: Name: PlayStation TV, Price: $199.99, Distributor: Walmart - CaveGamers, Rating: 4.1
+Product number 37: Name: PlayStation 5 Digital Edition *READ BELOW*, Price: $384.99, Distributor: mercari.com, Rating: 4.7
+Product number 38: Name: PlayStation 4 Pro 1TB Limited Edition The Last of US Part 2 Console, Price: $899.00, Distributor: Walmart - Greapon, Rating: 4.8
+Product number 39: Name: PlayStation 5 - Disc Edition, Price: $1,054.15, Distributor: shopezrentals.com, Rating: undefined
+Product number 40: Name: Playstation 5 Console - Sony, Price: $444.90, Distributor: Galactic Gamez, Rating: 1.4
+
+I have gotten the search results. How many of the top search results would you like me to share with you?
+=======
 Hello! Welcome to Speak-Commerce! I'm here to assist you with navigating the website and finding products. How can I help you today?
+>>>>>>> df13a6082d621874d6518a7937c309ef7659791e
