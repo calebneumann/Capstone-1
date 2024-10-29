@@ -11,6 +11,12 @@ BODY {
     margin: 0;
     height: auto;
 }
+
+.nav{
+  width: 100%;
+  height: 150px;
+
+}
 .column {
     float: left;
     width: 33.33%;
@@ -22,6 +28,12 @@ BODY {
   content: "";
   clear: both;
   display: table;
+}
+
+.logo{
+  background-color: red;
+  width: 100px;
+
 }
 
 
@@ -54,7 +66,6 @@ h2 {
 }
 
 div {
-    padding-right: 30px;
     height: 100%;
     width: 100%;
 }
@@ -79,9 +90,11 @@ video {
 }
 
 .main {
-    
+
+    margin-top:3% ;
     width: 100%;
     text-align: center;
+
 
 }
 
@@ -95,6 +108,7 @@ video {
 .nav h1 {
     padding-left: 20px;
     display: flex;
+  
 }
 
 /* Dropdown Button */
@@ -148,7 +162,8 @@ video {
   position: absolute; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
-  height:auto;
+  height:150px;
+
 }
 .recordThing{
   padding: 0;
@@ -158,21 +173,39 @@ video {
 }
 
 
+/**********/
 
+.navbar-logo{
+  float: left;
+  width: 20%;
+  height: 100%;
+
+}
+
+.logo-image{
+  width: 50%;
+  height: 120%;
+
+
+}
 .anchor-container {
   float: right; /* or display: inline-block; */
   text-align: right;
-  padding: 10px 24px; /* Some padding */
-  margin-top: -70px; /* adjust the margin as needed */
-  margin-bottom: -15px;
-  margin-right: 30px;
+  padding-right: 1%;
+  padding-top: 40px;
+
+  /* adjust the margin as needed */
+
+  width: 50%;
 }
 
 .anchor-container a {
   /* your anchor styles here */
+
   color: white;
   padding-left: 40px;
   font-size: large;
+  text-decoration: none;
 }
 
 .chat-transcript {
@@ -183,6 +216,8 @@ video {
   text-align: center; /* Center the text inside the container */
   color: red;
 }
+
+/**********/
 
 .center{
   text-align: center

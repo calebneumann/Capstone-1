@@ -79,8 +79,9 @@ video {
 }
 
 .main {
-    padding-left: 30px;
-    min-width: 75%;
+  margin-top: 3%;
+  width: 100%;
+
 }
 
 .news {
@@ -147,36 +148,57 @@ video {
 .navbar {
   overflow: visible;
   background-color: #397C97;
-  position: absolute; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
-  height:auto;
+  position: absolute;
+  /* Set the navbar to fixed position */
+  top: 0;
+  /* Position the navbar at the top of the page */
+  width: 100%;
+  /* Full width */
+  height: 150px;
+
 }
-  .recordThing{
-    padding: 0;
-    text-align: center;
-    margin-top: -60px;
-    color: red;
+
+.recordThing{
+  padding: 0;
+  text-align: center;
+  margin-top: -60px;
+  color: red;
+}
+
+.navbar-logo {
+  float: left;
+  width: 20%;
+  height: 100%;
+
+}
+
+.logo-image {
+  width: 50%;
+  height: 120%;
 }
   
 
 
-  .anchor-container {
-    float: right; /* or display: inline-block; */
-    text-align: right;
-    padding: 10px 24px; /* Some padding */
-    margin-top: -70px; /* adjust the margin as needed */
-    margin-bottom: -15px;
-    margin-right: 30px;
-  }
-  
-  .anchor-container a {
-    /* your anchor styles here */
-    color: white;
-    padding-left: 40px;
-    font-size: large;
-  }
+.anchor-container {
+  float: right;
+  /* or display: inline-block; */
+  text-align: right;
+  padding-right: 1%;
+  padding-top: 40px;
 
+  /* adjust the margin as needed */
+
+  width: 50%;
+}
+
+.anchor-container a {
+  /* your anchor styles here */
+
+  color: white;
+  padding-left: 40px;
+  font-size: large;
+  text-decoration: none;
+}
 
   .chat-transcript {
     overflow: hidden;
