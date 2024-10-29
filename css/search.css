@@ -251,3 +251,16 @@ h1 {
 .heart-button.active {
     color: #ff4757; /* Red color for filled heart */
 }
+
+.trash-button {
+    position: absolute;
+    top: 10px;  /* Adjust these values for desired positioning */
+    left: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 48px;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s ease;
+    margin: auto
+}
