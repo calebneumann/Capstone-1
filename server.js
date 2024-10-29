@@ -118,7 +118,6 @@ var userLoggedIn = "";
 
 
 
-
 //----------------------------------------LOOK HERE------------------------------------>
 //creates a connection with database details
 const database = mysql.createConnection({
@@ -310,7 +309,6 @@ app.post('/changePhone', (req, res) => {
 
 });
 //--------------------------------AAAAAAAAAAAAHHHHH DATABASE IS UP HERE----------------------------------------->
-
 
 
 

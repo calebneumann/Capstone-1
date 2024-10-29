@@ -1,4 +1,5 @@
 Hello!
+<<<<<<< HEAD
 Hello! Welcome to Speak-Commerce! I'm here to assist you with your online shopping experience. How can I help you today?
 The user is on the home. 
 Hello! Welcome to Speak-Commerce! I'm here to assist you with your online shopping experience. How can I help you today?
@@ -46,3 +47,6 @@ Product number 39: Name: PlayStation 5 - Disc Edition, Price: $1,054.15, Distrib
 Product number 40: Name: Playstation 5 Console - Sony, Price: $444.90, Distributor: Galactic Gamez, Rating: 1.4
 
 I have gotten the search results. How many of the top search results would you like me to share with you?
+=======
+Hello! Welcome to Speak-Commerce! I'm here to assist you with navigating the website and finding products. How can I help you today?
+>>>>>>> df13a6082d621874d6518a7937c309ef7659791e

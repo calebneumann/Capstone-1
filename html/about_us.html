@@ -7,25 +7,25 @@
 
 </HEAD>
 <div class="container">
-    <BODY>
-
+`    <BODY>
         <div class="navbar">
         <div class="dropdown">
         <div class="nav">
-            <a href="../index.html">
-                <img src="logo2.jpg" alt="Snow" style="width:100px" style="height:100px">
-            </a>
+                
+                    <div class="navbar-logo">
+                        <a href="../index.html">
+                            <img src="LOGO2.webp" class="logo-image">
+                        </a>
+                    </div>
             <div id="topLinks" class="anchor-container">
                 <h4>
                     <a href='../index.html'>Home</a>
                     <a href='search.html'>Search</a>
+                    <a href='chatGPT.html'>ChatGPT</a>
                     <a href='about_us.html'>About Us</a>
                     <a href='login.html'>Log in</a>
-                    
-
                 </h4>
             </div>
-
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', async () => {
@@ -35,12 +35,12 @@
                     if(result != ""){
                         var topBar = "<h4><a href='../index.html'>Home</a>";
                             topBar += "<a href='search.html'>Search</a>";
+                            topBar += "<a href='chatGPT.html'>ChatGPT</a>";
                             topBar += "<a href='about_us.html'>About Us</a>"
                             topBar += "<a href='profile.html'>Profile</a></h4>"
 
                         document.getElementById('topLinks').innerHTML = topBar
                     }
-                
                 })
                 .catch(error => {
                     document.getElementById('errorMessage').innerHTML = 'Error';
@@ -49,7 +49,6 @@
             });
           </script>
             <script>
-
                 document.addEventListener("keydown", (event) => {
                     if(event.key == ' '){
                         const sttResponse = document.getElementById('sttResponse');
@@ -57,15 +56,9 @@
                         //alert("you entered space")
                         
                         try {
-                            const response = fetch('/stt', {
-                                method: 'GET',
-                                headers: {
-                                  'source-page': 'about'  // You can include the HTML page name here
-                                }
-                              }).then(res => res.text()).then(data => {
+                            const response = fetch('/stt').then(res => res.text()).then(data => {
                                 sttResponse.textContent = data;
                                 data = data.toLowerCase();
-
                                 if(data.includes("home")){
                                     window.location.href = "../index.html";
                                 }
@@ -74,15 +67,6 @@
                                 }
                                 else if(data.includes("search")){
                                     window.location.href = "/search.html";
-                                }
-                                else if(data.includes("login")){
-                                    window.location.href = "/login.html";
-                                }
-                                else if(data.includes("profile")){
-                                    window.location.href = "/profile.html";
-                                }
-                                else if(data.includes("register")){
-                                    window.location.href = "/register.html";
                                 }
                                 else{
                                     document.getElementById('sttResponse').textContent = data; // Display the data
