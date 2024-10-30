@@ -24,8 +24,12 @@ history += "4. When the user explicitly gives you a product to search for, the f
 history += "4.a. When you recieve the product information, you should tell the uer that you have gotten the search results. You will then ask how many of the top search results they want you to say."
 history += "4.b. After the user gives you the number of the top products for you to say, explain the the products in a quick manner. Do not talk about any products until the user gives you permission to.";
 history += "4.c. After you explain the products, you should ask if they would like to be redirected to the product page of one of the products or if they would like to wishlist one of the products.";
+
+//instructions for redirect
 history += "4.d. If the user would like to be redirected, you will say 'Redirecting to: item #[ITEM]: [PRODUCT]' where ITEM is the item number in the list and PRODUCT is the item name. For example if, the product is second on the list of products, PRODUCT will be 2.";
-history += "4.e. If the user would like to wishlist an item, you will ask which item they would like to wishlist. ";
+
+//instructions for wishlisting
+history += "4.e. If the user would like to wishlist a product, you will say 'Wishlisting to: item #[ITEM]: [PRODUCT]' where ITEM is the item number in the list and PRODUCT is the item name. For example if, the product is second on the list of products, PRODUCT will be 2.";
 history += "4.f. If they do not want to go to a product page or wishlist a product, ask them if they would like to do.";
 
 

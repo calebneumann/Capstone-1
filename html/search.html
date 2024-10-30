@@ -296,6 +296,7 @@
 
 //<----------------------------------------delete above when done------------------------------------>
             var productData;
+            var productList;
             //activates whenever the spacebar is used
             document.addEventListener("keydown", async (event) => {
                 if(event.key == ' '){
@@ -340,6 +341,10 @@
                                 redirect(data);
                                 document.getElementById('sttResponse').textContent = data; // Display the data
             
+                            }
+
+                            else if(data.includes("wishlisting")){
+                                pressHeartButtonByIndex(data);
                             }
                             else{
                                 document.getElementById('sttResponse').textContent = data; // Display the data
@@ -391,7 +396,7 @@
                         product3.innerHTML = '<img class="image" src=' + '"' + data[2].thumbnail + '">' + '<h3>Result #3<ul><li><a href="' + data[2].link + '"> '+data[2].title+"</a></li><li>Price: "+data[2].price+"</li><li>Distributor: "+data[2].source+"</li><li>Rating: "+data[2].rating+"</li></ul></h1>";
                         */
 
-                        const productList = document.getElementById('product-list');
+                        productList = document.getElementById('product-list');
 
                         productList.innerHTML = ''; // This clears the list
 
@@ -551,6 +556,43 @@
                         console.log("Item number not found.");
                     }
                 }
+
+                function pressHeartButtonByIndex(data) {
+                    const regex = /#(\d+)/;
+                    var index;
+                    // Extract the number and convert it to an integer
+                    const match = data.match(regex);
+                    if (match && match[1]) {
+                        index = parseInt(match[1], 10);
+                        // Display the extracted number
+                        console.log("YOOO WE GOT ITEM #" + index)
+                        console.log(productData[index-1])
+
+
+                    } else {
+                        console.log("Item number not found.");
+                    }
+                    
+                    index = index - 1;
+                    // Check if the index is within the range of productList children
+                    if (index >= 0 && index < productList.children.length) {
+                        // Get the productDiv at the specified index
+                        const productDiv = productList.children[index];
+                        
+                        // Find the heart button inside this productDiv
+                        const heartButton = productDiv.querySelector('.heart-button');
+                        
+                        if (heartButton) {
+                            // Simulate a click on the heart button
+                            heartButton.click();
+                        } else {
+                            console.log("Heart button not found in the specified product div.");
+                        }
+                    } else {
+                        console.log("Index out of range.");
+                    }
+                }
+
 
 
               });
