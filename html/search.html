@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<HTML>
-    <HEAD>
-        <META NAME="GENERATOR" Content="Microsoft Visual Studio">
-        <TITLE>Product Search</TITLE>
+<html>
+    <head>
+        <meta NAME="GENERATOR" Content="Microsoft Visual Studio">
+        <title>Product Search</title>
         <link rel="stylesheet" type="text/css" href="search.css">
-    </HEAD>
+    </head>
 
     <script>
 
@@ -75,19 +75,25 @@
                 setCookie(name, JSON.stringify(updatedData), 7);
             }
             
+        }
 
-            
+        function deleteCookie(name) {
+            document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+
+        function cookieExists(name) {
+            return document.cookie.split('; ').some(cookie => cookie.startsWith(`${name}=`));
         }
     </script>
 
-
     <div class="container">
-    <BODY>
+        <body>
 
-        <div class="navbar">
+            <div class="navbar">
                 <div class="nav">
                     <a href="../index.html">
-                        <img src="logo2.jpg" alt="Snow" style="width:100px" style="height:100px">
+                        <img src="logo2.jpg" alt="Snow" style="width:100px"
+                            style="height:100px">
                     </a>
                     <div id="topLinks" class="anchor-container">
                         <h4>
@@ -95,11 +101,10 @@
                             <a href='search.html'>Search</a>
                             <a href='about_us.html'>About Us</a>
                             <a href='login.html'>Log in</a>
-                            
-    
+
                         </h4>
                     </div>
-    
+
                 </div>
                 <script>
                     document.addEventListener('DOMContentLoaded', async () => {
@@ -125,13 +130,13 @@
             </div>
         </div>
         <div class="main">
-        <br><br><br><br>
-        <h1>Product Search</h1>
-        
+            <br><br><br><br>
+            <h1>Product Search</h1>
 
-        <div id="product-list">Speak to the assistant to search for a product...</div>
+            <div id="product-list">Speak to the assistant to search for a
+                product...</div>
 
-        <script>
+            <script>
 //<----------------------------------------delete below when done with testing-------------------------->
                 var product11;
                 var product22;
@@ -159,6 +164,15 @@
                     productList.innerHTML = ''; // This clears the list
 
                     searchData.forEach(product => {
+                        var wishlistProduct = '{"title":"' + product.title + '",';
+                        wishlistProduct += '"thumbnail":"' + product.thumbnail + '",';
+                        wishlistProduct += '"price":"' + product.price + '",';
+                        wishlistProduct += '"source":"' + product.source + '",';
+                        wishlistProduct += '"link":"' + product.link + '"}';
+                        wishlistProduct = JSON.parse(wishlistProduct);
+
+
+                        console.log(wishlistProduct);
                         // Create a container div for each product
                         const productDiv = document.createElement('div');
                         productDiv.classList.add('product');
@@ -195,17 +209,76 @@
                         productDiv.appendChild(productPrice);
             
                         //button
+                        var checkLinks = getJSONFromCookie("wishlist");
+
                         const heartButton = document.createElement('button');
                         heartButton.classList.add('heart-button');
+                        
+                        const productToCheck = wishlistProduct.link;
+                        
                         heartButton.innerHTML = '&#9825;'; // Empty heart
-                    
+
+                        console.log(checkLinks);
+
+                        if(checkLinks != null)
+                        {
+                            const exists = checkLinks.some(item => item.link === productToCheck);
+
+                            if (exists) {
+                                heartButton.classList.toggle('active');
+                                heartButton.innerHTML = '&#9829;'; // Filled heart
+                            } else {
+                            heartButton.innerHTML = '&#9825;'; // Empty heart
+                            }
+                        }
+                        else{
+                            console.log("ppop");
+                        }
+                        
+                        
+                        
                         // Toggle heart fill on click
                         heartButton.addEventListener('click', () => {
                             heartButton.classList.toggle('active');
-                            heartButton.innerHTML = heartButton.classList.contains('active') ? '&#9829;' : '&#9825;';
-                            addDataToCookie("wishlist", product);
-                            console.log("got from database: ");
-                            console.log(getJSONFromCookie("wishlist"));
+                            if (heartButton.classList.contains('active')) {
+                                heartButton.innerHTML = '&#9829;'; // Filled heart
+                                addDataToCookie("wishlist", wishlistProduct);
+
+                            } else {
+                                heartButton.innerHTML = '&#9825;'; // Empty heart
+                                console.log("DEEELLLEEEEETTTEEEEE")
+                                var updatedWishlist = getJSONFromCookie("wishlist");
+                                
+                                const exists = updatedWishlist.some(item => item.link === wishlistProduct.link);
+
+                                if (exists) {
+                                    console.log("Product found in wishlist!");
+                                  } else {
+                                    console.log("Product not found in wishlist.");
+                                  }
+
+                                const index = updatedWishlist.findIndex(item => item.link === wishlistProduct.link);
+
+                                if (index !== -1) {
+                                // Remove the item at the found index
+                                updatedWishlist.splice(index, 1);
+                                console.log("Product deleted from wishlist!");
+                                console.log(updatedWishlist);
+                                if(JSON.stringify(updatedWishlist) == '[]'){
+                                    deleteCookie("wishlist");
+                                }
+                                else{
+                                    setCookie("wishlist", JSON.stringify(updatedWishlist), 7);
+                                }
+
+                                } else {
+                                console.log("Product not found in wishlist.");
+                                }
+
+                            }                            
+                            console.log(JSON.stringify(product));
+                            //console.log("got from database: ");
+                            //console.log(getJSONFromCookie("wishlist"));
                         });
 
                         productDiv.appendChild(heartButton); // Add heart button to product div
@@ -223,6 +296,7 @@
 
 //<----------------------------------------delete above when done------------------------------------>
             var productData;
+            var productList;
             //activates whenever the spacebar is used
             document.addEventListener("keydown", async (event) => {
                 if(event.key == ' '){
@@ -267,6 +341,10 @@
                                 redirect(data);
                                 document.getElementById('sttResponse').textContent = data; // Display the data
             
+                            }
+
+                            else if(data.includes("wishlisting")){
+                                pressHeartButtonByIndex(data);
                             }
                             else{
                                 document.getElementById('sttResponse').textContent = data; // Display the data
@@ -318,59 +396,137 @@
                         product3.innerHTML = '<img class="image" src=' + '"' + data[2].thumbnail + '">' + '<h3>Result #3<ul><li><a href="' + data[2].link + '"> '+data[2].title+"</a></li><li>Price: "+data[2].price+"</li><li>Distributor: "+data[2].source+"</li><li>Rating: "+data[2].rating+"</li></ul></h1>";
                         */
 
-                        const productList = document.getElementById('product-list');
+                        productList = document.getElementById('product-list');
 
                         productList.innerHTML = ''; // This clears the list
 
 
                         productData.forEach(product => {
+                            var wishlistProduct = '{"title":"' + product.title + '",';
+                            wishlistProduct += '"thumbnail":"' + product.thumbnail + '",';
+                            wishlistProduct += '"price":"' + product.price + '",';
+                            wishlistProduct += '"source":"' + product.source + '",';
+                            wishlistProduct += '"link":"' + product.link + '"}';
+                            wishlistProduct = JSON.parse(wishlistProduct);
+    
+    
+                            console.log(wishlistProduct);
                             // Create a container div for each product
-                        const productDiv = document.createElement('div');
-                        productDiv.classList.add('product');
-            
-                        // Create product title
-                        const productTitle = document.createElement('p');
-                        productTitle.classList.add('product-title');
-                        productTitle.innerHTML = `<a href="${product.link}" target="_blank">${product.title}</a>`;
-                        productDiv.appendChild(productTitle);
-            
-                        // Create product source
-                        const productSource = document.createElement('p');
-                        productSource.classList.add('product-source');
-                        productSource.textContent = product.source;
-                        productDiv.appendChild(productSource);
-
-                        // Create product image
-                        const productImgLink = document.createElement('a');
-                        productImgLink.href = product.link;
-                        productImgLink.target = "_blank";
-
-                        const productImg = document.createElement('img');
-                        productImg.src = product.thumbnail;
-                        productImg.alt = product.title;
-
-                        // Append the image to the anchor
-                        productImgLink.appendChild(productImg);
-                        productDiv.appendChild(productImgLink);
-            
-                        // Create product price
-                        const productPrice = document.createElement('p');
-                        productPrice.classList.add('product-price');
-                        productPrice.textContent = product.price;
-                        productDiv.appendChild(productPrice);
-            
-                        // Append the product div to the product list
-                        productList.appendChild(productDiv);
+                            const productDiv = document.createElement('div');
+                            productDiv.classList.add('product');
+                
+                            // Create product title
+                            const productTitle = document.createElement('p');
+                            productTitle.classList.add('product-title');
+                            productTitle.innerHTML = `<a href="${product.link}" target="_blank" class="product-title">${product.title}</a>`;
+                            productDiv.appendChild(productTitle);
+                
+                            // Create product source
+                            const productSource = document.createElement('p');
+                            productSource.classList.add('product-source');
+                            productSource.textContent = product.source;
+                            productDiv.appendChild(productSource);
+    
+                            // Create product image
+                            const productImgLink = document.createElement('a');
+                            productImgLink.href = product.link;
+                            productImgLink.target = "_blank";
+    
+                            const productImg = document.createElement('img');
+                            productImg.src = product.thumbnail;
+                            productImg.alt = product.title;
+    
+                            // Append the image to the anchor
+                            productImgLink.appendChild(productImg);
+                            productDiv.appendChild(productImgLink);
+                
+                            // Create product price
+                            const productPrice = document.createElement('p');
+                            productPrice.classList.add('product-price');
+                            productPrice.textContent = product.price;
+                            productDiv.appendChild(productPrice);
+                
+                            //button
+                            var checkLinks = getJSONFromCookie("wishlist");
+    
+                            const heartButton = document.createElement('button');
+                            heartButton.classList.add('heart-button');
+                            
+                            const productToCheck = wishlistProduct.link;
+                            
+                            heartButton.innerHTML = '&#9825;'; // Empty heart
+    
+                            console.log(checkLinks);
+    
+                            if(checkLinks != null)
+                            {
+                                const exists = checkLinks.some(item => item.link === productToCheck);
+    
+                                if (exists) {
+                                    heartButton.classList.toggle('active');
+                                    heartButton.innerHTML = '&#9829;'; // Filled heart
+                                } else {
+                                heartButton.innerHTML = '&#9825;'; // Empty heart
+                                }
+                            }
+                            else{
+                                console.log("ppop");
+                            }
+                            
+                            // Toggle heart fill on click
+                            heartButton.addEventListener('click', () => {
+                                heartButton.classList.toggle('active');
+                                if (heartButton.classList.contains('active')) {
+                                    heartButton.innerHTML = '&#9829;'; // Filled heart
+                                    addDataToCookie("wishlist", wishlistProduct);
+    
+                                } else {
+                                    heartButton.innerHTML = '&#9825;'; // Empty heart
+                                    console.log("DEEELLLEEEEETTTEEEEE")
+                                    var updatedWishlist = getJSONFromCookie("wishlist");
+                                    
+                                    const exists = updatedWishlist.some(item => item.link === wishlistProduct.link);
+    
+                                    if (exists) {
+                                        console.log("Product found in wishlist!");
+                                      } else {
+                                        console.log("Product not found in wishlist.");
+                                      }
+    
+                                    const index = updatedWishlist.findIndex(item => item.link === wishlistProduct.link);
+    
+                                    if (index !== -1) {
+                                    // Remove the item at the found index
+                                    updatedWishlist.splice(index, 1);
+                                    console.log("Product deleted from wishlist!");
+                                    console.log(updatedWishlist);
+                                    if(JSON.stringify(updatedWishlist) == '[]'){
+                                        deleteCookie("wishlist");
+                                    }
+                                    else{
+                                        setCookie("wishlist", JSON.stringify(updatedWishlist), 7);
+                                    }
+    
+                                    } else {
+                                    console.log("Product not found in wishlist.");
+                                    }
+    
+                                }                            
+                                console.log(JSON.stringify(product));
+                                //console.log("got from database: ");
+                                //console.log(getJSONFromCookie("wishlist"));
+                            });
+    
+                            productDiv.appendChild(heartButton); // Add heart button to product div
+    
+                            // Append the product div to the product list
+                            productList.appendChild(productDiv);
                         });
                     })
                     .catch(error => {
                         console.error('Error:', error);
                     });
                     
-                        product1 = "Name: " + searchData[0].title + ", Price: " + searchData[0].price + ", Distributor: " + searchData[0].source + ", Rating: " + searchData[0].store_rating + "\n";
-                        product2 = "Name: " + searchData[1].title + ", Price: " + searchData[1].price + ", Distributor: " + searchData[1].source + ", Rating: " + searchData[1].store_rating + "\n";
-                        product3 = "Name: " + searchData[2].title + ", Price: " + searchData[2].price + ", Distributor: " + searchData[2].source + ", Rating: " + searchData[2].store_rating + "\n";
-
 
                 }
 
@@ -401,16 +557,53 @@
                     }
                 }
 
+                function pressHeartButtonByIndex(data) {
+                    const regex = /#(\d+)/;
+                    var index;
+                    // Extract the number and convert it to an integer
+                    const match = data.match(regex);
+                    if (match && match[1]) {
+                        index = parseInt(match[1], 10);
+                        // Display the extracted number
+                        console.log("YOOO WE GOT ITEM #" + index)
+                        console.log(productData[index-1])
+
+
+                    } else {
+                        console.log("Item number not found.");
+                    }
+                    
+                    index = index - 1;
+                    // Check if the index is within the range of productList children
+                    if (index >= 0 && index < productList.children.length) {
+                        // Get the productDiv at the specified index
+                        const productDiv = productList.children[index];
+                        
+                        // Find the heart button inside this productDiv
+                        const heartButton = productDiv.querySelector('.heart-button');
+                        
+                        if (heartButton) {
+                            // Simulate a click on the heart button
+                            heartButton.click();
+                        } else {
+                            console.log("Heart button not found in the specified product div.");
+                        }
+                    } else {
+                        console.log("Index out of range.");
+                    }
+                }
+
+
 
               });
 
               
         </script>
-        <br><br><br>
-        <div class="sticky-container">
-        <h3>
-            <div id="sttResponse">Press the Space Bar to record...</div>
-        </h3>
-    </div>
-    </BODY>
-</HTML>
+            <br><br><br>
+            <div class="sticky-container">
+                <h3>
+                    <div id="sttResponse">Press the Space Bar to record...</div>
+                </h3>
+            </div>
+        </body>
+    </html>
