@@ -170,6 +170,7 @@
                                 }
                               }).then(res => res.text()).then(data => {
                                 data = data.toLowerCase();
+                                var wish = getJSONFromCookie("wishlist");
 
                                 if(data.includes("chat")){
                                     window.location.href = "/chatGPT.html";
@@ -188,6 +189,29 @@
                                 }
                                 else if(data.includes("register")){
                                     window.location.href = "/register.html";
+                                }
+                                else if(data.includes("retrieving wishlist")){
+                                    console.log("RETREEEVINT WIEHSLIST");
+                                    var wish = getJSONFromCookie("wishlist");
+                                    //wish = JSON.stringify(wish);
+                                    console.log(wish);
+                                    fetch('/giveWishlist', {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json'
+                                        },
+                                        body: JSON.stringify(wish)
+                                    });
+                                }
+                                else if(data.includes("deleting")){
+                                    console.log("DELETING ITEM");
+                                    //console.log(getItemIndex(data));
+                                    deleteProduct(getItemIndex(data));
+                                }
+                                else if(data.includes("redirecting to")){
+                                    console.log("REDIRECTING AAAHHHHH");
+                                    //console.log(getItemIndex(data));
+                                    redirectProduct(getItemIndex(data));
                                 }
                                 else{
                                     document.getElementById('sttResponse').textContent = data; // Display the data
@@ -259,11 +283,12 @@
                         
                         //iterates through each entry in the wishlist and sets the entry value to the product variable
                         //it can then get the product info and append them to their spot on the list
-                        searchData.forEach(product => {
+                        searchData.forEach((product, index) => {
                             // Create a container div for each product
                             const productDiv = document.createElement('div');
                             productDiv.classList.add('product');
-                
+                            productDiv.dataset.index = index; // Add data-index attribute for easy selection
+
                             // Create product title
                             const productTitle = document.createElement('p');
                             productTitle.classList.add('product-title');
@@ -305,42 +330,7 @@
                             // trash can button to delete entry
                             trashButton.addEventListener('click', () => {
                                 
-                                console.log("DEEELLLEEEEETTTEEEEE")
-                                var updatedWishlist = getJSONFromCookie("wishlist");
-                                const exists = updatedWishlist.some(item => item.link === product.link);
-                                if (exists) {
-                                    console.log("Product found in wishlist!");
-                                }
-                                else {
-                                    console.log("Product not found in wishlist.");
-                                }
-
-                                const index = updatedWishlist.findIndex(item => item.link === product.link);
-
-                                if (index !== -1) {
-                                // Remove the item at the found index
-                                updatedWishlist.splice(index, 1);
-                                console.log("Product deleted from wishlist!");
-                                console.log(updatedWishlist);
-
-                                if(JSON.stringify(updatedWishlist) == '[]'){
-                                    deleteCookie("wishlist");
-                                    
-                                }
-                                else{
-                                    setCookie("wishlist", JSON.stringify(updatedWishlist), 7);
-                                     
-                                }
-                                productDiv.remove();
-                                
-                                } else {
-                                console.log("Product not found in wishlist.");
-                                }
-
-                                                            
-                                console.log(JSON.stringify(product));
-                                //console.log("got from database: ");
-                                //console.log(getJSONFromCookie("wishlist"));
+                                deleteProduct(index);
                             });
 
                             productDiv.appendChild(trashButton); // Add trash can button to product div
@@ -356,6 +346,72 @@
                 });
                     
 
+                function deleteProduct(index) {
+                    const productDiv = document.querySelector(`.product[data-index="${index}"]`);
+                
+                    if (!productDiv) {
+                        console.log("Product div not found.");
+                        return;
+                    }
+                
+                    // Remove the product from the wishlist cookie
+                    let updatedWishlist = getJSONFromCookie("wishlist");
+                
+                    if (index >= 0 && index < updatedWishlist.length) {
+                        updatedWishlist.splice(index, 1);
+                        console.log("Product deleted from wishlist!");
+                
+                        // Update or delete the cookie
+                        if (updatedWishlist.length === 0) {
+                            deleteCookie("wishlist");
+                        } else {
+                            setCookie("wishlist", JSON.stringify(updatedWishlist), 7);
+                        }
+                
+                        // Remove the product div from the DOM
+                        productDiv.remove();
+                
+                        // Reassign data-index attributes to the remaining products
+                        const remainingProducts = document.querySelectorAll('.product');
+                        remainingProducts.forEach((productDiv, newIndex) => {
+                            productDiv.dataset.index = newIndex;
+                        });
+                
+                        // Check if we have a single item left and update accordingly
+                        if (remainingProducts.length === 1) {
+                            remainingProducts[0].dataset.index = 0;
+                        }
+                    } else {
+                        console.log("Product not found in wishlist.");
+                    }
+                }
+                
+                function redirectProduct(index) {
+                    let updatedWishlist = getJSONFromCookie("wishlist");
+                    const newTab = window.open(updatedWishlist[index].link, '_blank');
+                        // Remove focus from the new tab and bring it back to the original page
+                    setTimeout(() => {
+                        // If the tab was successfully created, blur it and focus back on the original tab
+                        if (newTab) {
+                            newTab.blur(); // Blur the new tab
+                            window.focus(); // Focus back on the current window
+                        }
+                    }, 500);
+                }
+
+                function getItemIndex(itemNum){
+
+                    const regex = /#(\d+)/;
+
+                    // Extract the number and convert it to an integer
+                    const match = itemNum.match(regex);
+                    if (match && match[1]) {
+                        const itemNumber = parseInt(match[1], 10);
+                        // Display the extracted number
+                        console.log("YOOO WE GOT ITEM #" + itemNumber)
+                        return itemNumber-1;
+                    }
+                }
 
             </script>
 
