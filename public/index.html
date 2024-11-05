@@ -3,12 +3,20 @@
     <head>
         <meta NAME="GENERATOR" Content="Microsoft Visual Studio">
         <title>Speakommerce</title>
-        <link rel="stylesheet" type="text/css" href="index.css">
+  
         <link rel="stylesheet" type="text/css" href="search.css">
+  
 
         <script src="js/index.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+
 
     </head>
+
+
 
     <script>
 
@@ -93,22 +101,27 @@
     <div class="container">
         <body>
             <div class="navbar">
-                <div class="nav">
+            <div class="nav">
+                <div class="navbar-logo">
                     <a href="../index.html">
-                        <img src="logo2.jpg" alt="Snow" style="width:100px"
-                            style="height:100px">
+                        <img src="LOGO2.webp" class="logo-image">
                     </a>
-                    <div id="topLinks" class="anchor-container">
-                        <h4>
-                            <a href='../index.html'>Home</a>
-                            <a href='search.html'>Search</a>
-                            <a href='about_us.html'>About Us</a>
-                            <a href='login.html'>Log in</a>
-
-                        </h4>
-                    </div>
-
                 </div>
+                <div id="topLinks" class="anchor-container">
+                    <h4>
+                        <a href='../index.html'>Home</a>
+                        <a href='search.html'>Search</a>
+                        <a href='about_us.html'>About Us</a>
+                        <a href="../index.html#wishlist">WishList</a>
+                        <a href='login.html'>Log in</a>
+            
+            
+                    </h4>
+                </div>
+
+
+            
+            </div>
                 <script>
                 document.addEventListener('DOMContentLoaded', async () => {
                     if(!cookieExists("wishlist")){
@@ -194,11 +207,30 @@
 
         </div>
         <div class="main">
-            <br><br><br><br>
+            <!---
+            
+   
+            <br><br><br><br><br><br>
             <h1>Speakommerce</h1>
-            <h3>Speak and find whatever e-commerce product you need!</h3>
-            <div id="product-list">Speak to the assistant to search for a
-                product...</div>
+            <h3 id="speak-label">Speak and find whatever e-commerce product you need!</h3>
+            <img src="scott-webb-GQD3Av_9A88-unsplash.jpg" alt="Background Image" id="background">
+                    -->
+                    <br>
+                    <br>
+                <img src="scott-webb-GQD3Av_9A88-unsplash (1).jpg" alt="Background Image" id="background">
+
+                    <br>
+                    <br>
+           
+                    <div id="wishlist">
+                        WishList
+                    </div>
+            <br>
+
+    <div id="product-list">Speak to the assistant to search for a
+        product...</div>
+                
+        
 
             <script>
                     //<----------------------------------------delete below when done with testing-------------------------->
@@ -238,16 +270,18 @@
                             productTitle.innerHTML = `<a href="${product.link}" target="_blank" class="product-title">${product.title}</a>`;
                             productDiv.appendChild(productTitle);
                 
-                            // Create product source
-                            const productSource = document.createElement('p');
-                            productSource.classList.add('product-source');
-                            productSource.textContent = product.source;
-                            productDiv.appendChild(productSource);
+                    
 
                             // Create product image
                             const productImgLink = document.createElement('a');
                             productImgLink.href = product.link;
                             productImgLink.target = "_blank";
+
+                                    // Create product source
+                            const productSource = document.createElement('p');
+                            productSource.classList.add('product-source');
+                            productSource.textContent = product.source;
+                            productDiv.appendChild(productSource);
 
                             const productImg = document.createElement('img');
                             productImg.src = product.thumbnail;
@@ -326,6 +360,8 @@
             </script>
 
         </div>
+
+ 
         <script src="index.js"></script>
         <br><br><br>
         <div class="sticky-container">
