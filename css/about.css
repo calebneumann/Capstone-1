@@ -6,18 +6,20 @@ html, body {
 }
 
 BODY {
-    font-family: 'Lato', sans-serif;
-    background-color: #E3F6FC;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    background-color: white;
     margin: 0;
     height: auto;
     width: auto;
+    text-align: center;
 }
 .column {
     float: left;
     width: 33.33%;
     padding: 5px;
+    background-color: red;
   }
-
 
 
   /* Clearfix (clear floats) */
@@ -78,11 +80,14 @@ video {
     border-radius: 5px;
 }
 
+
 .main {
   margin-top: 3%;
+  margin-left: 1%;
   width: 100%;
-
+  text-align: center;
 }
+
 
 .news {
     padding-left: 50px;
@@ -92,12 +97,6 @@ video {
 }
 
 
-
-
-    .nav h1 {
-        padding-left: 20px;
-        display: flex;
-    }
 
 
 /* Dropdown Button */
@@ -147,7 +146,7 @@ video {
 
 .navbar {
   overflow: visible;
-  background-color: #397C97;
+  background-color: #1c627c;
   position: absolute;
   /* Set the navbar to fixed position */
   top: 0;
@@ -167,7 +166,7 @@ video {
 
 .navbar-logo {
   float: left;
-  width: 20%;
+  width: 25%;
   height: 100%;
 
 }
@@ -175,6 +174,7 @@ video {
 .logo-image {
   width: 50%;
   height: 120%;
+  margin-left: -180px;
 }
   
 
@@ -200,6 +200,10 @@ video {
   text-decoration: none;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
   .chat-transcript {
     overflow: hidden;
     min-width: 0; /* Allow the container to shrink */
@@ -217,7 +221,7 @@ video {
   
 .sticky-container {
     overflow: visible;
-    background-color: #333;
+    background-color: black;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -228,5 +232,5 @@ video {
     margin-left: 14px;
     max-width: 98%;
     text-align: center;
-    color: red;
+    color: white;
 }
