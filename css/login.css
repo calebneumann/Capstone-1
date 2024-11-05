@@ -1,16 +1,19 @@
 html, body {
-    font-family: sans-serif;
     margin: 0;
     width: 100%;
     height: 100%;
 }
 
+
 BODY {
-    font-family: 'Lato', sans-serif;
-    background-color: #E3F6FC;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    background-color: whitesmoke;
     margin: 0;
     height: auto;
 }
+
+
 
 .nav{
   width: 100%;
@@ -31,9 +34,7 @@ BODY {
 }
 
 .logo{
-  background-color: red;
   width: 100px;
-
 }
 
 
@@ -90,12 +91,9 @@ video {
 }
 
 .main {
-
     margin-top:3% ;
     width: 100%;
     text-align: center;
-
-
 }
 
 .news {
@@ -108,6 +106,7 @@ video {
 .nav h1 {
     padding-left: 20px;
     display: flex;
+
   
 }
 
@@ -158,12 +157,11 @@ video {
 
 .navbar {
   overflow: visible;
-  background-color: #397C97;
+  background-color: #1c627c;
   position: absolute; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
   height:150px;
-
 }
 .recordThing{
   padding: 0;
@@ -177,7 +175,7 @@ video {
 
 .navbar-logo{
   float: left;
-  width: 20%;
+  width: 25%;
   height: 100%;
 
 }
@@ -248,19 +246,20 @@ video {
     -webkit-text-fill-color: transparent;
 }
 .sticky-container {
-    overflow: visible;
-    background-color: #333;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height:auto;
+  overflow: visible;
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: auto;
 }
-.sticky-container div{
 
-    margin-left: 14px;
-    max-width: 98%;
-    text-align: center;
-    color: red;
+.sticky-container div {
+
+  margin-left: 14px;
+  max-width: 98%;
+  text-align: center;
+  color: white;
 }
 
 .bigText{
@@ -297,7 +296,7 @@ video {
 
 #login-a {
   text-decoration: none;
-  color: #397C97;
+  color: #1c627c;
   transition: 0.4s;
 }
 
@@ -307,9 +306,10 @@ video {
 
 #loginButton {
   height: 38px;
-  background-color: #397C97;
+  background-color:#1c627c;
   color: white;
-  font-family: monospace;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
   cursor: pointer;
   font-size: 16px;
   outline: none;
@@ -318,7 +318,6 @@ video {
   border-radius: 5px;
   margin-bottom: 3px;
   outline: none;
-  font-family: monospace;
   text-align: center;
   transition: 0.4s;
 }
@@ -332,10 +331,10 @@ video {
 
 
 #speakButton{
-height: 38px;
+  height: 38px;
   background-color: #397C97;
   color: white;
-  font-family: monospace;
+  font-family: "Montserrat", sans-serif;
   cursor: pointer;
   font-size: 16px;
   outline: none;
@@ -344,7 +343,6 @@ height: 38px;
   border-radius: 5px;
   margin-bottom: 3px;
   outline: none;
-  font-family: monospace;
   text-align: center;
   transition: 0.4s;
 }
@@ -366,8 +364,10 @@ input{
   background-color: transparent;
   font-size: 14px;
   text-align: center;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 label{
   font-size: 20px;
+  font-family: "Montserrat", sans-serif !important;
 }

@@ -1,9 +1,11 @@
 html, body {
-    font-family: sans-serif;
+    
     margin: 0;
     width: 100%;
     height: 100%;
+    background-color: whitesmoke;
 }
+
 
 
 .column {
@@ -11,6 +13,8 @@ html, body {
     width: 33.33%;
     padding: 5px;
   }
+
+
 
 
 
@@ -28,6 +32,11 @@ button {
     cursor: pointer;
 }
 
+
+#speak-label{
+    text-align: center;
+    margin-top: -20px;
+}
 
 h1 {
     font-size: 48px;
@@ -82,32 +91,63 @@ video {
 
 .navbar {
     overflow: visible;
-    background-color: #397C97;
-    position: absolute; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
-    height:auto;
+    background-color: #1c627c;
+    position: absolute;
+    /* Set the navbar to fixed position */
+    top: 0;
+    /* Position the navbar at the top of the page */
+    width: 100%;
+    /* Full width */
+    height: 150px;
+}
+/**********/
+
+.navbar-logo {
+    float: left;
+    width: 25%;
+    height: 100%;
+
+}
+
+.logo-image {
+    width: 50%;
+    height: 120%;
+
+}
+
+a{
+text-decoration: none;
+color: black;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 .anchor-container {
-    float: right; /* or display: inline-block; */
+    float: right;
+    /* or display: inline-block; */
     text-align: right;
-    padding: 10px 24px; /* Some padding */
-    margin-top: -70px; /* adjust the margin as needed */
-    margin-bottom: -15px;
-    margin-right: 30px;
-  }
-  
-  .anchor-container a {
+    padding-right: 1%;
+    padding-top: 40px;
+
+    /* adjust the margin as needed */
+
+    width: 50%;
+}
+
+.anchor-container a {
     /* your anchor styles here */
+
     color: white;
     padding-left: 40px;
     font-size: large;
-  }
+    text-decoration: none;
+}
 
   BODY {
-    font-family: 'Lato', sans-serif;
-    background-color: #E3F6FC;
+    font-family: "Montserrat", sans-serif !important;
+    background-color: white;
     margin: 0;
     height: auto;
     width: auto;
@@ -122,6 +162,9 @@ video {
 }
 
 
+#background{
+    width: 100%;
+}
 
 
   .chat-transcript {
@@ -141,7 +184,7 @@ video {
   
 .sticky-container {
     overflow: visible;
-    background-color: #333;
+    background-color: black;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -152,7 +195,7 @@ video {
     margin-left: 14px;
     max-width: 98%;
     text-align: center;
-    color: red;
+    color: white;
 }
 
 
@@ -161,10 +204,16 @@ h1 {
     text-align: center;
 }
 
+#wishlist{
+    text-align: center;
+    font-size: 40px;
+}
+
 #product-list {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping to the next line */
     justify-content: flex-start; /* Align items to the start */
+    padding-left: 30px;
 }
 
 .product {
@@ -184,24 +233,22 @@ h1 {
 
 .product-title, .product-price {
     margin: 0; /* Remove default margins */
-    padding: 5px 0; /* Use padding for vertical spacing */
     overflow: visible; /* Ensure text isn’t clipped */
 }
 
 .product-title {
-    font-weight: bold;
     overflow: hidden;
     text-overflow: clip;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1; /* Limit title to 2 lines */
-    margin: auto;
     max-width: 70%;
     text-align: center;
     white-space: normal;
     display: flex;
     flex-wrap: wrap; /* Allow wrapping to the next line */
-    justify-content: flex-start; /* Align items to the start */
+    justify-content: center; /* Align items to the start */
+    font-weight: bold;
     
     
 }
@@ -216,10 +263,6 @@ h1 {
     margin-bottom: 5px;
 }
 
-
-
-
-
 .product img {
     max-width: auto;
     height: 175px;
@@ -228,11 +271,13 @@ h1 {
 }
 
 .product-source{
-    font-weight: bold; /* Makes the product title bold */
     overflow: hidden; /* Prevents text from overflowing outside the container */
     text-overflow: ellipsis; /* Adds "..." if the text overflows */
     margin: 0; /* Reset margin for consistency */
     padding: 5px; /* Optional: Add padding for better spacing */
+
+
+    
 }
 
 .heart-button {
@@ -258,7 +303,7 @@ h1 {
     left: 10px;
     background-color: transparent;
     border: none;
-    font-size: 48px;
+    font-size: 30px;
     cursor: pointer;
     color: #ccc;
     transition: color 0.3s ease;
