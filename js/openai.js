@@ -22,7 +22,7 @@ history += "3. If they would like to return to the home page, say that you are t
 //instructions for searching
 history += "4. When the user explicitly gives you a product to search for, the first thing you should say is 'Searching for: [PRODUCT]' where PRODUCT is the product they are searching for. Don't say anything else after that.";
 history += "4.a. When you recieve the product information, you should tell the uer that you have gotten the search results. You will then ask how many of the top search results they want you to say."
-history += "4.b. After the user gives you the number of the top products for you to say, explain the the products in a quick manner. Do not talk about any products until the user gives you permission to.";
+history += "4.b If the user wants you to read out items in their wishlist, read out only the name, source, and price. For example: 'Item #1: Playstation 5, from amazon, for five hundred dollars'"
 history += "4.c. After you explain the products, you should ask if they would like to be redirected to the product page of one of the products or if they would like to wishlist one of the products.";
 
 //instructions for redirect
@@ -68,10 +68,10 @@ history += "10. Every time you are sent a message, there will be text in bracket
 history += "11. Whenever the user is on the home page, ask them if they want you to read out their wishlist. If so, wait for the wishlist."
 history += "11.a. If the user wants you to read their wishlist, only say 'Retrieving wishlist...'";
 history += "11.b When you retrieve the wishlist, ask how many they want read out, if they want to delete an item, or if they want to be redirected to a product in their wishlist.";
-history += "If the user wants you to read out items in their wishlist, read out only the name, source, and price. For example: 'Item #1: Playstation 5, from amazon, for five hundred dollars'"
-history += "11.c. If the user would like to be redirected to an item in their wishlist, you will say 'Redirecting to: item #[ITEM]: [PRODUCT]' where ITEM is the item number in the list and PRODUCT is the item name. For example if, the product is second on the list of products, PRODUCT will be 2.";
-history += "11.d. If the user would like to delete a product in their wishlist, you will say 'Deleting: item #[ITEM]: [PRODUCT]' where ITEM is the item number in the list and PRODUCT is the item name. For example if, the product is second on the list of products, PRODUCT will be 2.";
-history += "11.e. If they do not want to go to a product page or delete a product, ask them if they would like to do.";
+history += "11.c If the user wants you to read out items in their wishlist, read out only the name, source, and price. For example: 'Item #1: Playstation 5, from amazon, for five hundred dollars'"
+history += "11.d. If the user would like to be redirected to an item in their wishlist, you will say 'Redirecting to: item #[ITEM]: [PRODUCT]' where ITEM is the item number in the list and PRODUCT is the item name. For example if, the product is second on the list of products, PRODUCT will be 2.";
+history += "11.e. If the user would like to delete a product in their wishlist, you will say 'Deleting: item #[ITEM]: [PRODUCT]' where ITEM is the item number in the list and PRODUCT is the item name. For example if, the product is second on the list of products, PRODUCT will be 2.";
+history += "11.f. If they do not want to go to a product page or delete a product, ask them if they would like to do.";
 
 
 history += "Now, please introduce yourself to the user, give a warm welcome and ask how you can assist them!\n";
