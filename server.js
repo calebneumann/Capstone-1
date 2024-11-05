@@ -330,21 +330,15 @@ app.get('/logOut', async(req, res) => {
 
 
 //i guess we can keep this small chunk of code for reference
-/*
-app.get('/jimboButton', (req, res) => {
-  const { username, password } = req.query;
 
-  var successMessage = "yo i got the goods. Here's the proof. The username is " + username + " and the password is " + password;
-  say.speak(successMessage);
 
-  console.log("Received Username: ", username);
-  console.log("Received Password: ", password);
-
-  // Send a JSON response back to the client
-  res.json({ message: "Hey man this is server.js. I got the goods." });
+app.post('/giveWishlist', (req, res) => {
+  const receivedData = req.body;
+  console.log('Received JSON data:', receivedData);
+  chatGPT(JSON.stringify(receivedData));
+  // Send a response back to the client
+  res.end;
 });
-*/
-
 
 //introduces the user to the app on first boot up. the variable makes 
 //sure the audio doesn't play every time the home page is accesed
