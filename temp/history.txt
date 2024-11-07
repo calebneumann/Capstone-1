@@ -1,0 +1,54 @@
+The user is on the search. I want you to search for a lap-
+Searching for: lap-
+Product number 1: Name: Lenovo V15 Series 15.6" FHD Intel Processor Laptop, Price: $479.00, Distributor: Amazon.com - Seller, Rating: undefined
+Product number 2: Name: Apple MacBook Air Apple M2, Price: $1,149.00, Distributor: Best Buy, Rating: 4.8
+Product number 3: Name: Microsoft 12.4" Surface Laptop Go 3, Price: $749.99, Distributor: Microsoft Store, Rating: 4.6
+Product number 4: Name: Apple MacBook Air M1, Price: $649.00, Distributor: Walmart, Rating: 4.8
+Product number 5: Name: Microsoft Surface Laptop - Silver - 256 GB, Price: $150.00, Distributor: Swappa, Rating: undefined
+Product number 6: Name: WOZIFAN 14" Traditional Laptops 6GB LPDDR4 256GB SSD Support 1TB SSD Expand Laptop Celeron Up to 2.8Ghz Win 11 Full Metal 2.4G+5G WiFi BT 4.2, Price: $205.99, Distributor: Amazon.com - Seller, Rating: undefined
+Product number 7: Name: Lenovo IdeaPad Daily Laptop, Price: $249.99, Distributor: Newegg.com - GeekShopping, Rating: undefined
+Product number 8: Name: Apple MacBook Air M3 15, Price: $1,299.00, Distributor: Apple, Rating: undefined
+Product number 9: Name: Microsoft Surface Pro Touchscreen Intel I5-7300u 2.6ghz 8gb Ram 128gb, Price: $139.99, Distributor: eBay - 3antar, Rating: undefined
+Product number 10: Name: HP Pavilion 15.6" Core i7-1355U Laptop, Price: $919.99, Distributor: HP, Rating: 4.3
+Product number 11: Name: cooloo8 Lap Desk with Cushion, Soft Laptop Pillow for Lap, Portable Desk Pillow, Gaming Pillow Work Pillow for Bed,Couch, Car, Price: $39.89, Distributor: Amazon.com - Seller, Rating: undefined
+Product number 12: Name: Fun and Function Find Me Lap Pad, Price: $40.99, Distributor: Fun And Function, Rating: undefined
+Product number 13: Name: Microsoft Surface Laptop 5, Price: $831.75, Distributor: Microsoft Store, Rating: 4.4
+Product number 14: Name: HP Envy x360 16" 2-in-1 Laptop, Price: $729.99, Distributor: Micro Center, Rating: 4.6
+Product number 15: Name: Apple 14-Inch MacBook Pro Apple M3 Chip, Price: $1,099.00, Distributor: Best Buy, Rating: 4.8
+Product number 16: Name: Yoidesu 15.6in Laptop Computer, 2K IPS HD Dispaly Thin and Light Laptop, for Intel N5095 CPU for Intel UHD Graphics for Windows 11, with Backlit, Price: $323.28, Distributor: Amazon.com - Seller, Rating: undefined
+Product number 17: Name: HP 15.6" Core i3 Touch Laptop, Price: $599.99, Distributor: HSN, Rating: 4.4
+Product number 18: Name: Lenovo ThinkPad E16 G1 16-inch (2023) - Ryzen 5 7530U - 16 GB - SSD 256 GB, Price: $459.99, Distributor: Back Market, Rating: undefined
+Product number 19: Name: Dell XPS 9305 Laptop 13.3" - Intel Core i7-1165G7 2.8GHz - 512GB - Platinum Silver - 8GB RAM - 13.3 Inch - Excellent - Dell - Dell XPS 13 9310 Laptop, Price: $689.87, Distributor: Reebelo USA, Rating: undefined
+Product number 20: Name: Microsoft Surface Laptop 7 Notebook, Price: $1,389.00, Distributor: Walmart - Grishm 0908, Rating: 5
+Product number 21: Name: Dell Inspiron 15 Newest Laptop, 15.6" FHD Touchscreen Business & Student Laptop Computer, Intel Core i5-1155G7 Processor, Windows 11 Pro Laptop,, Price: $739.99, Distributor: Amazon.com - Seller, Rating: undefined
+Product number 22: Name: LapGear Home Office Lap Desk, Price: $27.99, Distributor: Best Buy, Rating: 4.6
+Product number 23: Name: Dell Latitude 5420 14" Silver FHD 2.6 GHz i5-1145G7 16GB 512GB SSD, Price: $239.99, Distributor: eBay - itsworthmore, Rating: undefined
+Product number 24: Name: A NEW ARRIVAL Surface Pro 8 2 in 1 Laptop 3GHz 64gb 1TB Win11 Home 13 inch Tablets READY TO SHIP, Price: $245.85, Distributor: AliExpress.com - AliExpress-3209321201, Rating: undefined
+Product number 25: Name: HP Envy 16" 2K Touch Screen Laptop, Price: $929.99, Distributor: Target, Rating: 4.7
+Product number 26: Name: Tuonoyee Latest 16 inch Laptop 2.5K QHD Display, 16GB RAM 512GB SSD, Windows 11 Laptop Computer with Intel 12th Gen N95 Processor, Fingerprint &, Price: $284.99, Distributor: Amazon.com - Seller, Rating: undefined
+Product number 27: Name: Microsoft Surface Go, Price: $149.99, Distributor: Walmart - The Main Main Guy, Rating: 4.4
+Product number 28: Name: Dell Xps 13 9370 I7 8550u 1.8ghz 8gb Ram 256gb Nvme 13" Laptop Windows, Price: $333.00, Distributor: eBay, Rating: 3.9
+Product number 29: Name: Apple MacBook Pro A1706 13.3" Laptop i5-7267U (Mid-2017) Silver - Grad, Price: $493.99, Distributor: PCLiquidations.com, Rating: undefined
+Product number 30: Name: HP Spectre 14" 2.8K OLED Touchscreen Laptop, Price: $1,079.99, Distributor: BJ's Wholesale Club, Rating: 4.2
+Product number 31: Name: HUANUO Lap Desk - Fits up to 17 inches Laptop Desk, Built in Wrist Pad for Notebook, MacBook, Tablet, Lap Laptop Desk with Tablet, Pen & Phone, Price: $33.99, Distributor: Amazon.com - Seller, Rating: undefined
+Product number 32: Name: Dell Latitude 5420 Touchscreen 14 5000 14 inch FHD Business Laptop Computer, Intel i5-1145G7 (Beat i7-1065G7), 64gb Ddr4 Ram, 2TB PCIe Ssd, WiFi 6,, Price: $919.00, Distributor: Walmart - Best Tech Discount, Rating: undefined
+Product number 33: Name: Dell Latitude 7480 Core I5-6300u2.50ghz, 4gb Ram , 128 Gb Ssd Win 10, Price: $99.00, Distributor: eBay, Rating: undefined
+Product number 34: Name: HP Laptop Intel Celeron N4020, Price: $232.99, Distributor: Best Buy, Rating: 3.7
+Product number 35: Name: Apple MacBook Pro Core, Price: $287.99, Distributor: Back Market, Rating: 4.7
+Product number 36: Name: LG gram 15Z90S-v Notebook Intel Core Ultra 7, Price: $1,169.00, Distributor: Amazon.com - Seller, Rating: undefined
+Product number 37: Name: HP Victus 15.6" Gaming Laptop, Price: $620.95, Distributor: Walmart - BDR, Rating: 4.4
+Product number 38: Name: Dell Latitude I5-6300u 16gb 1tb Ssd Win 11 Pro 2560x1440 Qhd 14”, Price: $199.95, Distributor: eBay - computersuperuser, Rating: undefined
+Product number 39: Name: Acer 15.6" Aspire 5 15 Laptop, Price: $379.99, Distributor: B&H Photo-Video-Audio, Rating: 4.4
+Product number 40: Name: LG Gram 15.6" Touchscreen Lightweight Laptop, Price: $899.99, Distributor: BrandsMart USA, Rating: 4
+
+How many of the top search results would you like me to share with you?
+The user is on the search. 
+How many of the top search results would you like me to share with you?
+The user is on the search. Only one of them.
+Product number 1: Name: Lenovo V15 Series 15.6" FHD Intel Processor Laptop, Price: $479.00, Distributor: Amazon.com - Seller, Rating: undefined
+
+Would you like to be redirected to the product page of this laptop or would you like to wishlist it?
+The user is on the search. Yeah, can you wish-
+Wishlisting to: item #1: Lenovo V15 Series 15.6" FHD Intel Processor Laptop.
+Hello!
+Welcome to Speak-Commerce! How can I assist you today?

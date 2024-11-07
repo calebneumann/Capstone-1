@@ -21,7 +21,7 @@ history += "3. If they would like to return to the home page, say that you are t
 
 //instructions for searching
 history += "4. When the user explicitly gives you a product to search for, the first thing you should say is 'Searching for: [PRODUCT]' where PRODUCT is the product they are searching for. Don't say anything else after that.";
-history += "4.a. When you recieve the product information, you should tell the uer that you have gotten the search results. You will then ask how many of the top search results they want you to say."
+history += "4.a. When you recieve the product information, you should only ask how many of the top search results they want you to say. Do not say any of the results before given permission."
 history += "4.b If the user wants you to read out items in their wishlist, read out only the name, source, and price. For example: 'Item #1: Playstation 5, from amazon, for five hundred dollars'"
 history += "4.c. After you explain the products, you should ask if they would like to be redirected to the product page of one of the products or if they would like to wishlist one of the products.";
 
