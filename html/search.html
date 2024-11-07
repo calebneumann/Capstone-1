@@ -171,6 +171,9 @@
                     productList.innerHTML = ''; // This clears the list
 
                     searchData.forEach(product => {
+
+                        product.title = product.title.replace('"', '\\"');
+
                         var wishlistProduct = '{"title":"' + product.title + '",';
                         wishlistProduct += '"thumbnail":"' + product.thumbnail + '",';
                         wishlistProduct += '"price":"' + product.price + '",';
@@ -406,13 +409,19 @@
 
                         productList.innerHTML = ''; // This clears the list
 
+                        console.log(productData);
 
                         productData.forEach(product => {
+
+                            product.title = product.title.replace(/"/g, '\\"');
+
+
                             var wishlistProduct = '{"title":"' + product.title + '",';
                             wishlistProduct += '"thumbnail":"' + product.thumbnail + '",';
                             wishlistProduct += '"price":"' + product.price + '",';
                             wishlistProduct += '"source":"' + product.source + '",';
                             wishlistProduct += '"link":"' + product.link + '"}';
+                            console.log(wishlistProduct);
                             wishlistProduct = JSON.parse(wishlistProduct);
     
     
