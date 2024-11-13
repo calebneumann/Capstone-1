@@ -326,7 +326,7 @@
                             trashButton.innerHTML = '&#128465;';
                             
                             trashButton.addEventListener('click', () => {
-                                deleteProduct(index);
+                                deleteProduct(product.title);
                             });
                             
                             productDiv.appendChild(trashButton);
@@ -337,7 +337,7 @@
                     function deleteProduct(itemTitle) {
                         let updatedWishlist = getJSONFromCookie("wishlist");
                         const index = updatedWishlist.findIndex(product => product.title === itemTitle);
-
+                        console.log(itemTitle);
                         
                         if (index >= 0 && index < updatedWishlist.length) {
                             updatedWishlist.splice(index, 1);
