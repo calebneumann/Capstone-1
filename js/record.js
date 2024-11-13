@@ -59,15 +59,28 @@ async function startRecord(){
 //Function to transcribe audio
 
 async function voiceToText(filePath) {
-  const transcription = await openai.audio.transcriptions.create({
-    file: fs.createReadStream(filePath),
-    model: "whisper-1",
-    language: "en"
-  });
-  sttResponse = transcription.text;
-  console.log(transcription.text);
-  fs.unlinkSync(filePath);
+  try {
+    const transcription = await openai.audio.transcriptions.create({
+      file: fs.createReadStream(filePath),
+      model: "whisper-1",
+      language: "en"
+    });
+    sttResponse = transcription.text;
+    console.log(transcription.text);
+  } catch (error) {
+    // Handle the error if the audio file is too short or any other error occurs
+    if (error.message.includes("audio file is too short")) {
+      console.error("Error: The audio file is too short for transcription.");
+      sttResponse = "Error: The audio file is too short for transcription.";
+    } else {
+      console.error("An error occurred during transcription:", error.message);
+      sttResponse = "Error: An error occurred during transcription.";
 
+    }
+  } finally {
+    // Clean up the file regardless of success or failure
+    fs.unlinkSync(filePath);
+  }
 }
 
 
@@ -75,23 +88,23 @@ async function voiceToText(filePath) {
 keypress(process.stdin);
 
 async function recordThing(rec){
-recording == rec;
+  recording == rec;
 
 
-    if(recording == true){ //stop recording
-        recording = false;
+  if(recording == true){ //stop recording
+      recording = false;
 
-        await startRecord();
-
-    }
-    else if (recording == false) { //start's recording
-      recording = true;
-      file = fs.createWriteStream(filePath, { encoding: 'binary' });
-      say.stop();
-      await speakAndWait("Recording voice");
       await startRecord();
-    }
-    return sttResponse;
+
+  }
+  else if (recording == false) { //start's recording
+    recording = true;
+    file = fs.createWriteStream(filePath, { encoding: 'binary' });
+    say.stop();
+    await speakAndWait("Recording voice");
+    await startRecord();
+  }
+  return sttResponse;
 }
 //recordThing();
 module.exports = { recordThing };

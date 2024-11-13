@@ -22,11 +22,11 @@ history += "3. If they would like to return to the home page, say that you are t
 //instructions for searching
 history += "4. When the user explicitly gives you a product to search for, the first thing you should say is 'Searching for: [PRODUCT]' where PRODUCT is the product they are searching for. Don't say anything else after that.";
 history += "4.a. When you recieve the product information, you should only ask how many of the top search results they want you to say. Do not say any of the results before given permission."
-history += "4.b If the user wants you to read out items in their wishlist, read out only the name, source, and price. For example: 'Item #1: Playstation 5, from amazon, for five hundred dollars'"
+history += "4.b If the user wants you to read out products, read out only the name, source, and price. For example: 'Item #1: Playstation 5, from amazon, for five hundred dollars'"
 history += "4.c. After you explain the products, you should ask if they would like to be redirected to the product page of one of the products or if they would like to wishlist one of the products.";
 
 //instructions for redirect
-history += "4.d. If the user would like to be redirected, you will say 'Redirecting to: item #[ITEM]: [PRODUCT]' where ITEM is the item number in the list and PRODUCT is the item name. For example if, the product is second on the list of products, PRODUCT will be 2.";
+history += "4.d. If the user would like to be redirected to a product found in the product search, you will say 'Redirecting to: item #[ITEM]: [PRODUCT]' where ITEM is the item number in the list and PRODUCT is the item name. For example if, the product is second on the list of products, PRODUCT will be 2.";
 
 //instructions for wishlisting
 history += "4.e. If the user would like to wishlist a product, you will say 'Wishlisting to: item #[ITEM]: [PRODUCT]' where ITEM is the item number in the list and PRODUCT is the item name. For example if, the product is second on the list of products, PRODUCT will be 2.";
@@ -65,14 +65,16 @@ history += "9. If the user would like to view their Speak-Commerce profile, the 
 
 history += "10. Every time you are sent a message, there will be text in brackets indicating what page the user is currently on, such as [profile]. This is for you to keep track of where the user is located on the website."
 
+//instructions for handling the wishlist
 history += "11. Whenever the user is on the home page, ask them if they want you to read out their wishlist. If so, wait for the wishlist."
 history += "11.a. If the user wants you to read their wishlist, only say 'Retrieving wishlist...'";
 history += "11.b When you retrieve the wishlist, ask how many they want read out, if they want to delete an item, or if they want to be redirected to a product in their wishlist.";
-history += "11.c If the user wants you to read out items in their wishlist, read out only the name, source, and price. For example: 'Item #1: Playstation 5, from amazon, for five hundred dollars'"
-history += "11.d. If the user would like to be redirected to an item in their wishlist, you will say 'Redirecting to: item #[ITEM]: [PRODUCT]' where ITEM is the item number in the list and PRODUCT is the item name. For example if, the product is second on the list of products, PRODUCT will be 2.";
-history += "11.e. If the user would like to delete a product in their wishlist, you will say 'Deleting: item #[ITEM]: [PRODUCT]' where ITEM is the item number in the list and PRODUCT is the item name. For example if, the product is second on the list of products, PRODUCT will be 2.";
+history += "11.c If the user wants you to read out items in their wishlist, read out only the name, source, and price. For example: 'Playstation 5, from amazon, for five hundred dollars'"
+history += "11.d. If the user would like to be redirected to an item in their wishlist, you will say 'Redirecting to: ([PRODUCT]) from [SOURCE]' where PRODUCT is the item name and [SOURCE] is the website it is from.";
+history += "11.e. If the user would like to delete a product in their wishlist, you will say 'Deleting: ([PRODUCT]) from [SOURCE]' where PRODUCT is the item name and [SOURCE] is the website it is from.";
 history += "11.f. If they do not want to go to a product page or delete a product, ask them if they would like to do.";
 
+history += "12. If you recieve an error message, make sure to notify the user."
 
 history += "Now, please introduce yourself to the user, give a warm welcome and ask how you can assist them!\n";
 
@@ -95,26 +97,48 @@ async function chatGPT(question){
       history = history + response + '\n';
       console.log(response);
       //Send the response back to the client  
-      chatHistory(question, response);
+      updateChatHistory(question, response);
       say.stop();
       say.speak(response, 'Samantha', 1.2);
       return response;
     } catch (error) {
       // Handle errors
       console.error('Error:', error);
+      say.speak("ChatGPT Error", 'Samantha', 1.2);
+      return "NOO THERES AN ERROR AAAAAAAAAH";
+
     }
   }
   
 //stores the chat history in a text file
-function chatHistory(question, response){
+// function chatHistory(question, response){
 
   
-  fs.appendFileSync(parentDir + "/temp/history.txt", question);
-  fs.appendFileSync(parentDir + "/temp/history.txt", '\n');
-  fs.appendFileSync(parentDir + "/temp/history.txt", response);
-  fs.appendFileSync(parentDir + "/temp/history.txt", '\n');
+//   fs.appendFileSync(parentDir + "/temp/history.txt", question);
+//   fs.appendFileSync(parentDir + "/temp/history.txt", '\n');
+//   fs.appendFileSync(parentDir + "/temp/history.txt", response);
+//   fs.appendFileSync(parentDir + "/temp/history.txt", '\n');
 
+// }
+
+//new history storing thingy. It limits the history length to 70 lines to prevent overloading chatGPT
+function updateChatHistory(userInput, assistantResponse) {
+  // Read the file content
+  let maxLines = 70;
+  let history = fs.readFileSync(parentDir + "/temp/history.txt", 'utf8').split('\n');
+
+  // Add new input and response
+  history.push(`User: ${userInput}`, `Assistant: ${assistantResponse}`);
+
+  // Trim history to the last `maxLines` if it exceeds the limit
+  if (history.length > maxLines) {
+    history = history.slice(-maxLines);
+  }
+
+  // Write updated content back to the file
+  fs.writeFileSync(parentDir + "/temp/history.txt", history.join('\n'), 'utf8');
 }
+
 
 module.exports = { 
   chatGPT
