@@ -341,6 +341,9 @@
                             else if(data.includes("register")){
                                 window.location.href = "/register.html";
                             }
+                            else if(data.includes("wishlist page")){
+                                window.location.href = "../index.html#wishlist";
+                            }
                             else if(data.includes("searching for")){
                                 search_product(data);
                                 document.getElementById('sttResponse').textContent = data; // Display the data

@@ -168,31 +168,38 @@
                                   'source-page': 'home'  // You can include the HTML page name here
                                 }
                               }).then(res => res.text()).then(data => {
-                                data = data.toLowerCase();
+                                var dataLower = data.toLowerCase();
+
                                 var wish = getJSONFromCookie("wishlist");
 
-                                if(data.includes("chat")){
+                                if(dataLower.includes("chat")){
                                     window.location.href = "/chatGPT.html";
                                 }
-                                else if(data.includes("about us")){
+                                else if(dataLower.includes("about us")){
                                     window.location.href = "/about_us.html";
                                 }
-                                else if(data.includes("search")){
+                                else if(dataLower.includes("search page")){
                                     window.location.href = "/search.html";
                                 }
-                                else if(data.includes("login")){
+                                else if(dataLower.includes("login")){
                                     window.location.href = "/login.html";
                                 }
-                                else if(data.includes("profile")){
+                                else if(dataLower.includes("profile")){
                                     window.location.href = "/profile.html";
                                 }
-                                else if(data.includes("register")){
+                                else if(dataLower.includes("register")){
                                     window.location.href = "/register.html";
                                 }
-                                else if(data.includes("retrieving wishlist")){
+                                else if(dataLower.includes("wishlist page")){
+                                    window.location.href = "../index.html#wishlist";
+                                }
+                                else if(dataLower.includes("retrieving wishlist")){
                                     console.log("RETREEEVINT WIEHSLIST");
                                     var wish = getJSONFromCookie("wishlist");
                                     //wish = JSON.stringify(wish);
+                                    if(wish == null){
+                                        wish = {}
+                                    }
                                     console.log(wish);
                                     fetch('/giveWishlist', {
                                         method: 'POST',
@@ -202,12 +209,12 @@
                                         body: JSON.stringify(wish)
                                     });
                                 }
-                                else if(data.includes("deleting")){
+                                else if(dataLower.includes("deleting")){
                                     console.log("DELETING ITEM");
                                     //console.log(getItemIndex(data));
                                     deleteProduct(getItemIndex(data));
                                 }
-                                else if(data.includes("redirecting to")){
+                                else if(dataLower.includes("redirecting to")){
                                     console.log("REDIRECTING AAAHHHHH");
                                     //console.log(getItemIndex(data));
                                     redirectProduct(getItemIndex(data));
@@ -250,144 +257,123 @@
                     </div>
             <br>
 
-    <div id="product-list">Speak to the assistant to search for a
-        product...</div>
-                
+    <div id="product-list">Speak to the assistant to search for a product...</div>
+
         
 
             <script>
                     //<----------------------------------------delete below when done with testing-------------------------->
-                document.addEventListener('DOMContentLoaded', async () => {
-                    fetch("example.json")
-                    .then((res) => {
-                        if (!res.ok) {
-                            throw new Error
-                                (`HTTP error! Status: ${res.status}`);
-                        }
-                        console.log(res.json.body)
-                        var searchData = res.json["shopping_results"];
-                        console.log(searchData)
-                        return res.json();
-                    })
-                    .then((data) => {
-                        console.log(data)
-                        var searchData = data["shopping_results"];
-                        console.log(searchData);
+                    document.addEventListener('DOMContentLoaded', async () => {
+                        fetch("example.json")
+                            .then((res) => {
+                                if (!res.ok) {
+                                    throw new Error(`HTTP error! Status: ${res.status}`);
+                                }
+                                return res.json();
+                            })
+                            .then((data) => {
+                                renderProductList(data);
+                            })
+                            .catch((error) => console.error("Unable to fetch data:", error));
+                    });
+                    
+                    function renderProductList(data) {
+                        let searchData = getJSONFromCookie("wishlist");
                         
-                        //sets wishlist div value to this variable
                         const productList = document.getElementById('product-list');
-
-                        productList.innerHTML = ''; // This clears the list
-                        searchData = getJSONFromCookie("wishlist"); //gets the json from the cookie
+                        productList.innerHTML = ''; // Clear the list before rendering
                         
-                        //iterates through each entry in the wishlist and sets the entry value to the product variable
-                        //it can then get the product info and append them to their spot on the list
+                        if (searchData == null || searchData.length === 0) {
+                            document.getElementById("product-list").innerHTML = "Your wishlist is empty. Search for a product to add to your wishlist!<br><br><br><br><br>";
+                            const myDiv = document.getElementById("product-list");
+                            myDiv.style.margin = "0 auto";
+                            myDiv.style.textAlign = "center";
+                            return;
+                        }
+                        
                         searchData.forEach((product, index) => {
-                            // Create a container div for each product
                             const productDiv = document.createElement('div');
                             productDiv.classList.add('product');
-                            productDiv.dataset.index = index; // Add data-index attribute for easy selection
-
-                            // Create product title
+                            productDiv.dataset.index = index;
+                            
                             const productTitle = document.createElement('p');
                             productTitle.classList.add('product-title');
                             productTitle.innerHTML = `<a href="${product.link}" target="_blank" class="product-title">${product.title}</a>`;
                             productDiv.appendChild(productTitle);
-                
-                    
-
-                            // Create product image
-                            const productImgLink = document.createElement('a');
-                            productImgLink.href = product.link;
-                            productImgLink.target = "_blank";
-
-                                    // Create product source
+                            
                             const productSource = document.createElement('p');
                             productSource.classList.add('product-source');
                             productSource.textContent = product.source;
                             productDiv.appendChild(productSource);
-
+                    
+                            const productImgLink = document.createElement('a');
+                            productImgLink.href = product.link;
+                            productImgLink.target = "_blank";
+                    
                             const productImg = document.createElement('img');
                             productImg.src = product.thumbnail;
                             productImg.alt = product.title;
-
-                            // Append the image to the anchor
                             productImgLink.appendChild(productImg);
                             productDiv.appendChild(productImgLink);
-                
-                            // Create product price
+                    
                             const productPrice = document.createElement('p');
                             productPrice.classList.add('product-price');
                             productPrice.textContent = product.price;
                             productDiv.appendChild(productPrice);
-                
-                            //button
+                    
                             const trashButton = document.createElement('button');
                             trashButton.classList.add('trash-button');
-                            trashButton.innerHTML = '&#128465;'; // Trash can icon
-                        
-                            // trash can button to delete entry
+                            trashButton.innerHTML = '&#128465;';
+                            
                             trashButton.addEventListener('click', () => {
-                                
                                 deleteProduct(index);
                             });
-
-                            productDiv.appendChild(trashButton); // Add trash can button to product div
-
-                            // Append the product div to the product list
+                            
+                            productDiv.appendChild(trashButton);
                             productList.appendChild(productDiv);
                         });
-
-                    })
-                    .catch((error) =>
-                        console.error("Unable to fetch data:", error));
-                    
-                });
-                    
-
-                function deleteProduct(index) {
-                    const productDiv = document.querySelector(`.product[data-index="${index}"]`);
-                
-                    if (!productDiv) {
-                        console.log("Product div not found.");
-                        return;
                     }
-                
-                    // Remove the product from the wishlist cookie
-                    let updatedWishlist = getJSONFromCookie("wishlist");
-                
-                    if (index >= 0 && index < updatedWishlist.length) {
-                        updatedWishlist.splice(index, 1);
-                        console.log("Product deleted from wishlist!");
-                
-                        // Update or delete the cookie
-                        if (updatedWishlist.length === 0) {
-                            deleteCookie("wishlist");
+                    
+                    function deleteProduct(itemTitle) {
+                        let updatedWishlist = getJSONFromCookie("wishlist");
+                        const index = updatedWishlist.findIndex(product => product.title === itemTitle);
+
+                        
+                        if (index >= 0 && index < updatedWishlist.length) {
+                            updatedWishlist.splice(index, 1);
+                            console.log("Product deleted from wishlist!");
+                            
+                            if (updatedWishlist.length === 0) {
+                                deleteCookie("wishlist");
+                            } else {
+                                setCookie("wishlist", JSON.stringify(updatedWishlist), 7);
+                            }
+                            
+                            renderProductList(updatedWishlist);
                         } else {
-                            setCookie("wishlist", JSON.stringify(updatedWishlist), 7);
+                            console.log("Product not found in wishlist.");
                         }
-                
-                        // Remove the product div from the DOM
-                        productDiv.remove();
-                
-                        // Reassign data-index attributes to the remaining products
-                        const remainingProducts = document.querySelectorAll('.product');
-                        remainingProducts.forEach((productDiv, newIndex) => {
-                            productDiv.dataset.index = newIndex;
-                        });
-                
-                        // Check if we have a single item left and update accordingly
-                        if (remainingProducts.length === 1) {
-                            remainingProducts[0].dataset.index = 0;
-                        }
-                    } else {
-                        console.log("Product not found in wishlist.");
                     }
-                }
                 
-                function redirectProduct(index) {
+                function redirectProduct(itemTitle) {
+
+                    
                     let updatedWishlist = getJSONFromCookie("wishlist");
-                    const newTab = window.open(updatedWishlist[index].link, '_blank');
+                    const index2 = updatedWishlist.findIndex(product => product.title === itemTitle);
+
+
+                    console.log("Index is: " + index2);
+
+                    if (index2 !== -1) {
+                        console.log(`Product found at index: ${index2}`);
+                        console.log(`Product link: ${updatedWishlist[index2].link}`);
+                    } else {
+                        console.log("Product not found.");
+                        return null;
+                    }
+
+                    //let updatedWishlist = getJSONFromCookie("wishlist");
+                    const newTab = window.open(updatedWishlist[index2].link, '_blank');
                         // Remove focus from the new tab and bring it back to the original page
                     setTimeout(() => {
                         // If the tab was successfully created, blur it and focus back on the original tab
@@ -398,17 +384,18 @@
                     }, 500);
                 }
 
-                function getItemIndex(itemNum){
+                function getItemIndex(itemTitle){
 
-                    const regex = /#(\d+)/;
+                    const regex = /\(([^)]+)\)/;
+                    const match = itemTitle.match(regex);
 
-                    // Extract the number and convert it to an integer
-                    const match = itemNum.match(regex);
-                    if (match && match[1]) {
-                        const itemNumber = parseInt(match[1], 10);
-                        // Display the extracted number
-                        console.log("YOOO WE GOT ITEM #" + itemNumber)
-                        return itemNumber-1;
+                    // Extract the title
+                    if (match) {
+                        const extractedText = match[1]; // The first capturing group contains the text inside parentheses
+                        console.log(extractedText); // Output: LEGO 71374 Nintendo Entertainment System
+                        return extractedText;
+                    } else {
+                        console.log("No match found.");
                     }
                 }
 
