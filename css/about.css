@@ -52,7 +52,6 @@ h2 {
 }
 
 div {
-    padding-right: 30px;
     height: 100%;
     width: 100%;
 }
@@ -185,6 +184,7 @@ video {
   text-align: right;
   padding-right: 1%;
   padding-top: 40px;
+  margin-right: 20px;
 
   /* adjust the margin as needed */
 
@@ -233,4 +233,17 @@ video {
     max-width: 98%;
     text-align: center;
     color: white;
+}
+
+.about{
+  display: flex;
+  align-items: flex-start; /* Aligns text block with the top of the image */
+  gap: 20px; /* Space between the image and text */
+  max-width: 98%;
+}
+
+.groupImg{
+  height: 300px;
+  width: auto;
+  padding-right: 20px;
 }
